@@ -55,3 +55,4 @@
 @media(prefers-reduced-motion:reduce){.scroll-reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:900px){.desktop-nav{gap:12px}.desktop-nav a{font-size:8px}.nav-id{display:none}}
 @media(max-width:650px){.mobile-nav.open{max-height:360px}}
+.identity-facts>div span{max-width:48%}.identity-facts>div b{max-width:58%;text-align:right;line-height:1.5}

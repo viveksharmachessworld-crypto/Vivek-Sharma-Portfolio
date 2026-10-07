@@ -1,11 +1,9 @@
 // All owner-supplied images are committed with the site and served from this origin.
 const assets = [
-  {file:'My profile Photo.jpg',kind:'photograph',caption:'Profile portrait',detail:'Owner-provided profile photograph'},
+  {file:'FB_IMG_1749380787849.jpg',kind:'photograph',caption:'On the motorbike',detail:'Owner-provided photograph'},
+  {file:'FB_IMG_1750435821340.jpg',kind:'photograph',caption:'With the Thar',detail:'Owner-provided photograph'},
   {file:'20261007_165057.jpg',kind:'press',caption:'Framed chess press archive',detail:'Owner-provided archive'},
   {file:'FB_IMG_1749380355265.jpg',kind:'photograph',caption:'Award ceremony',detail:'Owner-provided photograph'},
-  {file:'FB_IMG_1749380486047.jpg',kind:'photograph',caption:'Holding an award',detail:'Owner-provided photograph'},
-  {file:'FB_IMG_1749380787849.jpg',kind:'photograph',caption:'Away from the board',detail:'Owner-provided photograph'},
-  {file:'FB_IMG_1750435821340.jpg',kind:'photograph',caption:'On the road',detail:'Owner-provided photograph'},
   {file:'Scan_20261007_164728.jpg',kind:'press',caption:'Bihar chess coverage',detail:'Newspaper archive scan'},
   {file:'Scan_20261007_164745.jpg',kind:'press',caption:'Local chess coverage',detail:'Newspaper archive scan'},
   {file:'Scan_20261007_164802.jpg',kind:'press',caption:'Patna event coverage',detail:'Newspaper archive scan'},
