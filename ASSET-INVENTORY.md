@@ -2,7 +2,7 @@
 
 ## Public image source
 
-All 34 JPEGs in `My Portfolio Image/` are committed to this repository and displayed by the site using same-origin relative paths. This makes the images publicly available wherever the portfolio is deployed and avoids dependence on Drive sharing settings. The Drive folder has shortcut entries whose originals are marked deleted; those links are not used by the website. The website uses an optimized 1350 × 1800 JPEG for the new profile photo; its original full-resolution `My profile Photo.heic` is retained alongside it.
+All 34 JPEGs in `public/My Portfolio Image/` are committed to this repository and displayed by the site using same-origin URLs. This makes the images publicly available wherever the portfolio is deployed and avoids dependence on Drive sharing settings. The Drive folder has shortcut entries whose originals are marked deleted; those links are not used by the website. The website uses an optimized 1350 × 1800 JPEG for the new profile photo; its original full-resolution `My profile Photo.heic` is retained alongside it.
 
 ## Image inventory
 
