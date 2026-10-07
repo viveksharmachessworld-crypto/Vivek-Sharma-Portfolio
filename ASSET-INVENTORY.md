@@ -2,15 +2,16 @@
 
 ## Public image source
 
-All 33 JPEGs in `My Portfolio Image/` are committed to this repository and displayed by the site using same-origin relative paths. This makes the images publicly available wherever the portfolio is deployed and avoids dependence on Drive sharing settings. The Drive folder has shortcut entries whose originals are marked deleted; those links are not used by the website.
+All 34 JPEGs in `My Portfolio Image/` are committed to this repository and displayed by the site using same-origin relative paths. This makes the images publicly available wherever the portfolio is deployed and avoids dependence on Drive sharing settings. The Drive folder has shortcut entries whose originals are marked deleted; those links are not used by the website. The website uses an optimized 1350 × 1800 JPEG for the new profile photo; its original full-resolution `My profile Photo.heic` is retained alongside it.
 
 ## Image inventory
 
-These 33 JPEGs were also present locally and visually inventoried. Dimensions are the source-file dimensions. The mapping below describes possible story placements if these assets are uploaded as actual files to the shared Drive folder. Captions stay broad where a scan's details need closer reading; no dates or tournament placements are inferred from filenames.
+These 34 JPEGs are included in the public site. Dimensions are the listed JPEG dimensions. Captions stay broad where a scan's details need closer reading; no dates or tournament placements are inferred from filenames.
 
 | File | Type / orientation | Resolution | Asset → story → section |
 |---|---|---:|---|
 | `20261007_165057.jpg` | Framed press archive · landscape | 4000 × 3000 | Press archive → chess record → Photo Archive |
+| `My profile Photo.jpg` | Profile photograph · portrait | 1350 × 1800 | Profile portrait → hero and identity → Photo Archive |
 | `FB_IMG_1749380355265.jpg` | Award photograph · square | 540 × 540 | Ceremony → recognition → Official Identity |
 | `FB_IMG_1749380486047.jpg` | Award photograph · portrait | 1290 × 1884 | Vivek holding award → player portrait → Opening |
 | `FB_IMG_1749380787849.jpg` | Personal photograph · portrait | 1536 × 2048 | Away from board → player life → Photo Archive |
@@ -44,7 +45,7 @@ These 33 JPEGs were also present locally and visually inventoried. Dimensions ar
 | `Scan_20261007_170316.jpg` | Newspaper clipping · portrait | 1397 × 1891 | Local chess coverage → public record → Photo Archive |
 | `Scan_20261007_171003.jpg` | Certificate · landscape | 2818 × 1861 | Bihar State Senior event → event history → Photo Archive |
 
-The public gallery includes every image listed above. Each tile opens a full-size viewer with keyboard and previous/next controls; filters separate photographs, certificates and press material.
+The public gallery includes all 34 JPEG images listed above. Each tile opens a full-size viewer with keyboard and previous/next controls; filters separate photographs, certificates and press material.
 
 ## Verified references used in the page
 
