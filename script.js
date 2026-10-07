@@ -2,7 +2,6 @@
 const assets = [
   {file:'20261007_165057.jpg',kind:'press',caption:'Framed chess press archive',detail:'Owner-provided archive'},
   {file:'FB_IMG_1749380355265.jpg',kind:'photograph',caption:'Award ceremony',detail:'Owner-provided photograph'},
-  {file:'FB_IMG_1749380486047.jpg',kind:'photograph',caption:'Holding an award',detail:'Owner-provided photograph'},
   {file:'Scan_20261007_164728.jpg',kind:'press',caption:'Bihar chess coverage',detail:'Newspaper archive scan'},
   {file:'Scan_20261007_164745.jpg',kind:'press',caption:'Local chess coverage',detail:'Newspaper archive scan'},
   {file:'Scan_20261007_164802.jpg',kind:'press',caption:'Patna event coverage',detail:'Newspaper archive scan'},
