@@ -45,7 +45,7 @@ These 34 JPEGs are included in the public site. Dimensions are the listed JPEG d
 | `Scan_20261007_170316.jpg` | Newspaper clipping · portrait | 1397 × 1891 | Local chess coverage → public record → Photo Archive |
 | `Scan_20261007_171003.jpg` | Certificate · landscape | 2818 × 1861 | Bihar State Senior event → event history → Photo Archive |
 
-All 34 JPEGs are served by the public site. “Frames from the journey” displays 32 of them: the profile portrait and the solo award portrait are left out of that gallery, while the bike and Thar photographs appear first. Each archive tile opens a full-size viewer with keyboard and previous/next controls; filters separate photographs, certificates and press material.
+All 34 JPEGs are served by the public site. “Frames from the journey” displays 31: the profile photo, motorbike photo and car photo are left out of that gallery. The award portrait, award ceremony and chess-playing photos remain. Each archive tile opens a full-size viewer with keyboard and previous/next controls; filters separate photographs, certificates and press material.
 
 ## Verified references used in the page
 
