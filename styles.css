@@ -37,6 +37,11 @@
   .feature-image:not(.podium-art){height:390px;min-height:0}
 }
 @media(max-width:380px){:root{--pad:18px}.hero h1{font-size:76px}.hero-actions{gap:14px}.archive-grid{grid-template-columns:1fr 1fr}.archive-caption small{font-size:6px}.rating-bottom{gap:8px}}
-.hero-photo-wrap{z-index:3;top:1%;right:8%;width:37%;height:47%;mask-image:none}
+.hero-photo-wrap{z-index:3;top:-8%;right:9%;width:26%;height:40%;mask-image:none}
+.hero-photo-wrap img{object-fit:contain;object-position:center top}
 .board-scene{z-index:1}
-@media(max-width:650px){.hero-photo-wrap{top:0;right:5%;width:42%;height:53%;z-index:3}.board-scene{z-index:1;margin-top:9%}}
+@media(max-width:650px){
+  .hero-art{height:420px}
+  .hero-photo-wrap{top:0;right:50%;transform:translateX(50%);width:36%;height:44%;z-index:3}
+  .board-scene{z-index:1;margin-top:39%}
+}
