@@ -1,6 +1,19 @@
 # Owner image archive inventory
 
-Source folder: `My Portfolio Image/` in the project. These 33 JPEGs were present locally and visually inventoried. Dimensions are the source-file dimensions. Captions stay broad where the scan itself needs closer reading; no dates or tournament placements are inferred from filenames.
+## Public Drive status
+
+The website's image elements now load from direct Google Drive image URLs; it no longer references `My Portfolio Image/` for displayed images. The supplied Drive folder lists 33 entries, but only four are actual shared image files. The other 29 entries are shortcuts marked by Drive as **Original item deleted**. I confirmed the four available files return `image/jpeg` from their direct Drive URLs. Those four, and only those four, are used by the site until the missing Drive originals are restored or uploaded.
+
+| Public image used | Drive file ID | Story / section |
+|---|---|---|
+| `FB_IMG_1749380355265.jpg` | `1mdsafM-OXKx8KmagD3m4qDKmEZDYassA` | Award ceremony → identity and photo archive |
+| `FB_IMG_1749380486047.jpg` | `1lHBr7M1vJpGRSu7hpDzJ7INvJQsO2nAy` | Holding an award → opening and photo archive |
+| `FB_IMG_1749380787849.jpg` | `1mvD2IVEDvBkZa7a4vgTDE_SIZiz4c5J_` | Personal photograph → photo archive |
+| `FB_IMG_1750435821340.jpg` | `1G1kkfkAO7ONAaoy13pqNEcO5liUnb-5Y` | Personal photograph → photo archive |
+
+## Local source inventory (not displayed by the website)
+
+These 33 JPEGs were also present locally and visually inventoried. Dimensions are the source-file dimensions. The mapping below describes possible story placements if these assets are uploaded as actual files to the shared Drive folder. Captions stay broad where a scan's details need closer reading; no dates or tournament placements are inferred from filenames.
 
 | File | Type / orientation | Resolution | Asset → story → section |
 |---|---|---:|---|
@@ -38,7 +51,7 @@ Source folder: `My Portfolio Image/` in the project. These 33 JPEGs were present
 | `Scan_20261007_170316.jpg` | Newspaper clipping · portrait | 1397 × 1891 | Local chess coverage → public record → Photo Archive |
 | `Scan_20261007_171003.jpg` | Certificate · landscape | 2818 × 1861 | Bihar State Senior event → event history → Photo Archive |
 
-The gallery includes all 33 files. Press, photograph and certificate filters organize the archive. Every tile opens a full-size viewer with keyboard and previous/next controls. The original images remain untouched.
+The public gallery currently includes the four available Drive image files. Each tile opens a full-size viewer with keyboard and previous/next controls. The 29 Drive shortcuts whose originals are deleted are not shown and are not replaced with local copies.
 
 ## Verified references used in the page
 

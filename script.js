@@ -1,40 +1,10 @@
 // Keeping the archive in one place makes captions, filters, and the lightbox agree.
 const assets = [
-  {file:'20261007_165057.jpg',kind:'press',caption:'Framed chess press archive',detail:'Owner-provided photograph · framed clippings'},
-  {file:'FB_IMG_1749380355265.jpg',kind:'photograph',caption:'Award ceremony',detail:'Owner-provided tournament photograph'},
-  {file:'FB_IMG_1749380486047.jpg',kind:'photograph',caption:'Holding an award',detail:'Owner-provided tournament photograph'},
-  {file:'FB_IMG_1749380787849.jpg',kind:'photograph',caption:'Away from the board',detail:'Owner-provided personal photograph'},
-  {file:'FB_IMG_1750435821340.jpg',kind:'photograph',caption:'On the road',detail:'Owner-provided personal photograph'},
-  {file:'Scan_20261007_164728.jpg',kind:'press',caption:'Bihar chess press coverage',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_164745.jpg',kind:'press',caption:'Chess in the local press',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_164802.jpg',kind:'press',caption:'Patna chess event coverage',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_164818.jpg',kind:'press',caption:'Chess event photo archive',detail:'Owner-provided press and event scan'},
-  {file:'Scan_20261007_164837.jpg',kind:'certificate',caption:'Chess certificate',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_164857.jpg',kind:'certificate',caption:'Tournament certificate',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_164914.jpg',kind:'certificate',caption:'Tournament certificate',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_164932.jpg',kind:'press',caption:'Chess press clippings',detail:'Owner-provided newspaper archive scan'},
-  {file:'Scan_20261007_164955.jpg',kind:'certificate',caption:'Gujarat Open · Category B · 2026',detail:'Certificate records second place and 8.5/10'},
-  {file:'Scan_20261007_165014.jpg',kind:'certificate',caption:'Barauni Open Chess Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165031.jpg',kind:'press',caption:'Local chess press clippings',detail:'Owner-provided newspaper archive scan'},
-  {file:'Scan_20261007_165108.jpg',kind:'press',caption:'Chess press coverage',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_165127.jpg',kind:'press',caption:'Bihar chess championship coverage',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_165141.jpg',kind:'press',caption:'Chess press archive',detail:'Owner-provided newspaper archive scan'},
-  {file:'Scan_20261007_165159.jpg',kind:'press',caption:'Chess as a career · press feature',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_165219.jpg',kind:'certificate',caption:'Diksha International Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165242.jpg',kind:'certificate',caption:'Bihar State Junior Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165328.jpg',kind:'certificate',caption:'National Junior Open',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165401.jpg',kind:'photograph',caption:'At the chessboard',detail:'Owner-provided tournament photograph'},
-  {file:'Scan_20261007_165421.jpg',kind:'certificate',caption:'Bihar State Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165439.jpg',kind:'certificate',caption:'Bihar State Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165517.jpg',kind:'certificate',caption:'Bihar State Rapid Chess Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_165540.jpg',kind:'certificate',caption:'East Central Railway sports certificate',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_170003.jpg',kind:'certificate',caption:'Bihar State Championship',detail:'Owner-provided certificate scan'},
-  {file:'Scan_20261007_170047.jpg',kind:'press',caption:'Chess press coverage',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_170248.jpg',kind:'press',caption:'Chess award ceremony · press coverage',detail:'Owner-provided press photograph and clipping'},
-  {file:'Scan_20261007_170316.jpg',kind:'press',caption:'Chess in the local press',detail:'Owner-provided newspaper clipping'},
-  {file:'Scan_20261007_171003.jpg',kind:'certificate',caption:'Bihar State Senior Chess Championship',detail:'Owner-provided certificate scan'}
+  {file:'FB_IMG_1749380355265.jpg',url:'https://drive.google.com/uc?export=view&id=1mdsafM-OXKx8KmagD3m4qDKmEZDYassA',kind:'photograph',caption:'Award ceremony',detail:'Owner-provided photograph · public Drive file'},
+  {file:'FB_IMG_1749380486047.jpg',url:'https://drive.google.com/uc?export=view&id=1lHBr7M1vJpGRSu7hpDzJ7INvJQsO2nAy',kind:'photograph',caption:'Holding an award',detail:'Owner-provided photograph · public Drive file'},
+  {file:'FB_IMG_1749380787849.jpg',url:'https://drive.google.com/uc?export=view&id=1mvD2IVEDvBkZa7a4vgTDE_SIZiz4c5J_',kind:'photograph',caption:'Away from the board',detail:'Owner-provided photograph · public Drive file'},
+  {file:'FB_IMG_1750435821340.jpg',url:'https://drive.google.com/uc?export=view&id=1G1kkfkAO7ONAaoy13pqNEcO5liUnb-5Y',kind:'photograph',caption:'On the road',detail:'Owner-provided photograph · public Drive file'}
 ];
-const imageRoot = 'My%20Portfolio%20Image/';
 const grid = document.querySelector('#archive-grid');
 const dialog = document.querySelector('#lightbox');
 let activeAssets = assets;
@@ -63,7 +33,7 @@ function renderArchive() {
     button.dataset.kind = asset.kind;
     button.setAttribute('aria-label', `${asset.caption}. Open image.`);
     const image = document.createElement('img');
-    image.src = imageRoot + encodeURIComponent(asset.file);
+    image.src = asset.url;
     image.alt = asset.caption;
     image.loading = 'lazy';
     const caption = document.createElement('span');
@@ -86,7 +56,7 @@ function openLightbox(index) {
 function updateLightbox() {
   const asset = activeAssets[activeIndex];
   const image = dialog.querySelector('figure img');
-  image.src = imageRoot + encodeURIComponent(asset.file);
+  image.src = asset.url;
   image.alt = asset.caption;
   dialog.querySelector('figcaption').textContent = `${asset.caption} · ${asset.detail}`;
   dialog.querySelector('.lightbox-counter').textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${assets.length}`;
