@@ -1,17 +1,10 @@
 # Owner image archive inventory
 
-## Public Drive status
+## Public image source
 
-The website's image elements now load from direct Google Drive image URLs; it no longer references `My Portfolio Image/` for displayed images. The supplied Drive folder lists 33 entries, but only four are actual shared image files. The other 29 entries are shortcuts marked by Drive as **Original item deleted**. I confirmed the four available files return `image/jpeg` from their direct Drive URLs. Those four, and only those four, are used by the site until the missing Drive originals are restored or uploaded.
+All 33 JPEGs in `My Portfolio Image/` are committed to this repository and displayed by the site using same-origin relative paths. This makes the images publicly available wherever the portfolio is deployed and avoids dependence on Drive sharing settings. The Drive folder has shortcut entries whose originals are marked deleted; those links are not used by the website.
 
-| Public image used | Drive file ID | Story / section |
-|---|---|---|
-| `FB_IMG_1749380355265.jpg` | `1mdsafM-OXKx8KmagD3m4qDKmEZDYassA` | Award ceremony → identity and photo archive |
-| `FB_IMG_1749380486047.jpg` | `1lHBr7M1vJpGRSu7hpDzJ7INvJQsO2nAy` | Holding an award → opening and photo archive |
-| `FB_IMG_1749380787849.jpg` | `1mvD2IVEDvBkZa7a4vgTDE_SIZiz4c5J_` | Personal photograph → photo archive |
-| `FB_IMG_1750435821340.jpg` | `1G1kkfkAO7ONAaoy13pqNEcO5liUnb-5Y` | Personal photograph → photo archive |
-
-## Local source inventory (not displayed by the website)
+## Image inventory
 
 These 33 JPEGs were also present locally and visually inventoried. Dimensions are the source-file dimensions. The mapping below describes possible story placements if these assets are uploaded as actual files to the shared Drive folder. Captions stay broad where a scan's details need closer reading; no dates or tournament placements are inferred from filenames.
 
@@ -51,11 +44,14 @@ These 33 JPEGs were also present locally and visually inventoried. Dimensions ar
 | `Scan_20261007_170316.jpg` | Newspaper clipping · portrait | 1397 × 1891 | Local chess coverage → public record → Photo Archive |
 | `Scan_20261007_171003.jpg` | Certificate · landscape | 2818 × 1861 | Bihar State Senior event → event history → Photo Archive |
 
-The public gallery currently includes the four available Drive image files. Each tile opens a full-size viewer with keyboard and previous/next controls. The 29 Drive shortcuts whose originals are deleted are not shown and are not replaced with local copies.
+The public gallery includes every image listed above. Each tile opens a full-size viewer with keyboard and previous/next controls; filters separate photographs, certificates and press material.
 
 ## Verified references used in the page
 
 - FIDE profile: https://ratings.fide.com/profile/45046328 (ratings and player identity checked 7 October 2026).
 - FIDE tournament report: https://ratings.fide.com/report.phtml?event=476857 (8.5/10 and +33 rating change).
+- FIDE source report: https://ratings.fide.com/tournament_src_report.phtml?code=476857 (round-by-round results, including rounds 4–10).
 - Official tournament pairing/results table: https://s2.chess-results.com/tnr1410225.aspx?SNode=S0&art=5&fed=IND&flag=NO&lan=7&turdet=YES (second place, score, and 313-entry event).
-- FIDE game/result information is not embedded as a replay because a verifiable PGN for the named round-8 game was not included among the local assets.
+- Prize report: https://chessbase.in/news/ashutosh-banerjee-wins-4th-gujarat-gm-below-2000-rating-2026 (second-place prize ₹1,00,000 + trophy).
+- Round-eight replay: https://chessever.com/games/xv5291Zn (Sharma Vivek–Mukesh Mandloi, 1–0, 47 moves; hosted game record).
+- Historical tournament placements: https://www.snoopchess.com/snoop/otb/45046328 (database highlights); https://chessbase.in/news/MPL-10th-National-Amateur-Chess-Championship-2023-report (2023 national amateur result); https://s2.chess-results.com/tnr1080457.aspx?SNode=S0&art=1&lan=1&rd=9&turdet=YES&zeilen=99999 (Diamant Cup); https://s1.chess-results.com/tnr1366531.aspx?art=1 (Bihar Open 2026).
