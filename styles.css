@@ -43,5 +43,5 @@
 @media(max-width:650px){
   .hero-art{height:420px}
   .hero-photo-wrap{top:0;right:50%;transform:translateX(50%);width:36%;height:44%;z-index:3}
-  .board-scene{z-index:1;margin-top:39%}
+  .board-scene{z-index:1;margin-top:67%}
 }
