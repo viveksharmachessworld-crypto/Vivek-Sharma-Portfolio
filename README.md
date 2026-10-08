@@ -22,10 +22,12 @@ Create a production bundle with `npm run build`; `npm start` serves that bundle 
 - `src/games.json` — six game records against grandmasters and international masters
 - `server.js`, `api/index.js` — Express API and Vercel function entry
 - `public/site.html` — portfolio content parsed into React elements
-- `public/My Portfolio Image/` — all 34 owner-provided public image files
+- `public/images/` — 31 optimized WebP assets served from the portfolio domain
 - `script.js` — archive filters, full-size viewer and mobile navigation
+- `achievements/gujarat-open-2026/` and `games/vivek-sharma-vs-mukesh-mandloi/` — crawlable, standalone SEO pages
+- `scripts/prerender.mjs` — injects page content, games and certificates into the initial HTML for crawlers and no-JS visitors
 - `ASSET-INVENTORY.md` — image inventory and source notes
 
-The images are served as public site assets from the deployed portfolio origin, so visitors do not need access to a personal computer or Google Drive permissions. The design references were used for broad interaction principles only; their layouts, assets, branding and code were not reused.
+The 31 optimized WebP images are served from the deployed portfolio origin, so visitors do not need access to a personal computer or Google Drive permissions. The profile photo, 14 certificate scans and 16 archive press/photo images are public. The three personal photos excluded from the archive are excluded from both the public build and version control. The design references were used for broad interaction principles only; their layouts, assets, branding and code were not reused.
 
 Ratings and identity are sourced from FIDE's player profile. Tournament results are linked to the cited records. Captions stay broad where scan text is unclear.
