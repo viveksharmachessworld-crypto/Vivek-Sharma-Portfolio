@@ -1,16 +1,144 @@
 [
- {"file":"chess-participation-certificate.webp","kind":"certificate","caption":"Chess participation certificate","detail":"Owner-provided certificate scan","width":1756,"height":2632},
- {"file":"chess-tournament-certificate-02.webp","kind":"certificate","caption":"Tournament certificate","detail":"Owner-provided certificate scan","width":1408,"height":1910},
- {"file":"chess-tournament-certificate-03.webp","kind":"certificate","caption":"Tournament certificate","detail":"Owner-provided certificate scan","width":1583,"height":2365},
- {"file":"vivek-sharma-gujarat-open-2026-second-place.webp","kind":"certificate","caption":"Gujarat Open 2026 · second place","detail":"Category B · 8.5/10","width":1333,"height":1884},
- {"file":"barauni-open-chess-certificate.webp","kind":"certificate","caption":"Barauni Open certificate","detail":"Owner-provided certificate scan","width":1962,"height":1638},
- {"file":"diksha-international-chess-event-certificate.webp","kind":"certificate","caption":"Diksha International event","detail":"Owner-provided certificate scan","width":1521,"height":1155},
- {"file":"bihar-state-junior-chess-certificate.webp","kind":"certificate","caption":"Bihar State Junior event","detail":"Owner-provided certificate scan","width":1836,"height":1328},
- {"file":"national-junior-open-chess-certificate.webp","kind":"certificate","caption":"National Junior Open","detail":"Owner-provided certificate scan","width":1648,"height":2334},
- {"file":"bihar-state-chess-certificate-02.webp","kind":"certificate","caption":"Bihar State event","detail":"Owner-provided certificate scan","width":2271,"height":1667},
- {"file":"bihar-state-chess-certificate-03.webp","kind":"certificate","caption":"Bihar State event","detail":"Owner-provided certificate scan","width":2108,"height":1610},
- {"file":"bihar-state-rapid-chess-certificate.webp","kind":"certificate","caption":"Bihar State Rapid event","detail":"Owner-provided certificate scan","width":2227,"height":1613},
- {"file":"east-central-railway-chess-certificate.webp","kind":"certificate","caption":"East Central Railway sports record","detail":"Owner-provided certificate scan","width":2282,"height":1635},
- {"file":"bihar-state-chess-certificate-04.webp","kind":"certificate","caption":"Bihar State event","detail":"Owner-provided certificate scan","width":2276,"height":1412},
- {"file":"bihar-state-senior-chess-certificate.webp","kind":"certificate","caption":"Bihar State Senior event","detail":"Owner-provided certificate scan","width":2818,"height":1861}
+  {
+    "file": "chess-participation-certificate.webp",
+    "kind": "certificate",
+    "caption": "Chess participation certificate",
+    "detail": "Owner-provided certificate scan",
+    "width": 1756,
+    "height": 2632
+  },
+  {
+    "file": "chess-tournament-certificate-02.webp",
+    "kind": "certificate",
+    "caption": "Tournament certificate",
+    "detail": "Owner-provided certificate scan",
+    "width": 1408,
+    "height": 1910
+  },
+  {
+    "file": "chess-tournament-certificate-03.webp",
+    "kind": "certificate",
+    "caption": "Tournament certificate",
+    "detail": "Owner-provided certificate scan",
+    "width": 1583,
+    "height": 2365
+  },
+  {
+    "file": "vivek-sharma-gujarat-open-2026-second-place.webp",
+    "kind": "certificate",
+    "caption": "Gujarat Open 2026 · second place",
+    "detail": "Category B · 8.5/10",
+    "width": 1333,
+    "height": 1884
+  },
+  {
+    "file": "barauni-open-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Barauni Open certificate",
+    "detail": "Owner-provided certificate scan",
+    "width": 1962,
+    "height": 1638
+  },
+  {
+    "file": "diksha-international-chess-event-certificate.webp",
+    "kind": "certificate",
+    "caption": "Diksha International event",
+    "detail": "Owner-provided certificate scan",
+    "width": 1521,
+    "height": 1155
+  },
+  {
+    "file": "bihar-state-junior-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Junior event",
+    "detail": "Owner-provided certificate scan",
+    "width": 1836,
+    "height": 1328
+  },
+  {
+    "file": "national-junior-open-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "National Junior Open",
+    "detail": "Owner-provided certificate scan",
+    "width": 1648,
+    "height": 2334
+  },
+  {
+    "file": "bihar-state-chess-certificate-02.webp",
+    "kind": "certificate",
+    "caption": "Bihar State event",
+    "detail": "Owner-provided certificate scan",
+    "width": 2271,
+    "height": 1667
+  },
+  {
+    "file": "bihar-state-chess-certificate-03.webp",
+    "kind": "certificate",
+    "caption": "Bihar State event",
+    "detail": "Owner-provided certificate scan",
+    "width": 2108,
+    "height": 1610
+  },
+  {
+    "file": "bihar-state-rapid-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Rapid event",
+    "detail": "Owner-provided certificate scan",
+    "width": 2227,
+    "height": 1613
+  },
+  {
+    "file": "east-central-railway-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "East Central Railway sports record",
+    "detail": "Owner-provided certificate scan",
+    "width": 2282,
+    "height": 1635
+  },
+  {
+    "file": "bihar-state-chess-certificate-04.webp",
+    "kind": "certificate",
+    "caption": "Bihar State event",
+    "detail": "Owner-provided certificate scan",
+    "width": 2276,
+    "height": 1412
+  },
+  {
+    "file": "bihar-state-senior-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Senior event",
+    "detail": "Owner-provided certificate scan",
+    "width": 2818,
+    "height": 1861
+  },
+  {
+    "file": "diksha-international-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Diksha International · first place, 8/9",
+    "detail": "Bihar State Rapid & Blitz Championship 2023–24 · certificate records first place and 8/9",
+    "width": 1468,
+    "height": 1080,
+    "event": "Diksha International Bihar State Rapid & Blitz Championship 2023–24",
+    "year": 2023,
+    "position": "1st place · certificate",
+    "location": "Diksha International School, Sabour, Bhagalpur",
+    "source": "https://www.snoopchess.com/snoop/otb/45046328",
+    "sourceLabel": "Snoop Chess · owner-provided certificate",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "bihar-rapid-blitz-championship-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Rapid Chess Championship certificate",
+    "detail": "Owner-provided certificate and trophy photograph · 2019",
+    "width": 1080,
+    "height": 1440,
+    "event": "Bihar State Rapid Chess Championship",
+    "year": 2019,
+    "position": null,
+    "location": "Patna, Bihar",
+    "source": "https://biharchess.org/",
+    "sourceLabel": "All Bihar Chess Association · owner-provided certificate",
+    "evidenceType": "Certificate + trophy photograph"
+  }
 ]

@@ -1,0 +1,613 @@
+[
+  {
+    "file": "chess-press-archive-frame.webp",
+    "kind": "press",
+    "caption": "Framed chess press archive",
+    "detail": "Owner-provided archive",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "vivek-sharma-award-ceremony.webp",
+    "kind": "photograph",
+    "caption": "Award ceremony",
+    "detail": "Owner-provided photograph",
+    "evidenceType": "Photograph"
+  },
+  {
+    "file": "bihar-chess-newspaper-coverage.webp",
+    "kind": "press",
+    "caption": "Bihar chess coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "local-chess-press-coverage.webp",
+    "kind": "press",
+    "caption": "Local chess coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "patna-chess-event-coverage.webp",
+    "kind": "press",
+    "caption": "Patna event coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "chess-event-press-archive.webp",
+    "kind": "press",
+    "caption": "Chess event coverage",
+    "detail": "Press archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "chess-participation-certificate.webp",
+    "kind": "certificate",
+    "caption": "Chess participation certificate",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "chess-tournament-certificate-02.webp",
+    "kind": "certificate",
+    "caption": "Tournament certificate",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "chess-tournament-certificate-03.webp",
+    "kind": "certificate",
+    "caption": "Tournament certificate",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "chess-newspaper-clipping.webp",
+    "kind": "press",
+    "caption": "Clipped chess coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "vivek-sharma-gujarat-open-2026-second-place.webp",
+    "kind": "certificate",
+    "caption": "Gujarat Open 2026 · second place",
+    "detail": "Category B · 8.5/10",
+    "evidenceType": "Certificate",
+    "event": "Gujarat International Open 2026",
+    "year": 2026,
+    "position": "2nd place",
+    "location": "Ahmedabad, Gujarat",
+    "sourceLabel": "FIDE tournament report",
+    "sourceUrl": "https://ratings.fide.com/report.phtml?event=476857"
+  },
+  {
+    "file": "barauni-open-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Barauni Open certificate",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "chess-press-coverage-02.webp",
+    "kind": "press",
+    "caption": "Chess press coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "chess-press-coverage-03.webp",
+    "kind": "press",
+    "caption": "Chess press coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "chess-championship-press-coverage.webp",
+    "kind": "press",
+    "caption": "Championship coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "chess-press-archive-02.webp",
+    "kind": "press",
+    "caption": "Chess press archive",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "vivek-sharma-chess-career-press.webp",
+    "kind": "press",
+    "caption": "Chess career feature",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "diksha-international-chess-event-certificate.webp",
+    "kind": "certificate",
+    "caption": "Diksha International event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "bihar-state-junior-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Junior event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "national-junior-open-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "National Junior Open",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "vivek-sharma-playing-chess-tournament.webp",
+    "kind": "photograph",
+    "caption": "Playing at the board",
+    "detail": "Owner-provided tournament photograph",
+    "evidenceType": "Photograph"
+  },
+  {
+    "file": "bihar-state-chess-certificate-02.webp",
+    "kind": "certificate",
+    "caption": "Bihar State event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "bihar-state-chess-certificate-03.webp",
+    "kind": "certificate",
+    "caption": "Bihar State event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "bihar-state-rapid-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Rapid event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "east-central-railway-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "East Central Railway sports record",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "bihar-state-chess-certificate-04.webp",
+    "kind": "certificate",
+    "caption": "Bihar State event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "chess-press-coverage-04.webp",
+    "kind": "press",
+    "caption": "Chess press coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "chess-award-press-coverage.webp",
+    "kind": "press",
+    "caption": "Award coverage",
+    "detail": "Press photograph and clipping",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "local-chess-press-coverage-02.webp",
+    "kind": "press",
+    "caption": "Local chess coverage",
+    "detail": "Newspaper archive scan",
+    "evidenceType": "Press"
+  },
+  {
+    "file": "bihar-state-senior-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Senior event",
+    "detail": "Owner-provided certificate scan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "fide-player-record-screenshot.webp",
+    "kind": "result",
+    "caption": "Chess player information and tournament record",
+    "detail": "Owner-provided screenshot of chess database record",
+    "width": 963,
+    "height": 895,
+    "evidenceType": "Results screenshot",
+    "event": "Chess player or tournament database",
+    "sourceLabel": "Owner-provided screenshot",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-award-ceremony-01.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament award ceremony",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1846,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-prize-presentation.webp",
+    "kind": "photograph",
+    "caption": "Tournament prize presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1366,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "diksha-championship-results-record.webp",
+    "kind": "result",
+    "caption": "Diksha International championship results",
+    "detail": "Owner-provided tournament results screenshot",
+    "width": 1080,
+    "height": 1452,
+    "evidenceType": "Results screenshot",
+    "event": "Chess player or tournament database",
+    "sourceLabel": "Owner-provided screenshot",
+    "sourceUrl": ""
+  },
+  {
+    "file": "diksha-championship-standings-record.webp",
+    "kind": "result",
+    "caption": "Diksha International final standings",
+    "detail": "Owner-provided tournament standings screenshot",
+    "width": 1080,
+    "height": 1481,
+    "evidenceType": "Results screenshot",
+    "event": "Chess player or tournament database",
+    "sourceLabel": "Owner-provided screenshot",
+    "sourceUrl": ""
+  },
+  {
+    "file": "diksha-international-chess-certificate.webp",
+    "kind": "certificate",
+    "caption": "Diksha International chess certificate",
+    "detail": "Owner-provided certificate photograph",
+    "width": 1468,
+    "height": 1080,
+    "evidenceType": "Certificate",
+    "event": "Diksha International Bihar State Rapid & Blitz Championship",
+    "year": 2023,
+    "position": "1st place · certificate records 8/9",
+    "location": "Bhagalpur, Bihar",
+    "sourceLabel": "Snoop Chess",
+    "sourceUrl": "https://www.snoopchess.com/snoop/otb/45046328"
+  },
+  {
+    "file": "chess-tournament-award-ceremony-02.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament award presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-trophies.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament trophies",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1260,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "diksha-chess-event-stage.webp",
+    "kind": "photograph",
+    "caption": "Diksha International chess event stage",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 658,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-award-presentation-group.webp",
+    "kind": "photograph",
+    "caption": "Chess award presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "vivek-sharma-playing-chess-blue-shirt.webp",
+    "kind": "photograph",
+    "caption": "Vivek Sharma playing chess",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "vivek-sharma-at-chessboard-tournament.webp",
+    "kind": "photograph",
+    "caption": "Vivek Sharma at the chessboard",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 608,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-hall-award-event.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament hall",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 608,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-trophy-detail.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament trophy",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1922,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-prize-winners.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament prize winners",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-award-group.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament award group",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-certificate-award-presentation.webp",
+    "kind": "photograph",
+    "caption": "Chess certificate presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1080,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-group-01.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament group photograph",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1413,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "vivek-sharma-with-chess-trophy.webp",
+    "kind": "photograph",
+    "caption": "Vivek Sharma with a chess trophy",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1442,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-award-ceremony-03.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament award ceremony",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 1440,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-championship-prize-ceremony.webp",
+    "kind": "photograph",
+    "caption": "Chess championship prize ceremony",
+    "detail": "Owner-provided tournament photograph",
+    "width": 960,
+    "height": 1280,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "junior-chess-tournament-playing-room.webp",
+    "kind": "photograph",
+    "caption": "Players at a junior chess tournament",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1004,
+    "height": 752,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "bihar-rapid-blitz-championship-certificate.webp",
+    "kind": "certificate",
+    "caption": "Bihar State Rapid & Blitz Championship certificate",
+    "detail": "Owner-provided certificate and trophy photograph",
+    "width": 1080,
+    "height": 1440,
+    "evidenceType": "Certificate",
+    "event": "Bihar State Rapid Chess Championship",
+    "year": 2019,
+    "location": "Patna, Bihar",
+    "sourceLabel": "Owner-provided certificate",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-trophy-presentation.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament trophy presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-certificate-archive-photo.webp",
+    "kind": "certificate",
+    "caption": "Chess certificate from the owner archive",
+    "detail": "Owner-provided certificate photograph",
+    "width": 1080,
+    "height": 1440,
+    "evidenceType": "Certificate",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-award-group-02.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament award presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "bihar-chess-championship-award.webp",
+    "kind": "photograph",
+    "caption": "Bihar chess championship award ceremony",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 540,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "bihar-chess-newspaper-profile-01.webp",
+    "kind": "press",
+    "caption": "Newspaper coverage of Vivek Sharma and chess",
+    "detail": "Owner-provided newspaper archive",
+    "width": 579,
+    "height": 356,
+    "evidenceType": "Press archive",
+    "sourceLabel": "Owner-provided press archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "bihar-chess-newspaper-profile-02.webp",
+    "kind": "press",
+    "caption": "Newspaper profile from the chess archive",
+    "detail": "Owner-provided newspaper archive",
+    "width": 460,
+    "height": 523,
+    "evidenceType": "Press archive",
+    "sourceLabel": "Owner-provided press archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-prize-ceremony-02.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament prize ceremony",
+    "detail": "Owner-provided tournament photograph",
+    "width": 960,
+    "height": 540,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-newspaper-profile-archive.webp",
+    "kind": "press",
+    "caption": "Newspaper coverage from the chess archive",
+    "detail": "Owner-provided newspaper archive",
+    "width": 909,
+    "height": 960,
+    "evidenceType": "Press archive",
+    "sourceLabel": "Owner-provided press archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-tournament-award-photo.webp",
+    "kind": "photograph",
+    "caption": "Chess tournament award presentation",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1080,
+    "height": 810,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "chess-newspaper-clipping-archive.webp",
+    "kind": "press",
+    "caption": "Chess newspaper clipping",
+    "detail": "Owner-provided newspaper archive",
+    "width": 1052,
+    "height": 640,
+    "evidenceType": "Press archive",
+    "sourceLabel": "Owner-provided press archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "khagaria-chess-event-photograph.webp",
+    "kind": "photograph",
+    "caption": "Chess event at Khagaria",
+    "detail": "Owner-provided tournament photograph",
+    "width": 960,
+    "height": 720,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  },
+  {
+    "file": "junior-chess-tournament-board.webp",
+    "kind": "photograph",
+    "caption": "Players competing at a chess tournament",
+    "detail": "Owner-provided tournament photograph",
+    "width": 1032,
+    "height": 581,
+    "evidenceType": "Photograph",
+    "sourceLabel": "Owner-provided tournament archive",
+    "sourceUrl": ""
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "round": 4,
+    "white": "Vivek Sharma",
+    "black": "Saumil Nair",
+    "result": "½–½",
+    "scoreForVivek": "½–½ draw",
+    "source": "https://chessarchive.net/en/player/MLDMBaPEgk/sharma-vivek",
+    "sourceLabel": "ChessArchive game list",
+    "note": null
+  },
+  {
+    "round": 6,
+    "white": "Vivek Sharma",
+    "black": "Harsh Yogesh Sharma",
+    "result": "1–0",
+    "scoreForVivek": "Win",
+    "source": "https://s3.chess-results.com/partiesuche.aspx?art=4&lan=14&rd=6&tnr=1410225",
+    "sourceLabel": "Chess-Results round 6 PGN record",
+    "note": null
+  },
+  {
+    "round": 7,
+    "white": "Rakshith M",
+    "black": "Vivek Sharma",
+    "result": "1–0",
+    "scoreForVivek": "Loss",
+    "source": "https://chessarchive.net/en/game/2Qr1M38N59/rakshith-m-vs-sharma-vivek-2026-06-03-4th-gujarat-international-open-grandmasters-chess-tournament-2026-catego",
+    "sourceLabel": "ChessArchive game and PGN",
+    "note": "The ChessArchive game record and FIDE round report show 1–0 for Rakshith M. The supplied research text lists 0–1; those versions conflict, so the source-recorded result is shown here."
+  },
+  {
+    "round": 8,
+    "white": "Vivek Sharma",
+    "black": "Mukesh Mandloi",
+    "result": "1–0",
+    "scoreForVivek": "Win",
+    "source": "https://chessarchive.net/en/game/nLPep24BgP/sharma-vivek-vs-mandloi-mukesh-2026-06-03-4th-gujarat-international-open-grandmasters-chess-tournament-2026-ca",
+    "sourceLabel": "ChessArchive game and PGN",
+    "note": "Local interactive replay available."
+  },
+  {
+    "round": 9,
+    "white": "Kush Ajay Agarwal",
+    "black": "Vivek Sharma",
+    "result": "0–1",
+    "scoreForVivek": "Win",
+    "source": "https://chessarchive.net/en/player/MLDMBaPEgk/sharma-vivek",
+    "sourceLabel": "ChessArchive player game list",
+    "note": "The player database lists the game and full move record; the direct game page URL is not linked here."
+  },
+  {
+    "round": 10,
+    "white": "Vivek Sharma",
+    "black": "Dhyaan Patel",
+    "result": "1–0",
+    "scoreForVivek": "Win",
+    "source": "https://chessarchive.net/en/game/vgoNY6vKLp/sharma-vivek-vs-dhyaan-patel-2026-06-04-4th-gujarat-international-open-grandmasters-chess-tournament-2026-cate",
+    "sourceLabel": "ChessArchive game and PGN",
+    "note": null
+  }
+]

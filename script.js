@@ -1,36 +1,4 @@
-// All owner-supplied images are committed with the site and served from this origin.
-const assets = [
-  {file:'chess-press-archive-frame.webp',kind:'press',caption:'Framed chess press archive',detail:'Owner-provided archive'},
-  {file:'vivek-sharma-award-ceremony.webp',kind:'photograph',caption:'Award ceremony',detail:'Owner-provided photograph'},
-  {file:'bihar-chess-newspaper-coverage.webp',kind:'press',caption:'Bihar chess coverage',detail:'Newspaper archive scan'},
-  {file:'local-chess-press-coverage.webp',kind:'press',caption:'Local chess coverage',detail:'Newspaper archive scan'},
-  {file:'patna-chess-event-coverage.webp',kind:'press',caption:'Patna event coverage',detail:'Newspaper archive scan'},
-  {file:'chess-event-press-archive.webp',kind:'press',caption:'Chess event coverage',detail:'Press archive scan'},
-  {file:'chess-participation-certificate.webp',kind:'certificate',caption:'Chess participation certificate',detail:'Owner-provided certificate scan'},
-  {file:'chess-tournament-certificate-02.webp',kind:'certificate',caption:'Tournament certificate',detail:'Owner-provided certificate scan'},
-  {file:'chess-tournament-certificate-03.webp',kind:'certificate',caption:'Tournament certificate',detail:'Owner-provided certificate scan'},
-  {file:'chess-newspaper-clipping.webp',kind:'press',caption:'Clipped chess coverage',detail:'Newspaper archive scan'},
-  {file:'vivek-sharma-gujarat-open-2026-second-place.webp',kind:'certificate',caption:'Gujarat Open 2026 · second place',detail:'Category B · 8.5/10'},
-  {file:'barauni-open-chess-certificate.webp',kind:'certificate',caption:'Barauni Open certificate',detail:'Owner-provided certificate scan'},
-  {file:'chess-press-coverage-02.webp',kind:'press',caption:'Chess press coverage',detail:'Newspaper archive scan'},
-  {file:'chess-press-coverage-03.webp',kind:'press',caption:'Chess press coverage',detail:'Newspaper archive scan'},
-  {file:'chess-championship-press-coverage.webp',kind:'press',caption:'Championship coverage',detail:'Newspaper archive scan'},
-  {file:'chess-press-archive-02.webp',kind:'press',caption:'Chess press archive',detail:'Newspaper archive scan'},
-  {file:'vivek-sharma-chess-career-press.webp',kind:'press',caption:'Chess career feature',detail:'Newspaper archive scan'},
-  {file:'diksha-international-chess-event-certificate.webp',kind:'certificate',caption:'Diksha International event',detail:'Owner-provided certificate scan'},
-  {file:'bihar-state-junior-chess-certificate.webp',kind:'certificate',caption:'Bihar State Junior event',detail:'Owner-provided certificate scan'},
-  {file:'national-junior-open-chess-certificate.webp',kind:'certificate',caption:'National Junior Open',detail:'Owner-provided certificate scan'},
-  {file:'vivek-sharma-playing-chess-tournament.webp',kind:'photograph',caption:'Playing at the board',detail:'Owner-provided tournament photograph'},
-  {file:'bihar-state-chess-certificate-02.webp',kind:'certificate',caption:'Bihar State event',detail:'Owner-provided certificate scan'},
-  {file:'bihar-state-chess-certificate-03.webp',kind:'certificate',caption:'Bihar State event',detail:'Owner-provided certificate scan'},
-  {file:'bihar-state-rapid-chess-certificate.webp',kind:'certificate',caption:'Bihar State Rapid event',detail:'Owner-provided certificate scan'},
-  {file:'east-central-railway-chess-certificate.webp',kind:'certificate',caption:'East Central Railway sports record',detail:'Owner-provided certificate scan'},
-  {file:'bihar-state-chess-certificate-04.webp',kind:'certificate',caption:'Bihar State event',detail:'Owner-provided certificate scan'},
-  {file:'chess-press-coverage-04.webp',kind:'press',caption:'Chess press coverage',detail:'Newspaper archive scan'},
-  {file:'chess-award-press-coverage.webp',kind:'press',caption:'Award coverage',detail:'Press photograph and clipping'},
-  {file:'local-chess-press-coverage-02.webp',kind:'press',caption:'Local chess coverage',detail:'Newspaper archive scan'},
-  {file:'bihar-state-senior-chess-certificate.webp',kind:'certificate',caption:'Bihar State Senior event',detail:'Owner-provided certificate scan'}
-];
+import assets from './src/archive-images.json';
 const imageUrl = file => `/images/${encodeURIComponent(file)}`;
 const grid = document.querySelector('#archive-grid');
 const dialog = document.querySelector('#lightbox');

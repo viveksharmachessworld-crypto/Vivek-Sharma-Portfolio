@@ -4,6 +4,7 @@ import parse from 'html-react-parser';
 import markup from '../public/site.html?raw';
 import certificatesSeed from './certificates.json';
 import gameRecords from './games.json';
+import SeoPage from './seo-pages.jsx';
 import './styles.css';
 
 function SoundControl() {
@@ -72,7 +73,7 @@ function GameArchive() {
     <p className="game-source-note">Game details and event ratings follow the supplied archive; linked databases provide the source records. The Diptayan Ghosh game links directly to its complete ChessBox score.</p>
   </section>;
 }
-function App() {
+function HomeApp() {
   useEffect(()=>{
     import('../script.js');
     const revealTargets=document.querySelectorAll('.intro-section,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.disciplines-section,.identity-section,.closing-section');
@@ -87,4 +88,6 @@ function App() {
   }});
   return <>{content}</>;
 }
-createRoot(document.getElementById('root')).render(<App/>);
+const root=createRoot(document.getElementById('root'));
+if(window.location.pathname==='/'||window.location.pathname==='/index.html')root.render(<HomeApp/>);
+else root.render(<SeoPage path={window.location.pathname}/>);
