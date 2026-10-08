@@ -53,11 +53,20 @@ const menuButton = document.querySelector('.menu-toggle'), mobileNav = document.
 menuButton.addEventListener('click', () => {
   const isOpen = mobileNav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(isOpen));
   menuButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation'); menuButton.textContent = isOpen ? '×' : '☰';
+  document.documentElement.classList.toggle('menu-open', isOpen);
 });
 mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   mobileNav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Open navigation'); menuButton.textContent = '☰';
+  document.documentElement.classList.remove('menu-open');
 }));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+    mobileNav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation'); menuButton.textContent = '☰';
+    document.documentElement.classList.remove('menu-open'); menuButton.focus();
+  }
+});
 document.querySelectorAll('.image-open').forEach(button => button.addEventListener('click', () => {
   const index = assets.findIndex(asset => asset.file === button.dataset.image); if (index >= 0) openLightbox(index);
 }));
