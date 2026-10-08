@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import parse from 'html-react-parser';
 import markup from '../public/site.html?raw';
 import certificatesSeed from './certificates.json';
+import gameRecords from './games.json';
 import './styles.css';
 
 function SoundControl() {
@@ -45,10 +46,36 @@ function CertificateGallery() {
     {selected!==null&&<div className="certificate-modal" role="dialog" aria-modal="true" aria-label={certificates[selected].caption} onClick={e=>{if(e.target===e.currentTarget)setSelected(null);}}><button className="certificate-modal-close" onClick={()=>setSelected(null)} aria-label="Close certificate viewer">×</button><button className="certificate-modal-step" onClick={()=>setSelected(i=>(i-1+certificates.length)%certificates.length)} aria-label="Previous certificate">←</button><figure><img src={imageUrl(certificates[selected].file)} alt={certificates[selected].caption}/><figcaption>{certificates[selected].caption} · {certificates[selected].detail}</figcaption></figure><button className="certificate-modal-step" onClick={()=>setSelected(i=>(i+1)%certificates.length)} aria-label="Next certificate">→</button></div>}
   </div>;
 }
+function GameArchive() {
+  const [view,setView]=useState('all');
+  const [selected,setSelected]=useState(gameRecords[0]);
+  const visibleGames=view==='GM'||view==='IM'?gameRecords.filter(game=>game.group===view):gameRecords;
+  const ranked=[...gameRecords].sort((a,b)=>b.opponentRating-a.opponentRating);
+  const squares=Array.from({length:64},(_,index)=><span key={index} className={(Math.floor(index/8)+index%8)%2?'dark':''}/>);
+  return <section className="games-section" id="games" aria-labelledby="games-title">
+    <div className="section-kicker"><span>THE GAME ARCHIVE</span><span className="kicker-line"/><span>GM + IM OPPONENTS · 2022—23</span></div>
+    <div className="games-intro"><div><p className="eyebrow gold-text">SIX RECORDS FROM THE BOARD</p><h2 id="games-title">Measured against<br/><em>the best.</em></h2></div><p>Rapid, blitz and classical encounters against titled opposition. Choose a record to see its tournament details and open the linked game source.</p></div>
+    <div className="games-metrics"><div><strong>06</strong><span>ARCHIVED GAMES</span></div><div><strong>04</strong><span>GRANDMASTER OPPONENTS</span></div><div><strong>2527</strong><span>HIGHEST OPPONENT RATING</span></div><div className="games-note">Ratings shown are the opponent's event ratings in the supplied game archive.</div></div>
+    <div className="game-explorer">
+      <div className="game-art-panel">
+        <div className="game-board-frame" aria-hidden="true"><div className="game-board3d">{squares}</div><span className="orbit-piece orbit-knight">♞</span><span className="orbit-piece orbit-rook">♜</span><span className="orbit-piece orbit-bishop">♝</span><span className="board-coordinate">8 · 1</span></div>
+        <div className="game-art-caption"><span>THE OPPOSITION ARCHIVE</span><b>{String(selected.opponentRating).padStart(4,'0')} <small>{selected.opponentTitle}</small></b></div>
+      </div>
+      <div className="game-details-panel" aria-live="polite">
+        <div className="game-filter" role="group" aria-label="Filter game archive"><button className={view==='all'?'active':''} onClick={()=>{setView('all');setSelected(gameRecords[0]);}}>ALL GAMES</button><button className={view==='GM'?'active':''} onClick={()=>{setView('GM');setSelected(gameRecords.find(game=>game.group==='GM'));}}>GM</button><button className={view==='IM'?'active':''} onClick={()=>{setView('IM');setSelected(gameRecords.find(game=>game.group==='IM'));}}>IM</button><button className={view==='opponents'?'active':''} onClick={()=>setView('opponents')}>TOP OPPONENTS</button></div>
+        {view==='opponents'?<div className="opponent-rankings"><div className="opponent-table-head"><span>RANK</span><span>OPPONENT</span><span>RATING</span></div>{ranked.map((game,index)=><button className="opponent-row" key={game.id} onClick={()=>{setSelected(game);setView('all');}}><span>{String(index+1).padStart(2,'0')}</span><b>{game.opponent}<small>{game.opponentTitle} · {game.year}</small></b><strong>{game.opponentRating}</strong></button>)}</div>:<>
+          <div className="game-picker">{visibleGames.map(game=><button key={game.id} className={`game-picker-card${selected.id===game.id?' selected':''}`} onClick={()=>setSelected(game)}><span>{game.title}</span><b>{game.opponent}</b><small>{game.opponentTitle} · {game.opponentRating} · {game.format}</small></button>)}</div>
+          <article className="selected-game"><div className="selected-game-kicker"><span>{selected.title}</span><span>{selected.format} · {selected.year}</span></div><h3>{selected.opponentTitle} {selected.opponent}</h3><div className="game-matchup"><span>{selected.opponentRating} <small>{selected.opponentTitle}</small></span><i>VS</i><span>{selected.vivekRating} <small>VIVEK SHARMA</small></span></div><div className="game-info-grid"><div><small>TOURNAMENT</small><b>{selected.event}</b></div><div><small>DATE / ROUND</small><b>{selected.date}{selected.round?` · ${selected.round}`:''}{selected.board?` · ${selected.board}`:''}</b></div><div><small>RESULT</small><b>{selected.result} <em>· {selected.outcome} for Vivek</em></b></div><div><small>OPENING / ECO</small><b>{selected.opening}{selected.eco?` · ${selected.eco}`:''}</b></div></div><a className="game-source-link" href={selected.source} target="_blank" rel="noreferrer">{selected.sourceLabel} <span>↗</span></a></article>
+        </>}
+      </div>
+    </div>
+    <p className="game-source-note">Game details and event ratings follow the supplied archive; linked databases provide the source records. The Diptayan Ghosh game links directly to its complete ChessBox score.</p>
+  </section>;
+}
 function App() {
   useEffect(()=>{
     import('../script.js');
-    const revealTargets=document.querySelectorAll('.intro-section,.feature-section,.career-results,.ratings-section,.press-section,.disciplines-section,.identity-section,.closing-section');
+    const revealTargets=document.querySelectorAll('.intro-section,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.disciplines-section,.identity-section,.closing-section');
     revealTargets.forEach(target=>target.classList.add('scroll-reveal'));
     if('IntersectionObserver'in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target);}}),{threshold:.08});revealTargets.forEach(target=>revealObserver.observe(target));}else revealTargets.forEach(target=>target.classList.add('in-view'));
   },[]);
@@ -56,6 +83,7 @@ function App() {
     if(node.type!=='tag')return;
     if(node.attribs?.id==='sound-control')return <SoundControl/>;
     if(node.attribs?.id==='certificate-app')return <CertificateGallery/>;
+    if(node.attribs?.id==='games-app')return <GameArchive/>;
   }});
   return <>{content}</>;
 }
