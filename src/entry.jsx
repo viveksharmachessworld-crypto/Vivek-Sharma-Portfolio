@@ -74,20 +74,25 @@ function GameArchive() {
   </section>;
 }
 function HomeApp() {
+  const [loading,setLoading]=useState(true),[loaderExit,setLoaderExit]=useState(false);
   useEffect(()=>{
     import('../script.js');
     const worldHost=document.getElementById('chess-world-root');
     let worldCleanup=()=>{}, worldCancelled=false;
+    let loaderFinished=false;
+    let fallbackTimer;
+    const finishLoader=()=>{if(loaderFinished)return;loaderFinished=true;setLoaderExit(true);fallbackTimer=window.setTimeout(()=>setLoading(false),480);};
+    const loaderTimeout=window.setTimeout(finishLoader,2600);
     const observers=[];
-    if(worldHost){import('./chess-world.js').then(({mountChessWorld})=>mountChessWorld(worldHost)).then(cleanup=>{if(worldCancelled)cleanup?.();else if(cleanup)worldCleanup=cleanup;}).catch(error=>console.warn('Using the CSS chessboard fallback.',error));}
+    if(worldHost){import('./chess-world.js').then(({mountChessWorld})=>mountChessWorld(worldHost)).then(cleanup=>{if(worldCancelled)cleanup?.();else if(cleanup)worldCleanup=cleanup;clearTimeout(loaderTimeout);finishLoader();}).catch(error=>{console.warn('Using the CSS chessboard fallback.',error);clearTimeout(loaderTimeout);finishLoader();});}
     const revealTargets=document.querySelectorAll('.intro-section,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.disciplines-section,.identity-section,.closing-section');
     revealTargets.forEach(target=>target.classList.add('scroll-reveal'));
     if('IntersectionObserver'in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target);}}),{threshold:.08});observers.push(revealObserver);revealTargets.forEach(target=>revealObserver.observe(target));
       if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const ratingObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const node=entry.target;ratingObserver.unobserve(node);const target=Number(node.dataset.ratingCount);const start=performance.now();node.textContent='0';const count=time=>{const progress=Math.min(1,(time-start)/1050);const eased=1-Math.pow(1-progress,3);node.textContent=String(Math.round(target*eased));if(progress<1)requestAnimationFrame(count);};requestAnimationFrame(count);}),{threshold:.65});observers.push(ratingObserver);document.querySelectorAll('[data-rating-count]').forEach(node=>ratingObserver.observe(node));}
     }else revealTargets.forEach(target=>target.classList.add('in-view'));
-    return()=>{worldCancelled=true;worldCleanup();observers.forEach(observer=>observer.disconnect());};
+    return()=>{worldCancelled=true;clearTimeout(loaderTimeout);clearTimeout(fallbackTimer);worldCleanup();observers.forEach(observer=>observer.disconnect());};
   },[]);
-  return <><div className="cinematic-atmosphere" aria-hidden="true"/>{parse(markup,{replace:node=>{
+  return <><div className="cinematic-atmosphere" aria-hidden="true"/>{loading&&<div className={`opening-loader${loaderExit?' is-exiting':''}`} aria-hidden="true"><span>VIVEK SHARMA</span><b>♛</b><small>FIDE 45046328 · INDIA</small><i/><p>PREPARING THE BOARD</p></div>}{parse(markup,{replace:node=>{
     if(node.type!=='tag')return;
     if(node.attribs?.id==='sound-control')return <SoundControl/>;
     if(node.attribs?.id==='certificate-app')return <CertificateGallery/>;
