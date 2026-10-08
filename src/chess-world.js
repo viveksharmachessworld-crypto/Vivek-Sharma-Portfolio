@@ -124,8 +124,9 @@ export async function mountChessWorld(host) {
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2('#11100e', .026);
     const camera = new THREE.PerspectiveCamera(33, 1, .1, 80);
-    const initialCamera = new THREE.Vector3(0.35, 2.6, 4.7);
-    const settledCamera = new THREE.Vector3(4.7, 7.8, 12.2);
+    // Keep the camera on the board's center line so its near edge faces the viewer.
+    const initialCamera = new THREE.Vector3(0, 2.5, 4.8);
+    const settledCamera = new THREE.Vector3(0, 7.4, 16.5);
     camera.position.copy(initialCamera);
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !lowPower, powerPreference: 'low-power', precision: lowPower ? 'mediump' : 'highp' });
@@ -167,7 +168,7 @@ export async function mountChessWorld(host) {
     const gold = new THREE.MeshStandardMaterial({ color: '#b99a60', roughness: .24, metalness: .72 });
 
     const board = new THREE.Group();
-    board.rotation.y = -.12;
+    board.rotation.y = 0;
     scene.add(board);
     const base = new THREE.Mesh(new THREE.BoxGeometry(8.8, .42, 8.8), frameMaterial);
     base.position.y = -.28;
