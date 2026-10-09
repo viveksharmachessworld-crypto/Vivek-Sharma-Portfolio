@@ -1,6 +1,6 @@
 # Public image archive
 
-The production site serves 66 optimized WebP files from `public/images/`: one profile portrait and 65 archive records. The archive contains 27 photographs, 17 certificate records, 18 press clippings and 3 result records. Thirty-five images from the newly added `original-assets` folder were converted to WebP and added to the public archive. Original uploads remain ignored by Git; visitors load the optimized files from the portfolio domain and do not need Drive access.
+The production site serves 66 optimized WebP files from `public/images/`: one profile portrait and 65 archive records. The archive contains 27 photographs, 19 certificate records, 17 press clippings and 3 result records. Thirty-five images from the newly added `original-assets` folder were converted to WebP and added to the public archive. Original uploads remain ignored by Git; visitors load the optimized files from the portfolio domain and do not need Drive access.
 
 `src/archive-images.json` is the complete gallery manifest used by the React archive and image filters. `src/certificates.json` drives the animated certificate gallery and the Express API. The production build checks that every archive record points to an existing public image.
 

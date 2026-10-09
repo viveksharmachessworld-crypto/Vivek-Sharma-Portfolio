@@ -10,8 +10,10 @@
     "file": "bihar-chess-newspaper-coverage.webp",
     "kind": "press",
     "caption": "Bihar chess coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "detail": "Newspaper / association archive coverage · event dated September 2023",
+    "evidenceType": "Press",
+    "year": 2023,
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship"
   },
   {
     "file": "local-chess-press-coverage.webp",
@@ -31,36 +33,46 @@
     "file": "chess-event-press-archive.webp",
     "kind": "press",
     "caption": "Chess event coverage",
-    "detail": "Press archive scan",
-    "evidenceType": "Press"
+    "detail": "Newspaper / association archive coverage · event dated September 2023",
+    "evidenceType": "Press",
+    "year": 2023,
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship"
   },
   {
     "file": "chess-participation-certificate.webp",
     "kind": "certificate",
     "caption": "Chess participation certificate",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate records 6/11 and 39th place",
+    "evidenceType": "Certificate",
+    "event": "47th National Junior (U-19) Open Chess Championship",
+    "year": 2017
   },
   {
     "file": "chess-tournament-certificate-02.webp",
     "kind": "certificate",
     "caption": "Tournament certificate",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Owner-provided certificate scan · event year transcribed from certificate archive",
+    "evidenceType": "Certificate",
+    "event": "Acharya Shri Sudarshan School Prize Money Chess Tournament",
+    "year": 2014
   },
   {
     "file": "chess-tournament-certificate-03.webp",
     "kind": "certificate",
     "caption": "Tournament certificate",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate records 5½/9 and 20th place",
+    "evidenceType": "Certificate",
+    "event": "24th National Youth (Under-25) Chess Championship",
+    "year": 2015
   },
   {
     "file": "chess-newspaper-clipping.webp",
     "kind": "press",
-    "caption": "Clipped chess coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Chess tournament champion and ECR Open Rapid victory",
+    "detail": "Newspaper archive scan dated 8 January and 10 September 2018",
+    "evidenceType": "Press",
+    "year": 2018,
+    "event": "Chess tournament champion and ECR Open Rapid victory"
   },
   {
     "file": "vivek-sharma-gujarat-open-2026-second-place.webp",
@@ -80,63 +92,81 @@
     "kind": "certificate",
     "caption": "Barauni Open certificate",
     "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "evidenceType": "Certificate",
+    "event": "Barauni Open Chess Championship · State Level",
+    "year": 2018
   },
   {
     "file": "chess-press-coverage-02.webp",
     "kind": "press",
-    "caption": "Chess press coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Vivek Sharma in Bihar Under-17 chess coverage",
+    "detail": "Dainik Jagran clipping dated 23 November 2014",
+    "evidenceType": "Press",
+    "year": 2014,
+    "event": "Vivek Sharma in Bihar Under-17 chess coverage"
   },
   {
     "file": "chess-press-coverage-03.webp",
     "kind": "press",
-    "caption": "Chess press coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Bihar State Rapid and Blitz championship",
+    "detail": "Prabhat Khabar clipping dated 22 April 2019",
+    "evidenceType": "Press",
+    "year": 2019,
+    "event": "Bihar State Rapid and Blitz championship"
   },
   {
     "file": "chess-championship-press-coverage.webp",
     "kind": "press",
-    "caption": "Championship coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Bihar State Rapid championship leaders",
+    "detail": "Prabhat Khabar clipping dated 21 April 2019",
+    "evidenceType": "Press",
+    "year": 2019,
+    "event": "Bihar State Rapid championship leaders"
   },
   {
     "file": "chess-press-archive-02.webp",
     "kind": "press",
-    "caption": "Chess press archive",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "School chess tournament coverage",
+    "detail": "Dainik Bhaskar clipping dated 16 November 2014",
+    "evidenceType": "Press",
+    "year": 2014,
+    "event": "School chess tournament coverage"
   },
   {
     "file": "vivek-sharma-chess-career-press.webp",
     "kind": "press",
-    "caption": "Chess career feature",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Chess offers a promising career",
+    "detail": "Dainik Jagran clipping dated 7 June 2016",
+    "evidenceType": "Press",
+    "year": 2016,
+    "event": "Chess offers a promising career"
   },
   {
     "file": "diksha-international-chess-event-certificate.webp",
     "kind": "certificate",
     "caption": "Diksha International event",
     "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "evidenceType": "Certificate",
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
+    "year": 2023
   },
   {
     "file": "bihar-state-junior-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Bihar State Junior event",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate dated 17–19 November 2018 · Jamui",
+    "evidenceType": "Certificate",
+    "event": "Bihar State Junior Chess Championship",
+    "year": 2018
   },
   {
     "file": "national-junior-open-chess-certificate.webp",
     "kind": "certificate",
     "caption": "National Junior Open",
     "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "evidenceType": "Certificate",
+    "event": "National Junior Open Chess Championship",
+    "year": 2018
   },
   {
     "file": "vivek-sharma-playing-chess-tournament.webp",
@@ -149,64 +179,82 @@
     "file": "bihar-state-chess-certificate-02.webp",
     "kind": "certificate",
     "caption": "Bihar State event",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate records 7.5/8 and first place · Kishanganj",
+    "evidenceType": "Certificate",
+    "event": "Bihar State U-15 Boys & Girls Chess Championship",
+    "year": 2016
   },
   {
     "file": "bihar-state-chess-certificate-03.webp",
     "kind": "certificate",
     "caption": "Bihar State event",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate records 7/7 and winner · Khagaria",
+    "evidenceType": "Certificate",
+    "event": "Bihar State U-11 & U-17 Boys & Girls Chess Championship",
+    "year": 2016
   },
   {
     "file": "bihar-state-rapid-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Bihar State Rapid event",
     "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "evidenceType": "Certificate",
+    "event": "Bihar State Rapid Chess Championship",
+    "year": 2019
   },
   {
     "file": "east-central-railway-chess-certificate.webp",
     "kind": "certificate",
     "caption": "East Central Railway sports record",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate dated 8–9 September 2018 · records first place",
+    "evidenceType": "Certificate",
+    "event": "ECR Open Rapid Chess Challenge",
+    "year": 2018
   },
   {
     "file": "bihar-state-chess-certificate-04.webp",
     "kind": "certificate",
     "caption": "Bihar State event",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate records 6.5/7 and second place · Muzaffarpur",
+    "evidenceType": "Certificate",
+    "event": "St. Xavier’s Bihar State U-17 Chess Championship",
+    "year": 2019
   },
   {
     "file": "chess-press-coverage-04.webp",
     "kind": "press",
-    "caption": "Chess press coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Vivek Sharma wins in Bihar State chess coverage",
+    "detail": "Dainik Jagran clipping dated 22 April 2019",
+    "evidenceType": "Press",
+    "year": 2019,
+    "event": "Vivek Sharma wins in Bihar State chess coverage"
   },
   {
     "file": "chess-award-press-coverage.webp",
     "kind": "press",
-    "caption": "Award coverage",
-    "detail": "Press photograph and clipping",
-    "evidenceType": "Press"
+    "caption": "Bihar U-19 state champion and national selection coverage",
+    "detail": "Press collage includes a post dated 19 November 2018",
+    "evidenceType": "Press",
+    "year": 2018,
+    "event": "Bihar U-19 state champion and national selection coverage"
   },
   {
     "file": "local-chess-press-coverage-02.webp",
     "kind": "press",
-    "caption": "Local chess coverage",
-    "detail": "Newspaper archive scan",
-    "evidenceType": "Press"
+    "caption": "Bihar State Under-17 championship coverage",
+    "detail": "Newspaper coverage of the Muzaffarpur event dated 27–29 April 2019",
+    "evidenceType": "Press",
+    "year": 2019,
+    "event": "Bihar State Under-17 championship coverage"
   },
   {
     "file": "bihar-state-senior-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Bihar State Senior event",
-    "detail": "Owner-provided certificate scan",
-    "evidenceType": "Certificate"
+    "detail": "Certificate dated 16–20 February 2022 · records 7/9 and fourth place",
+    "evidenceType": "Certificate",
+    "event": "Bihar State Senior Chess Championship",
+    "year": 2022
   },
   {
     "file": "fide-player-record-screenshot.webp",
@@ -270,11 +318,11 @@
     "file": "diksha-international-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Diksha International Blitz · first place",
-    "detail": "Bihar State Rapid & Blitz Championship 2023–24 · certificate records 8/8",
+    "detail": "Certificate records first place and 8/8 in the Blitz section",
     "width": 1468,
     "height": 1080,
     "evidenceType": "Certificate",
-    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship 2023–24",
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
     "year": 2023,
     "position": "1st place · Blitz certificate records 8/8",
     "location": "Bhagalpur, Bihar",
@@ -485,13 +533,15 @@
   {
     "file": "chess-certificate-archive-photo.webp",
     "kind": "certificate",
-    "caption": "Chess certificate from the owner archive",
-    "detail": "Owner-provided certificate photograph",
+    "caption": "Barauni Open Chess Championship · first place",
+    "detail": "Certificate dated 22–25 December 2018 · records 7/8, Buchholz 34.5 and first place",
     "width": 1080,
     "height": 1440,
     "evidenceType": "Certificate",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "event": "Barauni Open Chess Championship · State Level",
+    "year": 2018
   },
   {
     "file": "chess-tournament-award-group-02.webp",
@@ -551,13 +601,15 @@
   {
     "file": "chess-newspaper-profile-archive.webp",
     "kind": "press",
-    "caption": "Newspaper coverage from the chess archive",
-    "detail": "Owner-provided newspaper archive",
+    "caption": "Bihar Open Chess Tournament coverage",
+    "detail": "Dainik Jagran clipping dated 26 March 2018",
     "width": 909,
     "height": 960,
     "evidenceType": "Press archive",
     "sourceLabel": "Owner-provided press archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "year": 2018,
+    "event": "Bihar Open Chess Tournament coverage"
   },
   {
     "file": "chess-tournament-award-photo.webp",
@@ -607,7 +659,7 @@
     "file": "national-youth-u25-2015-certificate.webp",
     "kind": "certificate",
     "caption": "National Youth U-25 · 20th place",
-    "detail": "24th National Youth Chess Championship 2015 · certificate records 5½/9 and 20th place",
+    "detail": "Certificate records 5½/9 and 20th place",
     "width": 1070,
     "height": 1600,
     "event": "24th National Youth (Under-25) Chess Championship",
@@ -621,7 +673,7 @@
     "file": "national-junior-u19-2017-certificate.webp",
     "kind": "certificate",
     "caption": "National Junior U-19 · 39th place",
-    "detail": "47th National Junior Chess Championship 2017 · certificate records 6/11 and 39th place",
+    "detail": "Certificate records 6/11 and 39th place",
     "width": 878,
     "height": 1316,
     "event": "47th National Junior (U-19) Open Chess Championship",

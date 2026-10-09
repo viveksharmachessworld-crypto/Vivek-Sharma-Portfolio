@@ -3,25 +3,31 @@
     "file": "chess-participation-certificate.webp",
     "kind": "certificate",
     "caption": "Chess participation certificate",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate records 6/11 and 39th place",
     "width": 1756,
-    "height": 2632
+    "height": 2632,
+    "event": "47th National Junior (U-19) Open Chess Championship",
+    "year": 2017
   },
   {
     "file": "chess-tournament-certificate-02.webp",
     "kind": "certificate",
     "caption": "Tournament certificate",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Owner-provided certificate scan · event year transcribed from certificate archive",
     "width": 1408,
-    "height": 1910
+    "height": 1910,
+    "event": "Acharya Shri Sudarshan School Prize Money Chess Tournament",
+    "year": 2014
   },
   {
     "file": "chess-tournament-certificate-03.webp",
     "kind": "certificate",
     "caption": "Tournament certificate",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate records 5½/9 and 20th place",
     "width": 1583,
-    "height": 2365
+    "height": 2365,
+    "event": "24th National Youth (Under-25) Chess Championship",
+    "year": 2015
   },
   {
     "file": "vivek-sharma-gujarat-open-2026-second-place.webp",
@@ -37,7 +43,9 @@
     "caption": "Barauni Open certificate",
     "detail": "Owner-provided certificate scan",
     "width": 1962,
-    "height": 1638
+    "height": 1638,
+    "event": "Barauni Open Chess Championship · State Level",
+    "year": 2018
   },
   {
     "file": "diksha-international-chess-event-certificate.webp",
@@ -45,15 +53,19 @@
     "caption": "Diksha International event",
     "detail": "Owner-provided certificate scan",
     "width": 1521,
-    "height": 1155
+    "height": 1155,
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
+    "year": 2023
   },
   {
     "file": "bihar-state-junior-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Bihar State Junior event",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate dated 17–19 November 2018 · Jamui",
     "width": 1836,
-    "height": 1328
+    "height": 1328,
+    "event": "Bihar State Junior Chess Championship",
+    "year": 2018
   },
   {
     "file": "national-junior-open-chess-certificate.webp",
@@ -61,23 +73,29 @@
     "caption": "National Junior Open",
     "detail": "Owner-provided certificate scan",
     "width": 1648,
-    "height": 2334
+    "height": 2334,
+    "event": "National Junior Open Chess Championship",
+    "year": 2018
   },
   {
     "file": "bihar-state-chess-certificate-02.webp",
     "kind": "certificate",
     "caption": "Bihar State event",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate records 7.5/8 and first place · Kishanganj",
     "width": 2271,
-    "height": 1667
+    "height": 1667,
+    "event": "Bihar State U-15 Boys & Girls Chess Championship",
+    "year": 2016
   },
   {
     "file": "bihar-state-chess-certificate-03.webp",
     "kind": "certificate",
     "caption": "Bihar State event",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate records 7/7 and winner · Khagaria",
     "width": 2108,
-    "height": 1610
+    "height": 1610,
+    "event": "Bihar State U-11 & U-17 Boys & Girls Chess Championship",
+    "year": 2016
   },
   {
     "file": "bihar-state-rapid-chess-certificate.webp",
@@ -85,40 +103,48 @@
     "caption": "Bihar State Rapid event",
     "detail": "Owner-provided certificate scan",
     "width": 2227,
-    "height": 1613
+    "height": 1613,
+    "event": "Bihar State Rapid Chess Championship",
+    "year": 2019
   },
   {
     "file": "east-central-railway-chess-certificate.webp",
     "kind": "certificate",
     "caption": "East Central Railway sports record",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate dated 8–9 September 2018 · records first place",
     "width": 2282,
-    "height": 1635
+    "height": 1635,
+    "event": "ECR Open Rapid Chess Challenge",
+    "year": 2018
   },
   {
     "file": "bihar-state-chess-certificate-04.webp",
     "kind": "certificate",
     "caption": "Bihar State event",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate records 6.5/7 and second place · Muzaffarpur",
     "width": 2276,
-    "height": 1412
+    "height": 1412,
+    "event": "St. Xavier’s Bihar State U-17 Chess Championship",
+    "year": 2019
   },
   {
     "file": "bihar-state-senior-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Bihar State Senior event",
-    "detail": "Owner-provided certificate scan",
+    "detail": "Certificate dated 16–20 February 2022 · records 7/9 and fourth place",
     "width": 2818,
-    "height": 1861
+    "height": 1861,
+    "event": "Bihar State Senior Chess Championship",
+    "year": 2022
   },
   {
     "file": "diksha-international-chess-certificate.webp",
     "kind": "certificate",
     "caption": "Diksha International Blitz · first place",
-    "detail": "Bihar State Rapid & Blitz Championship 2023–24 · certificate records 8/8 and first place in the Rapid/Blitz section",
+    "detail": "Certificate records first place and 8/8 in the Blitz section",
     "width": 1468,
     "height": 1080,
-    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship 2023–24",
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
     "year": 2023,
     "position": "1st place · certificate",
     "location": "Diksha International School, Bhagalpur",
@@ -131,7 +157,7 @@
     "file": "bihar-rapid-blitz-championship-certificate.webp",
     "kind": "certificate",
     "caption": "Bihar State Rapid Chess Championship certificate",
-    "detail": "Owner-provided certificate and trophy photograph · 2019",
+    "detail": "Owner-provided certificate and trophy photograph",
     "width": 1080,
     "height": 1440,
     "event": "Bihar State Rapid Chess Championship",
@@ -146,7 +172,7 @@
     "file": "national-youth-u25-2015-certificate.webp",
     "kind": "certificate",
     "caption": "National Youth U-25 · 20th place",
-    "detail": "24th National Youth Chess Championship 2015 · certificate records 5½/9 and 20th place",
+    "detail": "Certificate records 5½/9 and 20th place",
     "width": 1070,
     "height": 1600,
     "event": "24th National Youth (Under-25) Chess Championship",
@@ -162,7 +188,7 @@
     "file": "national-junior-u19-2017-certificate.webp",
     "kind": "certificate",
     "caption": "National Junior U-19 · 39th place",
-    "detail": "47th National Junior Chess Championship 2017 · certificate records 6/11 and 39th place",
+    "detail": "Certificate records 6/11 and 39th place",
     "width": 878,
     "height": 1316,
     "event": "47th National Junior (U-19) Open Chess Championship",
@@ -172,6 +198,20 @@
     "location": "Patliputra Sports Complex, Patna",
     "source": "https://s4.chess-results.com/tnrWZ.aspx?lan=1&tno=300541",
     "sourceLabel": "Chess-Results + owner-provided certificate",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "chess-certificate-archive-photo.webp",
+    "kind": "certificate",
+    "caption": "Barauni Open Chess Championship · first place",
+    "detail": "Certificate dated 22–25 December 2018 · records 7/8, Buchholz 34.5 and first place",
+    "width": 1080,
+    "height": 1440,
+    "event": "Barauni Open Chess Championship · State Level",
+    "year": 2018,
+    "position": "1st place",
+    "score": "7/8 · Buchholz 34.5",
+    "location": "Barauni, Begusarai",
     "evidenceType": "Certificate"
   }
 ]

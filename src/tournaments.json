@@ -555,7 +555,7 @@
     "id": "ecr-open-rapid-2018",
     "year": 2018,
     "name": "ECR Open Rapid Chess Challenger",
-    "position": "2nd place · certificate verified",
+    "position": "1st place · certificate verified",
     "score": null,
     "players": 116,
     "rounds": null,
@@ -572,14 +572,14 @@
     "fideRated": false,
     "certificate": "Verified",
     "game": null,
-    "note": "Snoop Chess lists Rank 1; the uploaded certificate records 2nd place. The certificate result is displayed, with the database difference noted."
+    "note": "ChessPrime and the owner-provided certificate both list Vivek in first place."
   },
   {
     "id": "barauni-open-2018",
     "year": 2018,
     "name": "Barauni Open Chess Championship · State Level",
-    "position": "Certificate: 1st place",
-    "score": "Certificate: 7/8 · Buchholz 34.5",
+    "position": "1st place · certificate verified",
+    "score": "7/8 · Buchholz 34.5 (certificate)",
     "players": null,
     "rounds": 8,
     "location": "Marwari Dharamshala, Barauni, Begusarai",
@@ -595,7 +595,7 @@
     "fideRated": false,
     "certificate": "Verified",
     "game": null,
-    "note": "The brief lists 5/8 and Buchholz 42; the uploaded certificate reads 7/8, Buchholz 34.5, first place. Both records are shown pending confirmation."
+    "note": "The uploaded Barauni certificate clearly records 7/8, Buchholz 34.5 and first place. A previously supplied brief listed 5/8 and Buchholz 42; that conflicting figure is not supported by the certificate scan."
   },
   {
     "id": "darbhanga-state-2018",
@@ -647,8 +647,8 @@
     "id": "bihar-u17-2019",
     "year": 2019,
     "name": "Bihar State U-17 Open & Girls Chess Championship",
-    "position": null,
-    "score": null,
+    "position": "2nd place · certificate verified",
+    "score": "6.5/7",
     "players": null,
     "rounds": null,
     "location": "St. Xavier International School, Muzaffarpur",
@@ -664,7 +664,7 @@
     "fideRated": false,
     "certificate": "Verified",
     "game": null,
-    "note": null
+    "note": "Transcribed from the owner-provided certificate."
   },
   {
     "id": "bihar-state-rapid-2019",
@@ -687,21 +687,21 @@
     "fideRated": false,
     "certificate": "Verified",
     "game": null,
-    "note": null
+    "note": "Dated press coverage and the owner-provided certificate identify the April 2019 Bihar State Rapid event."
   },
   {
     "id": "bihar-u15-2016",
     "year": 2016,
     "name": "Bihar State U-15 Boys & Girls Chess Championship",
-    "position": null,
-    "score": null,
+    "position": "1st place · certificate verified",
+    "score": "7.5/8",
     "players": null,
     "rounds": null,
     "location": "Shree Digamber Jain Bhawan, Kishanganj",
     "date": "11–13 June 2016",
     "category": "State age-group",
     "prize": null,
-    "award": null,
+    "award": "Bihar State U-15 champion",
     "eventCode": "",
     "source": "https://biharchess.org/",
     "sourceLabel": "Owner-provided chess record archive",
@@ -710,21 +710,21 @@
     "fideRated": false,
     "certificate": "Verified",
     "game": null,
-    "note": null
+    "note": "Transcribed from the owner-provided certificate."
   },
   {
     "id": "bihar-u11-u17-2016",
     "year": 2016,
     "name": "Bihar State U-11 / U-17 Boys & Girls Chess Championship",
-    "position": null,
-    "score": null,
+    "position": "Winner · certificate verified",
+    "score": "7/7",
     "players": null,
     "rounds": null,
     "location": "Awadh Complex, Rajendra Chowk, Khagaria",
     "date": "5–8 June 2016",
     "category": "State age-group",
     "prize": null,
-    "award": null,
+    "award": "U-17 section winner",
     "eventCode": "",
     "source": "https://biharchess.org/",
     "sourceLabel": "Owner-provided chess record archive",
@@ -733,7 +733,7 @@
     "fideRated": false,
     "certificate": "Verified",
     "game": null,
-    "note": null
+    "note": "The owner-provided certificate records 7/7 and winner in the U-11 / U-17 event; age-group placement noted as written."
   },
   {
     "id": "school-prize-2014",
