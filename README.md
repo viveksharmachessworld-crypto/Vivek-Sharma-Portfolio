@@ -18,7 +18,7 @@ Create a production bundle with `npm run build`; `npm start` serves that bundle 
 
 - `src/entry.jsx` — React app, music interaction, animated certificate gallery and interactive game archive
 - `src/styles.css` — responsive styling, 3D transforms, motion and reduced-motion rules
-- `src/certificates.json` — 16 certificate records used by the archive and MongoDB API
+- `src/certificates.json` — 18 certificate records used by the archive and MongoDB API
 - `src/games.json` — six game records against grandmasters and international masters
 - `server.js`, `api/index.js` — Express API and Vercel function entry
 - `public/site.html` — portfolio content parsed into React elements

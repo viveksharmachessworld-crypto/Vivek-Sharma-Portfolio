@@ -114,17 +114,18 @@
   {
     "file": "diksha-international-chess-certificate.webp",
     "kind": "certificate",
-    "caption": "Diksha International · first place, 8/9",
-    "detail": "Bihar State Rapid & Blitz Championship 2023–24 · certificate records first place and 8/9",
+    "caption": "Diksha International Blitz · first place",
+    "detail": "Bihar State Rapid & Blitz Championship 2023–24 · certificate records 8/8 and first place in the Rapid/Blitz section",
     "width": 1468,
     "height": 1080,
-    "event": "Diksha International Bihar State Rapid & Blitz Championship 2023–24",
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship 2023–24",
     "year": 2023,
     "position": "1st place · certificate",
-    "location": "Diksha International School, Sabour, Bhagalpur",
+    "location": "Diksha International School, Bhagalpur",
     "source": "https://www.snoopchess.com/snoop/otb/45046328",
-    "sourceLabel": "Snoop Chess · owner-provided certificate",
-    "evidenceType": "Certificate"
+    "sourceLabel": "Snoop Chess + owner-provided certificate",
+    "evidenceType": "Certificate",
+    "score": "8/8 on certificate"
   },
   {
     "file": "bihar-rapid-blitz-championship-certificate.webp",
@@ -140,5 +141,37 @@
     "source": "https://biharchess.org/",
     "sourceLabel": "All Bihar Chess Association · owner-provided certificate",
     "evidenceType": "Certificate + trophy photograph"
+  },
+  {
+    "file": "national-youth-u25-2015-certificate.webp",
+    "kind": "certificate",
+    "caption": "National Youth U-25 · 20th place",
+    "detail": "24th National Youth Chess Championship 2015 · certificate records 5½/9 and 20th place",
+    "width": 1070,
+    "height": 1600,
+    "event": "24th National Youth (Under-25) Chess Championship",
+    "year": 2015,
+    "position": "20th place · certificate",
+    "score": "5.5/9",
+    "location": "Patliputra Sports Complex, Patna",
+    "source": "https://s3.chess-results.com/tnr190789.aspx?lan=10",
+    "sourceLabel": "Chess-Results + owner-provided certificate",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "national-junior-u19-2017-certificate.webp",
+    "kind": "certificate",
+    "caption": "National Junior U-19 · 39th place",
+    "detail": "47th National Junior Chess Championship 2017 · certificate records 6/11 and 39th place",
+    "width": 878,
+    "height": 1316,
+    "event": "47th National Junior (U-19) Open Chess Championship",
+    "year": 2017,
+    "position": "39th place · certificate",
+    "score": "6/11",
+    "location": "Patliputra Sports Complex, Patna",
+    "source": "https://s4.chess-results.com/tnrWZ.aspx?lan=1&tno=300541",
+    "sourceLabel": "Chess-Results + owner-provided certificate",
+    "evidenceType": "Certificate"
   }
 ]

@@ -269,16 +269,16 @@
   {
     "file": "diksha-international-chess-certificate.webp",
     "kind": "certificate",
-    "caption": "Diksha International chess certificate",
-    "detail": "Owner-provided certificate photograph",
+    "caption": "Diksha International Blitz · first place",
+    "detail": "Bihar State Rapid & Blitz Championship 2023–24 · certificate records 8/8",
     "width": 1468,
     "height": 1080,
     "evidenceType": "Certificate",
-    "event": "Diksha International Bihar State Rapid & Blitz Championship",
+    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship 2023–24",
     "year": 2023,
-    "position": "1st place · certificate records 8/9",
+    "position": "1st place · Blitz certificate records 8/8",
     "location": "Bhagalpur, Bihar",
-    "sourceLabel": "Snoop Chess",
+    "sourceLabel": "Snoop Chess + owner-provided certificate",
     "sourceUrl": "https://www.snoopchess.com/snoop/otb/45046328"
   },
   {
@@ -602,5 +602,33 @@
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
     "sourceUrl": ""
+  },
+  {
+    "file": "national-youth-u25-2015-certificate.webp",
+    "kind": "certificate",
+    "caption": "National Youth U-25 · 20th place",
+    "detail": "24th National Youth Chess Championship 2015 · certificate records 5½/9 and 20th place",
+    "width": 1070,
+    "height": 1600,
+    "event": "24th National Youth (Under-25) Chess Championship",
+    "year": 2015,
+    "location": "Patliputra Sports Complex, Patna",
+    "sourceLabel": "Chess-Results + owner-provided certificate",
+    "evidenceType": "Certificate",
+    "sourceUrl": "https://s3.chess-results.com/tnr190789.aspx?lan=10"
+  },
+  {
+    "file": "national-junior-u19-2017-certificate.webp",
+    "kind": "certificate",
+    "caption": "National Junior U-19 · 39th place",
+    "detail": "47th National Junior Chess Championship 2017 · certificate records 6/11 and 39th place",
+    "width": 878,
+    "height": 1316,
+    "event": "47th National Junior (U-19) Open Chess Championship",
+    "year": 2017,
+    "location": "Patliputra Sports Complex, Patna",
+    "sourceLabel": "Chess-Results + owner-provided certificate",
+    "evidenceType": "Certificate",
+    "sourceUrl": "https://s4.chess-results.com/tnrWZ.aspx?lan=1&tno=300541"
   }
 ]
