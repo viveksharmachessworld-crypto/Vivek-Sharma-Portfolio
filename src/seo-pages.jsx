@@ -118,7 +118,7 @@ function TournamentCard({ event }) {
 function TournamentExplorer({ featuredOnly = false }) {
   const [events,setEvents]=useState(tournamentsSeed);
   const [search,setSearch]=useState(''),[year,setYear]=useState('all'),[position,setPosition]=useState('all'),[region,setRegion]=useState('all'),[mode,setMode]=useState('all'),[rated,setRated]=useState('all');
-  useEffect(()=>{fetch('/api/tournaments').then(r=>r.ok?r.json():[]).then(rows=>{if(rows.length)setEvents(rows);}).catch(()=>{});},[]);
+  useEffect(()=>{const requestedYear=new URLSearchParams(window.location.search).get('year');if(requestedYear)setYear(requestedYear);fetch('/api/tournaments').then(r=>r.ok?r.json():[]).then(rows=>{if(rows.length)setEvents(rows);}).catch(()=>{});},[]);
   const years=useMemo(()=>[...new Set(events.map(x=>String(x.year)))].sort((a,b)=>b.localeCompare(a)),[events]);
   const visible=useMemo(()=>events.filter(event=>{
     const haystack=[event.name,event.year,event.position,event.location,event.category,event.score].filter(Boolean).join(' ').toLowerCase();
