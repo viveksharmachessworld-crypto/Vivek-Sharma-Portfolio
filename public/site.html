@@ -1,7 +1,7 @@
 <!-- The grain layer adds a quiet paper texture without affecting the content. -->
   <div class="grain" aria-hidden="true"></div>
   <!-- The header stays intentionally simple so the portfolio content remains the focus. -->
-  <header class="topbar">
+  <header class="topbar topbar-on-paper">
     <a class="brand" href="#home" aria-label="Vivek Sharma home"><span class="brand-mark">V<span>.</span>S</span><span class="brand-name">VIVEK SHARMA<br><small>INTERNATIONAL CHESS PLAYER · INDIA</small></span></a>
     <nav class="desktop-nav" aria-label="Main navigation"><a href="#journey">Journey</a><a href="#story">His Story</a><a href="#games">Games</a><a href="#results">Results</a><a href="#numbers">Ratings</a><a href="#certificates">Certificates</a><a href="#archive">Archive</a><a href="#identity">Identity</a></nav>
     <a class="nav-id" href="https://ratings.fide.com/profile/45046328" target="_blank" rel="noreferrer">FIDE 45046328 <span>↗</span></a>
@@ -10,26 +10,10 @@
   </header>
   <nav class="mobile-nav" aria-label="Mobile navigation"><a href="#journey">Journey</a><a href="#story">Vivek’s story</a><a href="#games">Game archive</a><a href="#results">Results</a><a href="#numbers">Ratings</a><a href="#certificates">Certificates</a><a href="#archive">Archive</a><a href="#identity">Official identity</a></nav>
   <main>
-    <!-- Opening panel: introduce the player and establish the visual language of the site. -->
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot"></span> THE GAME IS A JOURNEY</p>
-        <h1>Vivek<br><em>Sharma.</em></h1>
-        <div class="hero-rule"></div>
-        <p class="hero-sub">International chess player · India.<br>FIDE ID 45046328.<br><span>THE ART OF THE NEXT MOVE</span></p>
-        <div class="hero-actions"><a class="button button-gold" href="#journey">Enter the board <span>↘</span></a><a class="text-link" href="#journey">View chess journey <span>↗</span></a></div>
-        <div class="hero-foot"><span>FIDE ID <b>45046328</b></span><span>BIHAR <small>· INDIA</small></span></div>
-      </div>
-      <div class="hero-art" aria-label="A chessboard with a queen, against a portrait from Vivek Sharma's archive">
-        <div class="hero-photo-wrap"><img src="/images/vivek-sharma-chess-player-profile.webp" alt="Vivek Sharma, Indian chess player" width="1350" height="1800" fetchpriority="high"></div>
-        <div id="chess-world-root" class="chess-world-host" aria-hidden="true"></div>
-        <div class="board-scene" aria-hidden="true"><div class="board-glow"></div><div class="chessboard" id="hero-board"></div><div class="queen-piece">♛</div></div>
-        <span class="art-index">01 <i>—</i> THE OPENING</span><span class="art-caption">A PLAYER IN PROGRESS <i>EST. ON THE BOARD</i></span>
-      </div>
-      <a class="scroll-cue" href="#journey"><span></span> SCROLL TO EXPLORE</a>
-    </section>
+    <!-- Official chess identity now opens the page; the chessboard composition moves to the closing identity slot. -->
+    <section class="identity-section" id="home"><span id="identity" class="section-anchor" aria-hidden="true"></span><div class="identity-image"><img src="/images/vivek-sharma-chess-player-profile.webp" alt="Vivek Sharma, Indian chess player" width="1350" height="1800" loading="lazy"></div><div class="identity-copy"><p class="eyebrow gold-text">OFFICIAL CHESS IDENTITY</p><h2>Vivek<br><em>Sharma.</em></h2><p>International Chess Player · India 🇮🇳</p><div class="identity-facts"><div><span>FIDE ID</span><b>45046328</b></div><div><span>FEDERATION</span><b>IND · India</b></div><div><span>FIDE OVER-THE-BOARD TITLE</span><b>None listed</b></div><div><span>FIDE ONLINE ARENA TITLE</span><b>Arena International Master (AIM)</b></div><div><span>BIRTH YEAR</span><b>2002</b></div></div><a class="button button-outline" href="https://ratings.fide.com/profile/45046328" target="_blank" rel="me noopener noreferrer">View official FIDE profile <span>↗</span></a><div class="identity-record-links"><span>CHESS RECORDS</span><a href="https://chessprime.com/players/player/814778/" target="_blank" rel="me noopener noreferrer">ChessPrime ↗</a><a href="https://www.snoopchess.com/snoop/otb/45046328" target="_blank" rel="me noopener noreferrer">SnoopChess ↗</a><a href="https://chessarchive.net/en/player/MLDMBaPEgk/sharma-vivek" target="_blank" rel="me noopener noreferrer">ChessArchive ↗</a></div><a class="location-link" href="https://maps.app.goo.gl/9751R7DNiyPxx1S8A" target="_blank" rel="noopener noreferrer"><span>⌖</span> VIEW LOCATION IN GOOGLE MAPS <span>↗</span></a></div></section>
 
-    <!-- A short timeline gives the archive a human story before the statistics begin. -->
+    <!-- A short timeline gives the archive a human story before the statistics begin. --><!-- A short timeline gives the archive a human story before the statistics begin. -->
     <section class="section intro-section" id="journey">
       <div class="section-kicker"><span>01 / THE JOURNEY</span><span class="kicker-line"></span><span>BIHAR · INDIA</span></div>
       <div class="intro-grid"><div><p class="eyebrow gold-text">A LIFE AT THE BOARD</p><h2>Every move<br>leaves a <em>mark.</em></h2></div><div class="intro-copy"><p>Vivek Sharma is a FIDE-rated chess player from India, registered under FIDE ID 45046328. This official chess profile brings together his classical, rapid and blitz ratings, tournament results, games against grandmasters and international masters, and records from his chess journey.</p><p>From early state events to international competition, the board has been the constant. Explore the archive of photographs, press coverage and certificates, alongside results linked to FIDE and tournament records.</p></div></div>
@@ -115,8 +99,23 @@
     <!-- These principles are a visual reflection, not claims about the player's private style. -->
     <section class="section disciplines-section"><div class="section-kicker"><span>06 / THE PRACTICE</span><span class="kicker-line"></span><span>THE DISCIPLINES OF CHESS</span></div><div class="discipline-layout"><h2>The work<br>between <em>moves.</em></h2><div class="discipline-list"><div><span>01</span><b>CALCULATION</b><i>Look further.</i></div><div><span>02</span><b>PATIENCE</b><i>Wait for the moment.</i></div><div><span>03</span><b>PRECISION</b><i>Make it count.</i></div><div><span>04</span><b>MEMORY</b><i>Carry the lesson forward.</i></div></div></div><p class="discipline-note">The disciplines of chess — a design reflection, not a claim about Vivek's personal playing style.</p></section>
 
-    <section class="identity-section" id="identity"><div class="identity-image"><img src="/images/vivek-sharma-chess-player-profile.webp" alt="Vivek Sharma, Indian chess player" width="1350" height="1800" loading="lazy"></div><div class="identity-copy"><p class="eyebrow gold-text">OFFICIAL CHESS IDENTITY</p><h2>Vivek<br><em>Sharma.</em></h2><p>International Chess Player · India 🇮🇳</p><div class="identity-facts"><div><span>FIDE ID</span><b>45046328</b></div><div><span>FEDERATION</span><b>IND · India</b></div><div><span>FIDE OVER-THE-BOARD TITLE</span><b>None listed</b></div><div><span>FIDE ONLINE ARENA TITLE</span><b>Arena International Master (AIM)</b></div><div><span>BIRTH YEAR</span><b>2002</b></div></div><a class="button button-outline" href="https://ratings.fide.com/profile/45046328" target="_blank" rel="me noopener noreferrer">View official FIDE profile <span>↗</span></a><div class="identity-record-links"><span>CHESS RECORDS</span><a href="https://chessprime.com/players/player/814778/" target="_blank" rel="me noopener noreferrer">ChessPrime ↗</a><a href="https://www.snoopchess.com/snoop/otb/45046328" target="_blank" rel="me noopener noreferrer">SnoopChess ↗</a><a href="https://chessarchive.net/en/player/MLDMBaPEgk/sharma-vivek" target="_blank" rel="me noopener noreferrer">ChessArchive ↗</a></div><a class="location-link" href="https://maps.app.goo.gl/9751R7DNiyPxx1S8A" target="_blank" rel="noopener noreferrer"><span>⌖</span> VIEW LOCATION IN GOOGLE MAPS <span>↗</span></a></div></section>
-
+<section class="hero relocated-hero" id="opening">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> THE GAME IS A JOURNEY</p>
+        <h1>Vivek<br><em>Sharma.</em></h1>
+        <div class="hero-rule"></div>
+        <p class="hero-sub">International chess player · India.<br>FIDE ID 45046328.<br><span>THE ART OF THE NEXT MOVE</span></p>
+        <div class="hero-actions"><a class="button button-gold" href="#journey">Enter the board <span>↘</span></a><a class="text-link" href="#journey">View chess journey <span>↗</span></a></div>
+        <div class="hero-foot"><span>FIDE ID <b>45046328</b></span><span>BIHAR <small>· INDIA</small></span></div>
+      </div>
+      <div class="hero-art" aria-label="A chessboard with a queen, against a portrait from Vivek Sharma's archive">
+        <div class="hero-photo-wrap"><img src="/images/vivek-sharma-chess-player-profile.webp" alt="Vivek Sharma, Indian chess player" width="1350" height="1800" fetchpriority="high"></div>
+        <div id="chess-world-root" class="chess-world-host" aria-hidden="true"></div>
+        <div class="board-scene" aria-hidden="true"><div class="board-glow"></div><div class="chessboard" id="hero-board"></div><div class="queen-piece">♛</div></div>
+        <span class="art-index">01 <i>—</i> THE OPENING</span><span class="art-caption">A PLAYER IN PROGRESS <i>EST. ON THE BOARD</i></span>
+      </div>
+      <a class="scroll-cue" href="#journey"><span></span> SCROLL TO EXPLORE</a>
+    </section>
     <section class="closing-section"><div class="closing-board" aria-hidden="true"><div class="mini-board"></div><span>♜</span></div><p class="eyebrow gold-text">THE POSITION IS NEVER FINAL</p><h2>The next move<br>is <em>yours.</em></h2><div class="closing-actions"><a class="button button-gold" href="#home">Explore again <span>↑</span></a><a class="text-link" href="https://ratings.fide.com/profile/45046328" target="_blank" rel="noreferrer">View FIDE profile <span>↗</span></a></div></section>
   </main>
   <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">V<span>.</span>S</span><span class="brand-name">VIVEK SHARMA<br><small>INTERNATIONAL CHESS PLAYER · INDIA</small></span></a><span>BUILT FROM THE RECORD. MOVING FORWARD.</span><a href="#home">BACK TO TOP ↑</a></footer>
