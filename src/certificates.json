@@ -7,7 +7,8 @@
     "width": 1756,
     "height": 2632,
     "event": "47th National Junior (U-19) Open Chess Championship",
-    "year": 2017
+    "year": 2017,
+    "showcaseLevel": "National"
   },
   {
     "file": "chess-tournament-certificate-02.webp",
@@ -27,7 +28,8 @@
     "width": 1583,
     "height": 2365,
     "event": "24th National Youth (Under-25) Chess Championship",
-    "year": 2015
+    "year": 2015,
+    "showcaseLevel": "National"
   },
   {
     "file": "vivek-sharma-gujarat-open-2026-second-place.webp",
@@ -35,7 +37,9 @@
     "caption": "Gujarat Open 2026 · second place",
     "detail": "Category B · 8.5/10",
     "width": 1333,
-    "height": 1884
+    "height": 1884,
+    "showcaseLevel": "International",
+    "showcase": false
   },
   {
     "file": "barauni-open-chess-certificate.webp",
@@ -75,7 +79,8 @@
     "width": 1648,
     "height": 2334,
     "event": "National Junior Open Chess Championship",
-    "year": 2018
+    "year": 2018,
+    "showcaseLevel": "National"
   },
   {
     "file": "bihar-state-chess-certificate-02.webp",

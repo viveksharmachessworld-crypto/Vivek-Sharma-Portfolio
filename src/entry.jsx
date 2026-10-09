@@ -25,10 +25,35 @@ function SoundControl() {
   return <button className={`sound-toggle${playing?' is-playing':''}`} type="button" aria-pressed={playing} onClick={toggle} aria-label={playing?'Turn ambient music off':'Turn ambient music on'}><span className="sound-bars" aria-hidden="true"><i/><i/><i/></span><span className="sound-label">{playing?'SOUND ON':'SOUND OFF'}</span></button>;
 }
 function imageUrl(file) { return `/images/${encodeURIComponent(file||'')}`; }
+const archiveCertificates = certificatesSeed.filter(cert => cert.showcase !== false && cert.file !== 'vivek-sharma-gujarat-open-2026-second-place.webp');
+const featuredCertificates = certificatesSeed.filter(cert => cert.showcaseLevel && cert.showcase !== false).sort((a,b) => (a.year||0)-(b.year||0));
+function NationalCertificateShowcase() {
+  const [active,setActive]=useState(0), touch=useRef(null);
+  const certificates=featuredCertificates;
+  const cert=certificates[active];
+  if(!cert)return null;
+  const move=amount=>setActive(i=>(i+amount+certificates.length)%certificates.length);
+  const outcome=cert.detail.match(/\d+(?:st|nd|rd|th) place/i)?.[0]||cert.detail.match(/\d+(?:½|\.\d+)?\s*\/\s*\d+/i)?.[0]||'Participation';
+  return <section className="feature-section national-certificate-feature" aria-label="National certificate records">
+    <div className="feature-image national-certificate-image" onTouchStart={e=>{touch.current=e.touches[0].clientX;}} onTouchEnd={e=>{if(touch.current!==null&&Math.abs(e.changedTouches[0].clientX-touch.current)>45)move(e.changedTouches[0].clientX<touch.current?1:-1);touch.current=null;}}>
+      <img key={cert.file} src={imageUrl(cert.file)} alt={`${cert.year} ${cert.event} certificate`} width={cert.width} height={cert.height} loading="eager"/>
+      <span className="image-tag">{cert.showcaseLevel.toUpperCase()} · {cert.year}</span>
+    </div>
+    <div className="feature-copy">
+      <p className="eyebrow gold-text" aria-live="polite">NATIONAL CERTIFICATE · {String(active+1).padStart(2,'0')} / {String(certificates.length).padStart(2,'0')}</p>
+      <h2>{outcome!=='Participation'?<>{outcome}.<br/><em>{cert.year}.</em></>:<>National stage.<br/><em>{cert.year}.</em></>}</h2>
+      <p className="feature-name">{cert.event}<br/><span className="feature-format">{cert.showcaseLevel.toUpperCase()} · OWNER-PROVIDED CERTIFICATE</span></p>
+      <div className="feature-stats"><div><strong>{cert.year}</strong><small>EVENT YEAR</small></div><div><strong>{cert.showcaseLevel}</strong><small>COMPETITION LEVEL</small></div><div><strong>{outcome}</strong><small>ON THE CERTIFICATE</small></div></div>
+      <p className="feature-note">{cert.detail}. Each available national certificate is shown individually; use the controls to move through the archive.</p>
+      <a className="text-link gold-link" href={imageUrl(cert.file)} target="_blank" rel="noreferrer">View full certificate <span>↗</span></a>
+      <div className="national-certificate-controls" aria-label="Certificate navigation"><button className="certificate-step" type="button" onClick={()=>move(-1)} aria-label="Previous national certificate">←</button><span>{String(active+1).padStart(2,'0')} — {String(certificates.length).padStart(2,'0')}</span><button className="certificate-step" type="button" onClick={()=>move(1)} aria-label="Next national certificate">→</button><small>SWIPE OR USE ARROWS</small></div>
+    </div>
+  </section>;
+}
 function CertificateGallery() {
-  const [certificates,setCertificates]=useState(certificatesSeed), [active,setActive]=useState(0), [selected,setSelected]=useState(null);
+  const [certificates,setCertificates]=useState(archiveCertificates), [active,setActive]=useState(0), [selected,setSelected]=useState(null);
   const stage=useRef(null), touch=useRef(null);
-  useEffect(()=>{fetch('/api/certificates').then(r=>r.ok?r.json():[]).then(data=>{if(data.length)setCertificates(data);}).catch(()=>{});},[]);
+  useEffect(()=>{fetch('/api/certificates').then(r=>r.ok?r.json():[]).then(data=>{const visible=data.filter(cert=>cert.showcase!==false&&cert.file!=='vivek-sharma-gujarat-open-2026-second-place.webp');if(visible.length)setCertificates(visible);}).catch(()=>{});},[]);
   useEffect(()=>{
     if(!stage.current||!('IntersectionObserver'in window)){stage.current?.querySelectorAll('.certificate-card').forEach(c=>c.classList.add('is-visible'));return;}
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}}),{threshold:.12});
@@ -97,6 +122,7 @@ function HomeApp() {
   return <><div className="cinematic-atmosphere" aria-hidden="true"/>{loading&&<div className={`opening-loader${loaderExit?' is-exiting':''}`} aria-hidden="true"><span>VIVEK SHARMA</span><b>♛</b><small>FIDE 45046328 · INDIA</small><i/><p>PREPARING THE BOARD</p></div>}{parse(markup,{replace:node=>{
     if(node.type!=='tag')return;
     if(node.attribs?.id==='sound-control')return <SoundControl/>;
+    if(node.attribs?.id==='certificate-showcase-app')return <NationalCertificateShowcase/>;
     if(node.attribs?.id==='certificate-app')return <CertificateGallery/>;
     if(node.attribs?.id==='games-app')return <GameArchive/>;
     if(node.attribs?.id==='chess-world-root')return <div id="chess-world-root" className="chess-world-host" aria-hidden="true"/>;
