@@ -5,6 +5,7 @@ import markup from '../public/site.html?raw';
 import certificatesSeed from './certificates.json';
 import gameRecords from './games.json';
 import SeoPage from './seo-pages.jsx';
+import PortfolioAssistant from './portfolio-assistant.jsx';
 import './styles.css';
 
 function SoundControl() {
@@ -98,7 +99,7 @@ function HomeApp() {
     if(node.attribs?.id==='certificate-app')return <CertificateGallery/>;
     if(node.attribs?.id==='games-app')return <GameArchive/>;
     if(node.attribs?.id==='chess-world-root')return <div id="chess-world-root" className="chess-world-host" aria-hidden="true"/>;
-  }})}</>;
+  }})}<PortfolioAssistant/></>;
 }
 const root=createRoot(document.getElementById('root'));
 if(window.location.pathname==='/'||window.location.pathname==='/index.html')root.render(<HomeApp/>);
