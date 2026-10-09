@@ -85,7 +85,8 @@ function HomeApp() {
     const finishLoader=()=>{if(loaderFinished)return;loaderFinished=true;setLoaderExit(true);fallbackTimer=window.setTimeout(()=>setLoading(false),480);};
     const loaderTimeout=window.setTimeout(finishLoader,2600);
     const observers=[];
-    if(worldHost){import('./chess-world.js').then(({mountChessWorld})=>mountChessWorld(worldHost)).then(cleanup=>{if(worldCancelled)cleanup?.();else if(cleanup)worldCleanup=cleanup;clearTimeout(loaderTimeout);finishLoader();}).catch(error=>{console.warn('Using the CSS chessboard fallback.',error);clearTimeout(loaderTimeout);finishLoader();});}
+    const loadChessWorld=()=>{if(!worldHost||worldCancelled)return;import('./chess-world.js').then(({mountChessWorld})=>mountChessWorld(worldHost)).then(cleanup=>{if(worldCancelled)cleanup?.();else if(cleanup)worldCleanup=cleanup;clearTimeout(loaderTimeout);finishLoader();}).catch(error=>{console.warn('Using the CSS chessboard fallback.',error);clearTimeout(loaderTimeout);finishLoader();});};
+    if(worldHost&&'IntersectionObserver'in window){const worldObserver=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){worldObserver.disconnect();loadChessWorld();}},{rootMargin:'500px 0px'});worldObserver.observe(worldHost);observers.push(worldObserver);}else loadChessWorld();
     const revealTargets=document.querySelectorAll('.intro-section,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.disciplines-section,.identity-section,.closing-section');
     revealTargets.forEach(target=>target.classList.add('scroll-reveal'));
     if('IntersectionObserver'in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target);}}),{threshold:.08});observers.push(revealObserver);revealTargets.forEach(target=>revealObserver.observe(target));
