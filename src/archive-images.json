@@ -682,5 +682,46 @@
     "sourceLabel": "Chess-Results + owner-provided certificate",
     "evidenceType": "Certificate",
     "sourceUrl": "https://s4.chess-results.com/tnrWZ.aspx?lan=1&tno=300541"
+  },
+  {
+    "file": "dd-dbca-open-fide-2022-fifth-place.jpeg",
+    "kind": "certificate",
+    "caption": "DD-DBCA Open FIDE Rating · 5th place",
+    "detail": "3rd DD-DBCA Open FIDE Rating Chess Tournament · 7/9 · 5th place",
+    "evidenceType": "Certificate",
+    "event": "3rd DD-DBCA Open FIDE Rating Chess Tournament",
+    "year": 2022,
+    "position": "5th place",
+    "location": "Kolkata, West Bengal",
+    "sourceLabel": "Owner-provided tournament certificate",
+    "sourceUrl": ""
+  },
+  {
+    "file": "mpl-9th-national-amateur-2022-fifth-place.jpeg",
+    "kind": "certificate",
+    "caption": "MPL 9th National Amateur · 5th place",
+    "detail": "Below 2000 Open · 6.5/9 · 5th place",
+    "evidenceType": "Certificate",
+    "event": "MPL 9th National Amateur Chess Championship · Below 2000 Open",
+    "year": 2022,
+    "position": "5th place",
+    "score": "6.5/9",
+    "location": "Jaipur, Rajasthan",
+    "sourceLabel": "Owner-provided tournament certificate",
+    "sourceUrl": ""
+  },
+  {
+    "file": "mpl-10th-national-amateur-2023-runner-up.jpeg",
+    "kind": "certificate",
+    "caption": "MPL 10th National Amateur · 2nd place",
+    "detail": "Below 2000 Open · 7/9 · 2nd place",
+    "evidenceType": "Certificate",
+    "event": "MPL 10th National Amateur Chess Championship · Below 2000 Open",
+    "year": 2023,
+    "position": "2nd place",
+    "score": "7/9",
+    "location": "Punjab",
+    "sourceLabel": "Owner-provided tournament certificate",
+    "sourceUrl": ""
   }
 ]

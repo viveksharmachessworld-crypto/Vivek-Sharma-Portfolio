@@ -25,7 +25,7 @@ function SoundControl() {
   return <button className={`sound-toggle${playing?' is-playing':''}`} type="button" aria-pressed={playing} onClick={toggle} aria-label={playing?'Turn ambient music off':'Turn ambient music on'}><span className="sound-bars" aria-hidden="true"><i/><i/><i/></span><span className="sound-label">{playing?'SOUND ON':'SOUND OFF'}</span></button>;
 }
 function imageUrl(file) { return `/images/${encodeURIComponent(file||'')}`; }
-const archiveCertificates = certificatesSeed.filter(cert => cert.showcase !== false && cert.file !== 'vivek-sharma-gujarat-open-2026-second-place.webp');
+const archiveCertificates = certificatesSeed.filter(cert => cert.showcase !== false);
 const featuredCertificates = certificatesSeed.filter(cert => cert.showcaseLevel && cert.showcase !== false).sort((a,b) => (a.year||0)-(b.year||0));
 function NationalCertificateShowcase() {
   const [active,setActive]=useState(0), touch=useRef(null);
@@ -34,17 +34,17 @@ function NationalCertificateShowcase() {
   if(!cert)return null;
   const move=amount=>setActive(i=>(i+amount+certificates.length)%certificates.length);
   const outcome=cert.detail.match(/\d+(?:st|nd|rd|th) place/i)?.[0]||cert.detail.match(/\d+(?:½|\.\d+)?\s*\/\s*\d+/i)?.[0]||'Participation';
-  return <section className="feature-section national-certificate-feature" aria-label="National certificate records">
+  return <section className="feature-section national-certificate-feature" aria-label="National and open tournament certificate records">
     <div className="feature-image national-certificate-image" onTouchStart={e=>{touch.current=e.touches[0].clientX;}} onTouchEnd={e=>{if(touch.current!==null&&Math.abs(e.changedTouches[0].clientX-touch.current)>45)move(e.changedTouches[0].clientX<touch.current?1:-1);touch.current=null;}}>
-      <img key={cert.file} src={imageUrl(cert.file)} alt={`${cert.year} ${cert.event} certificate`} width={cert.width} height={cert.height} loading="eager"/>
+      <img className="certificate-slide-image" key={cert.file} src={imageUrl(cert.file)} alt={`${cert.year} ${cert.event} certificate`} width={cert.width} height={cert.height} loading="eager"/>
       <span className="image-tag">{cert.showcaseLevel.toUpperCase()} · {cert.year}</span>
     </div>
     <div className="feature-copy">
-      <p className="eyebrow gold-text" aria-live="polite">NATIONAL CERTIFICATE · {String(active+1).padStart(2,'0')} / {String(certificates.length).padStart(2,'0')}</p>
-      <h2>{outcome!=='Participation'?<>{outcome}.<br/><em>{cert.year}.</em></>:<>National stage.<br/><em>{cert.year}.</em></>}</h2>
+      <p className="eyebrow gold-text" aria-live="polite">{cert.showcaseLevel.toUpperCase()} CERTIFICATE · {String(active+1).padStart(2,'0')} / {String(certificates.length).padStart(2,'0')}</p>
+      <h2 key={cert.file} className="certificate-slide-title">{outcome!=='Participation'?<>{outcome}.<br/><em>{cert.year}.</em></>:<>National stage.<br/><em>{cert.year}.</em></>}</h2>
       <p className="feature-name">{cert.event}<br/><span className="feature-format">{cert.showcaseLevel.toUpperCase()} · OWNER-PROVIDED CERTIFICATE</span></p>
       <div className="feature-stats"><div><strong>{cert.year}</strong><small>EVENT YEAR</small></div><div><strong>{cert.showcaseLevel}</strong><small>COMPETITION LEVEL</small></div><div><strong>{outcome}</strong><small>ON THE CERTIFICATE</small></div></div>
-      <p className="feature-note">{cert.detail}. Each available national certificate is shown individually; use the controls to move through the archive.</p>
+      <p className="feature-note">{cert.detail}. Each certificate in this collection is shown individually; use the controls to move through the archive.</p>
       <a className="text-link gold-link" href={imageUrl(cert.file)} target="_blank" rel="noreferrer">View full certificate <span>↗</span></a>
       <div className="national-certificate-controls" aria-label="Certificate navigation"><button className="certificate-step" type="button" onClick={()=>move(-1)} aria-label="Previous national certificate">←</button><span>{String(active+1).padStart(2,'0')} — {String(certificates.length).padStart(2,'0')}</span><button className="certificate-step" type="button" onClick={()=>move(1)} aria-label="Next national certificate">→</button><small>SWIPE OR USE ARROWS</small></div>
     </div>
@@ -53,7 +53,7 @@ function NationalCertificateShowcase() {
 function CertificateGallery() {
   const [certificates,setCertificates]=useState(archiveCertificates), [active,setActive]=useState(0), [selected,setSelected]=useState(null);
   const stage=useRef(null), touch=useRef(null);
-  useEffect(()=>{fetch('/api/certificates').then(r=>r.ok?r.json():[]).then(data=>{const visible=data.filter(cert=>cert.showcase!==false&&cert.file!=='vivek-sharma-gujarat-open-2026-second-place.webp');if(visible.length)setCertificates(visible);}).catch(()=>{});},[]);
+  useEffect(()=>{fetch('/api/certificates').then(r=>r.ok?r.json():[]).then(data=>{const visible=data.filter(cert=>cert.showcase!==false);if(visible.length)setCertificates(visible);}).catch(()=>{});},[]);
   useEffect(()=>{
     if(!stage.current||!('IntersectionObserver'in window)){stage.current?.querySelectorAll('.certificate-card').forEach(c=>c.classList.add('is-visible'));return;}
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}}),{threshold:.12});
@@ -112,7 +112,7 @@ function HomeApp() {
     const observers=[];
     const loadChessWorld=()=>{if(!worldHost||worldCancelled)return;import('./chess-world.js').then(({mountChessWorld})=>mountChessWorld(worldHost)).then(cleanup=>{if(worldCancelled)cleanup?.();else if(cleanup)worldCleanup=cleanup;clearTimeout(loaderTimeout);finishLoader();}).catch(error=>{console.warn('Using the CSS chessboard fallback.',error);clearTimeout(loaderTimeout);finishLoader();});};
     if(worldHost&&'IntersectionObserver'in window){const worldObserver=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){worldObserver.disconnect();loadChessWorld();}},{rootMargin:'500px 0px'});worldObserver.observe(worldHost);observers.push(worldObserver);}else loadChessWorld();
-    const revealTargets=document.querySelectorAll('.intro-section,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.disciplines-section,.identity-section,.closing-section');
+    const revealTargets=document.querySelectorAll('.intro-section,.personal-story,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.archive-section,.certificate-section,.disciplines-section,.identity-section,.closing-section');
     revealTargets.forEach(target=>target.classList.add('scroll-reveal'));
     if('IntersectionObserver'in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target);}}),{threshold:.08});observers.push(revealObserver);revealTargets.forEach(target=>revealObserver.observe(target));
       if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const ratingObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const node=entry.target;ratingObserver.unobserve(node);const target=Number(node.dataset.ratingCount);const start=performance.now();node.textContent='0';const count=time=>{const progress=Math.min(1,(time-start)/1050);const eased=1-Math.pow(1-progress,3);node.textContent=String(Math.round(target*eased));if(progress<1)requestAnimationFrame(count);};requestAnimationFrame(count);}),{threshold:.65});observers.push(ratingObserver);document.querySelectorAll('[data-rating-count]').forEach(node=>ratingObserver.observe(node));}

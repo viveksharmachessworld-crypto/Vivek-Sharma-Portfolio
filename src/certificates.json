@@ -38,8 +38,10 @@
     "detail": "Category B · 8.5/10",
     "width": 1333,
     "height": 1884,
-    "showcaseLevel": "International",
-    "showcase": false
+    "year": 2026,
+    "showcaseLevel": "International Open",
+    "showcase": true,
+    "event": "4th Gujarat International Open Grandmasters Chess Tournament · Category B"
   },
   {
     "file": "barauni-open-chess-certificate.webp",
@@ -120,7 +122,8 @@
     "width": 2282,
     "height": 1635,
     "event": "ECR Open Rapid Chess Challenge",
-    "year": 2018
+    "year": 2018,
+    "showcaseLevel": "Open Rapid"
   },
   {
     "file": "bihar-state-chess-certificate-04.webp",
@@ -217,6 +220,51 @@
     "position": "1st place",
     "score": "7/8 · Buchholz 34.5",
     "location": "Barauni, Begusarai",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "dd-dbca-open-fide-2022-fifth-place.jpeg",
+    "kind": "certificate",
+    "caption": "DD-DBCA Open FIDE Rating · 5th place",
+    "detail": "Certificate records 7/9 and 5th place",
+    "width": 1600,
+    "height": 1157,
+    "event": "3rd DD-DBCA Open FIDE Rating Chess Tournament",
+    "year": 2022,
+    "showcaseLevel": "FIDE-Rated Open",
+    "position": "5th place",
+    "score": "7/9",
+    "location": "Kolkata, West Bengal",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "mpl-9th-national-amateur-2022-fifth-place.jpeg",
+    "kind": "certificate",
+    "caption": "MPL 9th National Amateur · 5th place",
+    "detail": "Below 2000 Open · certificate records 6.5/9 and 5th place",
+    "width": 1600,
+    "height": 1018,
+    "event": "MPL 9th National Amateur Chess Championship · Below 2000 Open",
+    "year": 2022,
+    "showcaseLevel": "National",
+    "position": "5th place",
+    "score": "6.5/9",
+    "location": "Jaipur, Rajasthan",
+    "evidenceType": "Certificate"
+  },
+  {
+    "file": "mpl-10th-national-amateur-2023-runner-up.jpeg",
+    "kind": "certificate",
+    "caption": "MPL 10th National Amateur · 2nd place",
+    "detail": "Below 2000 Open · certificate records 7/9 and 2nd place",
+    "width": 1589,
+    "height": 973,
+    "event": "MPL 10th National Amateur Chess Championship · Below 2000 Open",
+    "year": 2023,
+    "showcaseLevel": "National",
+    "position": "2nd place",
+    "score": "7/9",
+    "location": "Punjab",
     "evidenceType": "Certificate"
   }
 ]
