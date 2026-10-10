@@ -204,6 +204,39 @@ body:has(.full-story[open]) .assistant-launch:not(.is-open)>span:last-child{disp
 .game-art-panel:hover .game-board3d{transform:perspective(950px) rotateX(41deg) rotateZ(-15deg) translateY(-8px)}
 .game-board3d span{background:#e8e5da}
 .game-board3d span.dark{background:#31513f}
+
+/* The archive's decorative board is replaced by a playable historical puzzle. */
+.puzzle-art-panel{height:auto;min-height:620px;display:block;padding:25px 25px 20px;overflow:visible;background:radial-gradient(ellipse at 50% 38%,#1d3028 0,#151a17 68%);perspective:none}
+.puzzle-art-panel:before,.puzzle-art-panel:after{pointer-events:none}
+.fischer-puzzle{position:relative;z-index:1;max-width:440px;margin:0 auto}
+.puzzle-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;color:#c7a96c;font:8px var(--mono);letter-spacing:.13em}
+.puzzle-heading button,.puzzle-controls button{border:1px solid #8a744d;background:#171813;color:#dfcca4;padding:8px 10px;font:7px var(--mono);letter-spacing:.1em;cursor:pointer;transition:background .2s,color .2s}
+.puzzle-heading button:hover,.puzzle-controls button:hover:not(:disabled){background:#c7a96c;color:#171713}
+.puzzle-board{width:min(100%,390px);aspect-ratio:1;margin:0 auto;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border:5px solid #e4e2d7;box-shadow:0 12px 35px #0007;touch-action:manipulation;user-select:none}
+.puzzle-square{position:relative;display:grid;place-items:center;min-width:0;min-height:0;border:0;padding:0;cursor:pointer;background:#eeeee4;color:#26231d}
+.puzzle-square.dark{background:#547765;color:#f5f4ec}
+.puzzle-square.is-selected{box-shadow:inset 0 0 0 4px #d5b36c;z-index:1}
+.puzzle-square.is-legal:after{content:'';position:absolute;width:24%;aspect-ratio:1;border-radius:50%;background:#16251f66}
+.puzzle-square.is-legal:has(.puzzle-piece):after{width:84%;height:84%;background:transparent;border:3px solid #d9b45f}
+.puzzle-piece{position:relative;z-index:1;line-height:1;font-family:"DejaVu Sans",serif;font-size:clamp(23px,3.2vw,39px);text-shadow:0 2px 2px #0003}
+.puzzle-piece.white{color:#fffef3;text-shadow:0 1px 1px #29352f,0 2px 3px #24342e}
+.puzzle-piece.black{color:#18251f;text-shadow:0 1px 1px #d4d8cd}
+.puzzle-coordinate{position:absolute;z-index:2;left:3px;top:2px;color:#6c6d60;font:7px var(--mono);line-height:1}
+.puzzle-square.dark .puzzle-coordinate{color:#e2dccb}
+.puzzle-coordinate.file-coordinate{top:auto;left:auto;right:3px;bottom:2px}
+.puzzle-message{min-height:41px;display:flex;align-items:center;gap:9px;margin-top:13px;color:#d4cdbb;font:10px/1.5 var(--sans)}
+.puzzle-message i{flex:0 0 auto;color:#c4a365;font-style:normal;font-size:9px}
+.puzzle-message.solved{color:#e8d4a7}
+.puzzle-controls{display:flex;align-items:center;gap:10px;min-height:31px;color:#9e9b8e;font:8px/1.5 var(--mono)}
+.puzzle-controls button{padding:6px 9px;flex:0 0 auto}
+.puzzle-controls button:disabled{opacity:.5;cursor:default}
+.puzzle-source{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #ffffff20;margin-top:12px;padding-top:12px;color:#bd9d5e;font:7px var(--mono);letter-spacing:.09em;text-decoration:none}
+.puzzle-source span{font-size:13px}
+.puzzle-art-panel .game-art-caption{position:static;margin-top:14px;padding-top:12px}
+.puzzle-art-panel .game-art-caption>span{font-size:7px}
+@media(max-width:950px){.puzzle-art-panel{min-height:0;padding:22px 18px 17px}.fischer-puzzle{max-width:400px}.puzzle-board{width:min(100%,350px)}}
+@media(max-width:700px){.puzzle-art-panel{min-height:0;padding:19px 16px 15px}.puzzle-board{width:min(100%,370px)}.puzzle-piece{font-size:clamp(24px,7vw,39px)}.puzzle-message{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.puzzle-heading button,.puzzle-controls button{transition:none}}
 .orbit-piece{color:#f0eee7;text-shadow:1px 3px 1px #747a73,4px 10px 14px #000b}
 .orbit-queen{top:4%;left:55%;font-size:clamp(72px,8vw,100px);color:#f0eee7;transform:translateZ(100px) rotate(-10deg)}
 .orbit-rook{top:40%;left:20%;font-size:58px;color:#272c2a;text-shadow:1px 3px 1px #9a9b91,4px 10px 14px #000b}

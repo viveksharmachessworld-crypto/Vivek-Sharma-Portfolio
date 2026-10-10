@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Chess } from 'chess.js';
 import parse from 'html-react-parser';
 import markup from '../public/site.html?raw';
 import certificatesSeed from './certificates.json';
@@ -73,20 +74,53 @@ function CertificateGallery() {
     {selected!==null&&<div className="certificate-modal" role="dialog" aria-modal="true" aria-label={certificates[selected].caption} onClick={e=>{if(e.target===e.currentTarget)setSelected(null);}}><button className="certificate-modal-close" onClick={()=>setSelected(null)} aria-label="Close certificate viewer">×</button><button className="certificate-modal-step" onClick={()=>setSelected(i=>(i-1+certificates.length)%certificates.length)} aria-label="Previous certificate">←</button><figure><img src={imageUrl(certificates[selected].file)} alt={certificates[selected].caption}/><figcaption>{certificates[selected].caption} · {certificates[selected].detail}</figcaption></figure><button className="certificate-modal-step" onClick={()=>setSelected(i=>(i+1)%certificates.length)} aria-label="Next certificate">→</button></div>}
   </div>;
 }
+const fischerPetrosianFen = 'Q7/4q3/2pq4/4p3/2PpP1P1/1knP4/7Q/5BK1 w - - 0 1';
+const chessGlyphs = { wk:'♔', wq:'♕', wr:'♖', wb:'♗', wn:'♘', wp:'♙', bk:'♚', bq:'♛', br:'♜', bb:'♝', bn:'♞', bp:'♟' };
+function FischerPuzzle() {
+  const [fen,setFen]=useState(fischerPetrosianFen), [selected,setSelected]=useState(null), [solved,setSolved]=useState(false), [message,setMessage]=useState('White to move · find the most practical winning try.'), [hint,setHint]=useState(false);
+  const reset=()=>{setFen(fischerPetrosianFen);setSelected(null);setSolved(false);setHint(false);setMessage('White to move · find the most practical winning try.');};
+  const play=(from,to)=>{
+    if(solved)return;
+    const game=new Chess(fen);
+    let move;
+    try { move=game.move({from,to,promotion:'q'}); } catch { move=null; }
+    if(!move)return;
+    setSelected(null);
+    if(move.from==='c4'&&move.to==='c5'){
+      setFen(game.fen());setSolved(true);setMessage('Congratulations — 1. c5! advances the passed pawn and gives White the strongest practical chances.');
+    }else{
+      setMessage('Legal move, but there is a more ambitious plan. Try again.');
+      setFen(fischerPetrosianFen);
+    }
+  };
+  const position=new Chess(fen), board=position.board();
+  const squares=board.flatMap((rank,row)=>rank.map((piece,col)=>{
+    const square=`${'abcdefgh'[col]}${8-row}`, dark=(row+col)%2===1, isSelected=selected===square;
+    const legal=selected?(()=>{try{return new Chess(fen).moves({square:selected,verbose:true}).some(move=>move.to===square);}catch{return false;}})():false;
+    const name=piece?`${piece.color==='w'?'white':'black'} ${({k:'king',q:'queen',r:'rook',b:'bishop',n:'knight',p:'pawn'})[piece.type]}`:'empty';
+    return <button key={square} type="button" role="gridcell" className={`puzzle-square${dark?' dark':''}${isSelected?' is-selected':''}${legal?' is-legal':''}`} aria-label={`${square}, ${name}`} aria-selected={isSelected} draggable={Boolean(piece?.color==='w'&&!solved)} onClick={()=>{if(selected){if(selected===square){setSelected(null);return;}play(selected,square);}else if(piece?.color==='w'&&!solved)setSelected(square);}} onDragStart={event=>{if(piece?.color!=='w'||solved){event.preventDefault();return;}event.dataTransfer.setData('text/plain',square);setSelected(square);}} onDragOver={event=>{if(selected)event.preventDefault();}} onDrop={event=>{event.preventDefault();const from=event.dataTransfer.getData('text/plain')||selected;if(from)play(from,square);}}>{piece&&<span className={`puzzle-piece ${piece.color==='w'?'white':'black'}`} aria-hidden="true">{chessGlyphs[`${piece.color}${piece.type}`]}</span>}{col===0&&<small className="puzzle-coordinate rank-coordinate">{8-row}</small>}{row===7&&<small className="puzzle-coordinate file-coordinate">{'abcdefgh'[col]}</small>}</button>;
+  }));
+  return <div className="fischer-puzzle">
+    <div className="puzzle-heading"><span>POSITION 01 · WHITE TO MOVE</span><button type="button" onClick={reset} aria-label="Reset chess puzzle">RESET ↺</button></div>
+    <div className="puzzle-board" role="grid" aria-label="Playable Fischer versus Petrosian chess puzzle" onDragOver={event=>event.preventDefault()}>{squares}</div>
+    <div className={`puzzle-message${solved?' solved':''}`} aria-live="polite"><i aria-hidden="true">{solved?'✦':'●'}</i>{message}</div>
+    <div className="puzzle-controls"><button type="button" onClick={()=>setHint(true)} disabled={hint||solved}>HINT</button><span>{hint?'Advance the c-pawn: c4 → c5.':'Click a white piece, then its destination — or drag it.'}</span></div>
+    <a className="puzzle-source" href="https://www.chessgames.com/perl/chessgame?gid=1106430" target="_blank" rel="noreferrer">FISCHER — PETROSIAN · CANDIDATES 1959 <span>↗</span></a>
+  </div>;
+}
 function GameArchive() {
   const [view,setView]=useState('all');
   const [selected,setSelected]=useState(gameRecords[0]);
   const visibleGames=view==='GM'||view==='IM'?gameRecords.filter(game=>game.group===view):gameRecords;
   const ranked=[...gameRecords].sort((a,b)=>b.opponentRating-a.opponentRating);
-  const squares=Array.from({length:64},(_,index)=><span key={index} className={(Math.floor(index/8)+index%8)%2?'dark':''}/>);
   return <section className="games-section" id="games" aria-labelledby="games-title">
     <div className="section-kicker"><span>THE GAME ARCHIVE</span><span className="kicker-line"/><span>GM + IM OPPONENTS · 2022—23</span></div>
     <div className="games-intro"><div><p className="eyebrow gold-text">SIX RECORDS FROM THE BOARD</p><h2 id="games-title">Measured against<br/><em>the best.</em></h2></div><p>Rapid, blitz and classical encounters against titled opposition. Choose a record to see its tournament details and open the linked game source.</p></div>
     <div className="games-metrics"><div><strong>06</strong><span>ARCHIVED GAMES</span></div><div><strong>04</strong><span>GRANDMASTER OPPONENTS</span></div><div><strong>2527</strong><span>HIGHEST OPPONENT RATING</span></div><div className="games-note">Ratings shown are the opponent's event ratings in the supplied game archive.</div></div>
     <div className="game-explorer">
-      <div className="game-art-panel">
-        <div className="game-board-frame" aria-hidden="true"><div className="game-board3d">{squares}</div><span className="orbit-piece orbit-queen">♛</span><span className="orbit-piece orbit-rook">♜</span><span className="orbit-piece orbit-bishop">♝</span><span className="board-coordinate">8 · 1</span></div>
-        <div className="game-art-caption"><span>THE OPPOSITION ARCHIVE</span><b>{String(selected.opponentRating).padStart(4,'0')} <small>{selected.opponentTitle}</small></b></div>
+      <div className="game-art-panel puzzle-art-panel">
+        <FischerPuzzle/>
+        <div className="game-art-caption"><span>INTERACTIVE CHESS PUZZLE</span><b>1959 <small>FOUR QUEENS</small></b></div>
       </div>
       <div className="game-details-panel" aria-live="polite">
         <div className="game-filter" role="group" aria-label="Filter game archive"><button className={view==='all'?'active':''} onClick={()=>{setView('all');setSelected(gameRecords[0]);}}>ALL GAMES</button><button className={view==='GM'?'active':''} onClick={()=>{setView('GM');setSelected(gameRecords.find(game=>game.group==='GM'));}}>GM</button><button className={view==='IM'?'active':''} onClick={()=>{setView('IM');setSelected(gameRecords.find(game=>game.group==='IM'));}}>IM</button><button className={view==='opponents'?'active':''} onClick={()=>setView('opponents')}>TOP OPPONENTS</button></div>
