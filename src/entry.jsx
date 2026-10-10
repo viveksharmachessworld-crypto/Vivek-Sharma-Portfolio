@@ -85,7 +85,7 @@ function GameArchive() {
     <div className="games-metrics"><div><strong>06</strong><span>ARCHIVED GAMES</span></div><div><strong>04</strong><span>GRANDMASTER OPPONENTS</span></div><div><strong>2527</strong><span>HIGHEST OPPONENT RATING</span></div><div className="games-note">Ratings shown are the opponent's event ratings in the supplied game archive.</div></div>
     <div className="game-explorer">
       <div className="game-art-panel">
-        <div className="game-board-frame" aria-hidden="true"><div className="game-board3d">{squares}</div><span className="orbit-piece orbit-knight">♞</span><span className="orbit-piece orbit-rook">♜</span><span className="orbit-piece orbit-bishop">♝</span><span className="board-coordinate">8 · 1</span></div>
+        <div className="game-board-frame" aria-hidden="true"><div className="game-board3d">{squares}</div><span className="orbit-piece orbit-queen">♛</span><span className="orbit-piece orbit-rook">♜</span><span className="orbit-piece orbit-bishop">♝</span><span className="board-coordinate">8 · 1</span></div>
         <div className="game-art-caption"><span>THE OPPOSITION ARCHIVE</span><b>{String(selected.opponentRating).padStart(4,'0')} <small>{selected.opponentTitle}</small></b></div>
       </div>
       <div className="game-details-panel" aria-live="polite">
