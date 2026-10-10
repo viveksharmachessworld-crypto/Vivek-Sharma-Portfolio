@@ -77,35 +77,71 @@ function CertificateGallery() {
 const fischerPetrosianFen = 'Q7/4q3/2pq4/4p3/2PpP1P1/1knP4/7Q/5BK1 w - - 0 1';
 const chessGlyphs = { wk:'♔', wq:'♕', wr:'♖', wb:'♗', wn:'♘', wp:'♙', bk:'♚', bq:'♛', br:'♜', bb:'♝', bn:'♞', bp:'♟' };
 function FischerPuzzle() {
-  const [fen,setFen]=useState(fischerPetrosianFen), [selected,setSelected]=useState(null), [solved,setSolved]=useState(false), [message,setMessage]=useState('White to move · find the most practical winning try.'), [hint,setHint]=useState(false);
-  const reset=()=>{setFen(fischerPetrosianFen);setSelected(null);setSolved(false);setHint(false);setMessage('White to move · find the most practical winning try.');};
-  const play=(from,to)=>{
-    if(solved)return;
-    const game=new Chess(fen);
-    let move;
-    try { move=game.move({from,to,promotion:'q'}); } catch { move=null; }
-    if(!move)return;
-    setSelected(null);
-    if(move.from==='c4'&&move.to==='c5'){
-      setFen(game.fen());setSolved(true);setMessage('Congratulations — 1. c5! advances the passed pawn and gives White the strongest practical chances.');
-    }else{
-      setMessage('Legal move, but there is a more ambitious plan. Try again.');
-      setFen(fischerPetrosianFen);
-    }
+  const gameRef=useRef(null), workerRef=useRef(null), pendingMoveRef=useRef(false);
+  const [fen,setFen]=useState(fischerPetrosianFen), [selected,setSelected]=useState(null), [thinking,setThinking]=useState(false), [finished,setFinished]=useState(false), [engineReady,setEngineReady]=useState(false), [message,setMessage]=useState('Starting the chess engine…');
+  if(!gameRef.current)gameRef.current=new Chess(fischerPetrosianFen);
+  useEffect(()=>{
+    let worker;
+    try{
+      worker=new Worker('/stockfish/stockfish-19-lite-single.js');
+      workerRef.current=worker;
+      worker.onmessage=({data})=>{
+        const line=String(data||'');
+        if(line==='uciok'){worker.postMessage('setoption name Threads value 1');worker.postMessage('setoption name Hash value 32');worker.postMessage('isready');}
+        else if(line==='readyok'){setEngineReady(true);setMessage('Your move · play White against Vivek Sharma.');}
+        else if(line.startsWith('bestmove')&&pendingMoveRef.current){
+          pendingMoveRef.current=false;
+          const uci=line.split(/\s+/)[1];
+          const game=gameRef.current;
+          if(uci&&uci!=='(none)'){
+            try{game.move({from:uci.slice(0,2),to:uci.slice(2,4),promotion:uci[4]||'q'});}catch{}
+          }
+          setFen(game.fen());setThinking(false);
+          if(game.isGameOver()){
+            setFinished(true);
+            setMessage(game.isCheckmate()?'Checkmate — Vivek Sharma wins as Black. Start a new game to play again.':'The game is drawn. Congratulations on holding the position against Vivek Sharma.');
+          }else setMessage('Your move · Black has replied.');
+        }
+      };
+      worker.onerror=()=>{setEngineReady(false);setMessage('The chess engine could not start. Reload the page to try again.');};
+      worker.postMessage('uci');
+    }catch{setMessage('The chess engine could not start in this browser.');}
+    return()=>{pendingMoveRef.current=false;worker?.terminate();workerRef.current=null;};
+  },[]);
+  const reset=()=>{
+    pendingMoveRef.current=false;workerRef.current?.postMessage('stop');workerRef.current?.postMessage('ucinewgame');
+    const game=new Chess(fischerPetrosianFen);gameRef.current=game;setFen(game.fen());setSelected(null);setThinking(false);setFinished(false);setMessage(engineReady?'Your move · play White against Vivek Sharma.':'Starting the chess engine…');
   };
-  const position=new Chess(fen), board=position.board();
+  const resign=()=>{if(finished||thinking)return;setFinished(true);setSelected(null);setMessage('You resigned. Vivek Sharma wins this game. Start a new game whenever you are ready.');};
+  const play=(from,to)=>{
+    if(finished||thinking||!engineReady)return;
+    const game=gameRef.current;let move;
+    try{move=game.move({from,to,promotion:'q'});}catch{move=null;}
+    if(!move)return;
+    setSelected(null);setFen(game.fen());
+    if(game.isGameOver()){
+      setFinished(true);
+      setMessage(game.isCheckmate()?'Congratulations — checkmate! You defeated Vivek Sharma as White.':'The game is drawn. Congratulations on holding the position against Vivek Sharma.');
+      return;
+    }
+    pendingMoveRef.current=true;setThinking(true);setMessage('Vivek Sharma is calculating Black’s strongest reply…');
+    workerRef.current?.postMessage(`position fen ${game.fen()}`);workerRef.current?.postMessage('go depth 13');
+  };
+  const position=new Chess(fen), board=position.board(), history=gameRef.current.history();
   const squares=board.flatMap((rank,row)=>rank.map((piece,col)=>{
     const square=`${'abcdefgh'[col]}${8-row}`, dark=(row+col)%2===1, isSelected=selected===square;
     const legal=selected?(()=>{try{return new Chess(fen).moves({square:selected,verbose:true}).some(move=>move.to===square);}catch{return false;}})():false;
     const name=piece?`${piece.color==='w'?'white':'black'} ${({k:'king',q:'queen',r:'rook',b:'bishop',n:'knight',p:'pawn'})[piece.type]}`:'empty';
-    return <button key={square} type="button" role="gridcell" className={`puzzle-square${dark?' dark':''}${isSelected?' is-selected':''}${legal?' is-legal':''}`} aria-label={`${square}, ${name}`} aria-selected={isSelected} draggable={Boolean(piece?.color==='w'&&!solved)} onClick={()=>{if(selected){if(selected===square){setSelected(null);return;}play(selected,square);}else if(piece?.color==='w'&&!solved)setSelected(square);}} onDragStart={event=>{if(piece?.color!=='w'||solved){event.preventDefault();return;}event.dataTransfer.setData('text/plain',square);setSelected(square);}} onDragOver={event=>{if(selected)event.preventDefault();}} onDrop={event=>{event.preventDefault();const from=event.dataTransfer.getData('text/plain')||selected;if(from)play(from,square);}}>{piece&&<span className={`puzzle-piece ${piece.color==='w'?'white':'black'}`} aria-hidden="true">{chessGlyphs[`${piece.color}${piece.type}`]}</span>}{col===0&&<small className="puzzle-coordinate rank-coordinate">{8-row}</small>}{row===7&&<small className="puzzle-coordinate file-coordinate">{'abcdefgh'[col]}</small>}</button>;
+    return <button key={square} type="button" role="gridcell" className={`puzzle-square${dark?' dark':''}${isSelected?' is-selected':''}${legal?' is-legal':''}`} aria-label={`${square}, ${name}`} aria-selected={isSelected} disabled={thinking||finished||!engineReady} draggable={Boolean(piece?.color==='w'&&!finished&&!thinking)} onClick={()=>{if(selected){if(selected===square){setSelected(null);return;}play(selected,square);}else if(piece?.color==='w'&&!finished&&!thinking&&engineReady)setSelected(square);}} onDragStart={event=>{if(piece?.color!=='w'||finished||thinking){event.preventDefault();return;}event.dataTransfer.setData('text/plain',square);setSelected(square);}} onDragOver={event=>{if(selected)event.preventDefault();}} onDrop={event=>{event.preventDefault();const from=event.dataTransfer.getData('text/plain')||selected;if(from)play(from,square);}}>{piece&&<span className={`puzzle-piece ${piece.color==='w'?'white':'black'}`} aria-hidden="true">{chessGlyphs[`${piece.color}${piece.type}`]}</span>}{col===0&&<small className="puzzle-coordinate rank-coordinate">{8-row}</small>}{row===7&&<small className="puzzle-coordinate file-coordinate">{'abcdefgh'[col]}</small>}</button>;
   }));
   return <div className="fischer-puzzle">
-    <div className="puzzle-heading"><span>POSITION 01 · WHITE TO MOVE</span><button type="button" onClick={reset} aria-label="Reset chess puzzle">RESET ↺</button></div>
-    <div className="puzzle-board" role="grid" aria-label="Playable Fischer versus Petrosian chess puzzle" onDragOver={event=>event.preventDefault()}>{squares}</div>
-    <div className={`puzzle-message${solved?' solved':''}`} aria-live="polite"><i aria-hidden="true">{solved?'✦':'●'}</i>{message}</div>
-    <div className="puzzle-controls"><button type="button" onClick={()=>setHint(true)} disabled={hint||solved}>HINT</button><span>{hint?'Advance the c-pawn: c4 → c5.':'Click a white piece, then its destination — or drag it.'}</span></div>
-    <a className="puzzle-source" href="https://www.chessgames.com/perl/chessgame?gid=1106430" target="_blank" rel="noreferrer">FISCHER — PETROSIAN · CANDIDATES 1959 <span>↗</span></a>
+    <div className="puzzle-heading"><span>VIVEK SHARMA · BLACK · COMPUTER OPPONENT</span><button type="button" onClick={reset} aria-label="Start a new chess game">NEW GAME ↺</button></div>
+    <div className="puzzle-board" role="grid" aria-label="Play a complete chess game against Vivek Sharma, the computer opponent" onDragOver={event=>event.preventDefault()}>{squares}</div>
+    <div className={`puzzle-message${finished?' solved':''}`} aria-live="polite"><i aria-hidden="true">{thinking?'◌':finished?'✦':'●'}</i>{message}</div>
+    <div className="puzzle-controls"><button type="button" onClick={resign} disabled={finished||thinking||!engineReady}>RESIGN</button><span>{thinking?'Black is choosing a strong reply…':'Select a white piece, then its destination, or drag it.'}</span></div>
+    <div className="puzzle-move-list" aria-label="Moves played">{history.length?Array.from({length:Math.ceil(history.length/2)},(_,index)=><span key={index}>{index+1}. {history[index*2]} {history[index*2+1]||''}</span>):<span>Move history will appear here as the game unfolds.</span>}</div>
+    <a className="puzzle-source" href="https://www.chessgames.com/perl/chessgame?gid=1106430" target="_blank" rel="noreferrer">POSITION INSPIRED BY FISCHER — PETROSIAN · 1959 <span>↗</span></a>
+    <small className="puzzle-engine-credit">Vivek Sharma is the computer opponent, powered by Stockfish.</small>
   </div>;
 }
 function GameArchive() {
@@ -120,13 +156,13 @@ function GameArchive() {
     <div className="game-explorer">
       <div className="game-art-panel puzzle-art-panel">
         <FischerPuzzle/>
-        <div className="game-art-caption"><span>INTERACTIVE CHESS PUZZLE</span><b>1959 <small>FOUR QUEENS</small></b></div>
+        <div className="game-art-caption"><span>PLAY A COMPLETE GAME AGAINST VIVEK SHARMA</span><b>1959 <small>FOUR QUEENS</small></b></div>
       </div>
       <div className="game-details-panel" aria-live="polite">
         <div className="game-filter" role="group" aria-label="Filter game archive"><button className={view==='all'?'active':''} onClick={()=>{setView('all');setSelected(gameRecords[0]);}}>ALL GAMES</button><button className={view==='GM'?'active':''} onClick={()=>{setView('GM');setSelected(gameRecords.find(game=>game.group==='GM'));}}>GM</button><button className={view==='IM'?'active':''} onClick={()=>{setView('IM');setSelected(gameRecords.find(game=>game.group==='IM'));}}>IM</button><button className={view==='opponents'?'active':''} onClick={()=>setView('opponents')}>TOP OPPONENTS</button></div>
         {view==='opponents'?<div className="opponent-rankings"><div className="opponent-table-head"><span>RANK</span><span>OPPONENT</span><span>RATING</span></div>{ranked.map((game,index)=><button className="opponent-row" key={game.id} onClick={()=>{setSelected(game);setView('all');}}><span>{String(index+1).padStart(2,'0')}</span><b>{game.opponent}<small>{game.opponentTitle} · {game.year}</small></b><strong>{game.opponentRating}</strong></button>)}</div>:<>
           <div className="game-picker">{visibleGames.map(game=><button key={game.id} className={`game-picker-card${selected.id===game.id?' selected':''}`} onClick={()=>setSelected(game)}><span>{game.title}</span><b>{game.opponent}</b><small>{game.opponentTitle} · {game.opponentRating} · {game.format}</small></button>)}</div>
-          <article className="selected-game"><div className="selected-game-kicker"><span>{selected.title}</span><span>{selected.format} · {selected.year}</span></div><h3>{selected.opponentTitle} {selected.opponent}</h3><div className="game-matchup"><span>{selected.opponentRating} <small>{selected.opponentTitle} · {selected.opponentFederation||''}</small></span><i>VS</i><span>{selected.vivekRating} <small>VIVEK SHARMA · IND</small></span></div><div className="game-info-grid"><div><small>TOURNAMENT</small><b>{selected.event}</b></div><div><small>DATE / ROUND</small><b>{selected.date}{selected.round?` · ${selected.round}`:''}{selected.board?` · ${selected.board}`:''}</b></div><div><small>RESULT</small><b>{selected.result} <em>· {selected.outcome} for Vivek</em></b></div><div><small>OPENING / ECO</small><b>{selected.opening}{selected.eco?` · ${selected.eco}`:''}</b></div></div>{selected.id==='gm-michal'&&<div className="krasenkow-feature"><img src="/images/vivek-sharma-at-chessboard-tournament.webp" alt="Vivek Sharma playing Grandmaster Michal Krasenkow at the 20th Delhi International Open" loading="lazy"/><div className="krasenkow-story"><span>ACROSS THE BOARD · NEW DELHI</span><h4>Vivek Sharma <i>vs</i> Michal Krasenkow</h4><p>At the 20th Delhi International Open, Vivek Sharma faced Poland’s Grandmaster Michal Krasenkow in a classical fourth-round game. The English Hedgehog (A17) was a demanding test against an experienced international opponent. The official pairing record shows a 1–0 win for Krasenkow. The game remains part of Vivek’s playing record—and a position worth returning to, move by move.</p><small>25 MARCH 2023 · ROUND 4 · KRASENKOW 1–0 SHARMA</small></div></div>}<a className="game-source-link" href={selected.id==='gm-michal'?'https://www.chessbase.in/news/20th-Delhi-GM-Open-2023-Round-4-report':selected.source} target="_blank" rel="noreferrer">{selected.id==='gm-michal'?'ROUND 4 PAIRING & RESULT':selected.sourceLabel} <span>↗</span></a></article>
+          <article className="selected-game"><div className="selected-game-kicker"><span>{selected.title}</span><span>{selected.format} · {selected.year}</span></div><h3>{selected.opponentTitle} {selected.opponent}</h3><div className="game-matchup"><span>{selected.opponentRating} <small>{selected.opponentTitle} · {selected.opponentFederation||''}</small></span><i>VS</i><span>{selected.vivekRating} <small>VIVEK SHARMA · IND</small></span></div><div className="game-info-grid"><div><small>TOURNAMENT</small><b>{selected.event}</b></div><div><small>DATE / ROUND</small><b>{selected.date}{selected.round?` · ${selected.round}`:''}{selected.board?` · ${selected.board}`:''}</b></div><div><small>RESULT</small><b>{selected.result} <em>· {selected.outcome} for Vivek</em></b></div><div><small>OPENING / ECO</small><b>{selected.opening}{selected.eco?` · ${selected.eco}`:''}</b></div></div><a className="game-source-link" href={selected.source} target="_blank" rel="noreferrer">{selected.sourceLabel} <span>↗</span></a></article>
         </>}
       </div>
     </div>
