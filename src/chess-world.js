@@ -1,24 +1,23 @@
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
-function makeWoodTexture(THREE) {
+function makeTournamentFrameTexture(THREE) {
   const canvas = document.createElement('canvas');
   canvas.width = 512;
   canvas.height = 512;
   const context = canvas.getContext('2d');
-  const base = context.createLinearGradient(0, 0, 512, 512);
-  base.addColorStop(0, '#6b4b2d');
-  base.addColorStop(.4, '#9a7040');
-  base.addColorStop(.7, '#76512f');
-  base.addColorStop(1, '#4a3322');
+  const base = context.createLinearGradient(0, 0, 0, 512);
+  base.addColorStop(0, '#343a3d');
+  base.addColorStop(.48, '#22282b');
+  base.addColorStop(1, '#151a1d');
   context.fillStyle = base;
   context.fillRect(0, 0, 512, 512);
-  for (let index = 0; index < 180; index += 1) {
+  for (let index = 0; index < 96; index += 1) {
     const y = Math.random() * 512;
-    context.strokeStyle = `rgba(${index % 2 ? '238,190,116' : '25,17,10'},${.025 + Math.random() * .045})`;
-    context.lineWidth = .4 + Math.random() * 2.5;
+    context.strokeStyle = `rgba(${index % 2 ? '205,215,218' : '7,12,14'},${.018 + Math.random() * .028})`;
+    context.lineWidth = .4 + Math.random() * 1.1;
     context.beginPath();
     context.moveTo(0, y);
-    context.bezierCurveTo(140, y + Math.random() * 12 - 6, 320, y + Math.random() * 14 - 7, 512, y + Math.random() * 10 - 5);
+    context.bezierCurveTo(140, y + Math.random() * 3 - 1.5, 320, y + Math.random() * 3 - 1.5, 512, y + Math.random() * 3 - 1.5);
     context.stroke();
   }
   const texture = new THREE.CanvasTexture(canvas);
@@ -159,13 +158,13 @@ export async function mountChessWorld(host) {
     fillLight.position.set(-3, 3, 4);
     scene.add(fillLight);
 
-    const woodTexture = makeWoodTexture(THREE);
-    const frameMaterial = new THREE.MeshStandardMaterial({ map: woodTexture, roughness: .32, metalness: .08 });
-    const lightSquare = new THREE.MeshStandardMaterial({ color: '#d8c59d', roughness: .29, metalness: .04 });
-    const darkSquare = new THREE.MeshStandardMaterial({ color: '#493625', roughness: .25, metalness: .06 });
-    const ivory = new THREE.MeshPhysicalMaterial({ color: '#e7d9bd', roughness: .23, metalness: .08, clearcoat: .32, clearcoatRoughness: .3 });
-    const walnut = new THREE.MeshPhysicalMaterial({ color: '#30251c', roughness: .27, metalness: .15, clearcoat: .28 });
-    const gold = new THREE.MeshStandardMaterial({ color: '#b99a60', roughness: .24, metalness: .72 });
+    const frameTexture = makeTournamentFrameTexture(THREE);
+    const frameMaterial = new THREE.MeshStandardMaterial({ map: frameTexture, roughness: .4, metalness: .58 });
+    const lightSquare = new THREE.MeshStandardMaterial({ color: '#e7e4d8', roughness: .72, metalness: 0 });
+    const darkSquare = new THREE.MeshStandardMaterial({ color: '#31513f', roughness: .74, metalness: 0 });
+    const ivory = new THREE.MeshPhysicalMaterial({ color: '#f0ede4', roughness: .3, metalness: .02, clearcoat: .12, clearcoatRoughness: .4 });
+    const walnut = new THREE.MeshPhysicalMaterial({ color: '#222628', roughness: .34, metalness: .04, clearcoat: .12 });
+    const gold = new THREE.MeshStandardMaterial({ color: '#b8ad91', roughness: .42, metalness: .32 });
 
     const board = new THREE.Group();
     board.rotation.y = 0;
@@ -175,9 +174,12 @@ export async function mountChessWorld(host) {
     base.castShadow = true;
     base.receiveShadow = true;
     board.add(base);
-    const innerBase = new THREE.Mesh(new THREE.BoxGeometry(8.42, .07, 8.42), gold);
+    const innerBase = new THREE.Mesh(new THREE.BoxGeometry(8.42, .07, 8.42), frameMaterial);
     innerBase.position.y = -.045;
     board.add(innerBase);
+    const inlay = new THREE.Mesh(new THREE.BoxGeometry(8.44, .012, 8.44), gold);
+    inlay.position.y = -.006;
+    board.add(inlay);
     const squareGeometry = new THREE.BoxGeometry(1, .085, 1);
     for (let rank = 0; rank < 8; rank += 1) {
       for (let file = 0; file < 8; file += 1) {
@@ -311,7 +313,7 @@ export async function mountChessWorld(host) {
         if (object.material) (Array.isArray(object.material) ? object.material : [object.material]).forEach(material => material.dispose());
       });
       renderer.dispose();
-      woodTexture.dispose();
+      frameTexture.dispose();
       renderer.domElement.remove();
       host.closest('.hero-art')?.classList.remove('has-webgl');
     };
