@@ -70,4 +70,9 @@ document.addEventListener('keydown', event => {
 document.querySelectorAll('.image-open').forEach(button => button.addEventListener('click', () => {
   const index = assets.findIndex(asset => asset.file === button.dataset.image); if (index >= 0) openLightbox(index);
 }));
+document.querySelectorAll('a[href^="#story-chapter-"]').forEach(link => link.addEventListener('click', () => {
+  const chapter = document.querySelector(link.getAttribute('href'));
+  const story = chapter?.closest('details.full-story');
+  if (story) story.open = true;
+}));
 renderArchive();
