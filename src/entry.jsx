@@ -110,7 +110,7 @@ function FischerPuzzle() {
 }
 function GameArchive() {
   const [view,setView]=useState('all');
-  const [selected,setSelected]=useState(gameRecords[0]);
+  const [selected,setSelected]=useState(gameRecords.find(game=>game.id==='gm-michal')||gameRecords[0]);
   const visibleGames=view==='GM'||view==='IM'?gameRecords.filter(game=>game.group===view):gameRecords;
   const ranked=[...gameRecords].sort((a,b)=>b.opponentRating-a.opponentRating);
   return <section className="games-section" id="games" aria-labelledby="games-title">
@@ -126,7 +126,7 @@ function GameArchive() {
         <div className="game-filter" role="group" aria-label="Filter game archive"><button className={view==='all'?'active':''} onClick={()=>{setView('all');setSelected(gameRecords[0]);}}>ALL GAMES</button><button className={view==='GM'?'active':''} onClick={()=>{setView('GM');setSelected(gameRecords.find(game=>game.group==='GM'));}}>GM</button><button className={view==='IM'?'active':''} onClick={()=>{setView('IM');setSelected(gameRecords.find(game=>game.group==='IM'));}}>IM</button><button className={view==='opponents'?'active':''} onClick={()=>setView('opponents')}>TOP OPPONENTS</button></div>
         {view==='opponents'?<div className="opponent-rankings"><div className="opponent-table-head"><span>RANK</span><span>OPPONENT</span><span>RATING</span></div>{ranked.map((game,index)=><button className="opponent-row" key={game.id} onClick={()=>{setSelected(game);setView('all');}}><span>{String(index+1).padStart(2,'0')}</span><b>{game.opponent}<small>{game.opponentTitle} · {game.year}</small></b><strong>{game.opponentRating}</strong></button>)}</div>:<>
           <div className="game-picker">{visibleGames.map(game=><button key={game.id} className={`game-picker-card${selected.id===game.id?' selected':''}`} onClick={()=>setSelected(game)}><span>{game.title}</span><b>{game.opponent}</b><small>{game.opponentTitle} · {game.opponentRating} · {game.format}</small></button>)}</div>
-          <article className="selected-game"><div className="selected-game-kicker"><span>{selected.title}</span><span>{selected.format} · {selected.year}</span></div><h3>{selected.opponentTitle} {selected.opponent}</h3><div className="game-matchup"><span>{selected.opponentRating} <small>{selected.opponentTitle}</small></span><i>VS</i><span>{selected.vivekRating} <small>VIVEK SHARMA</small></span></div><div className="game-info-grid"><div><small>TOURNAMENT</small><b>{selected.event}</b></div><div><small>DATE / ROUND</small><b>{selected.date}{selected.round?` · ${selected.round}`:''}{selected.board?` · ${selected.board}`:''}</b></div><div><small>RESULT</small><b>{selected.result} <em>· {selected.outcome} for Vivek</em></b></div><div><small>OPENING / ECO</small><b>{selected.opening}{selected.eco?` · ${selected.eco}`:''}</b></div></div><a className="game-source-link" href={selected.source} target="_blank" rel="noreferrer">{selected.sourceLabel} <span>↗</span></a></article>
+          <article className="selected-game"><div className="selected-game-kicker"><span>{selected.title}</span><span>{selected.format} · {selected.year}</span></div><h3>{selected.opponentTitle} {selected.opponent}</h3><div className="game-matchup"><span>{selected.opponentRating} <small>{selected.opponentTitle} · {selected.opponentFederation||''}</small></span><i>VS</i><span>{selected.vivekRating} <small>VIVEK SHARMA · IND</small></span></div><div className="game-info-grid"><div><small>TOURNAMENT</small><b>{selected.event}</b></div><div><small>DATE / ROUND</small><b>{selected.date}{selected.round?` · ${selected.round}`:''}{selected.board?` · ${selected.board}`:''}</b></div><div><small>RESULT</small><b>{selected.result} <em>· {selected.outcome} for Vivek</em></b></div><div><small>OPENING / ECO</small><b>{selected.opening}{selected.eco?` · ${selected.eco}`:''}</b></div></div>{selected.id==='gm-michal'&&<div className="krasenkow-feature"><img src="/images/vivek-sharma-at-chessboard-tournament.webp" alt="Vivek Sharma playing Grandmaster Michal Krasenkow at the 20th Delhi International Open" loading="lazy"/><div className="krasenkow-story"><span>ACROSS THE BOARD · NEW DELHI</span><h4>Vivek Sharma <i>vs</i> Michal Krasenkow</h4><p>At the 20th Delhi International Open, Vivek Sharma faced Poland’s Grandmaster Michal Krasenkow in a classical fourth-round game. The English Hedgehog (A17) was a demanding test against an experienced international opponent. The official pairing record shows a 1–0 win for Krasenkow. The game remains part of Vivek’s playing record—and a position worth returning to, move by move.</p><small>25 MARCH 2023 · ROUND 4 · KRASENKOW 1–0 SHARMA</small></div></div>}<a className="game-source-link" href={selected.id==='gm-michal'?'https://www.chessbase.in/news/20th-Delhi-GM-Open-2023-Round-4-report':selected.source} target="_blank" rel="noreferrer">{selected.id==='gm-michal'?'ROUND 4 PAIRING & RESULT':selected.sourceLabel} <span>↗</span></a></article>
         </>}
       </div>
     </div>
@@ -137,21 +137,17 @@ function HomeApp() {
   const [loading,setLoading]=useState(true),[loaderExit,setLoaderExit]=useState(false);
   useEffect(()=>{
     import('../script.js');
-    const worldHost=document.getElementById('chess-world-root');
-    let worldCleanup=()=>{}, worldCancelled=false;
     let loaderFinished=false;
     let fallbackTimer;
     const finishLoader=()=>{if(loaderFinished)return;loaderFinished=true;setLoaderExit(true);fallbackTimer=window.setTimeout(()=>setLoading(false),480);};
-    const loaderTimeout=window.setTimeout(finishLoader,2600);
+    const loaderTimeout=window.setTimeout(finishLoader,1200);
     const observers=[];
-    const loadChessWorld=()=>{if(!worldHost||worldCancelled)return;import('./chess-world.js').then(({mountChessWorld})=>mountChessWorld(worldHost)).then(cleanup=>{if(worldCancelled)cleanup?.();else if(cleanup)worldCleanup=cleanup;clearTimeout(loaderTimeout);finishLoader();}).catch(error=>{console.warn('Using the CSS chessboard fallback.',error);clearTimeout(loaderTimeout);finishLoader();});};
-    if(worldHost&&'IntersectionObserver'in window){const worldObserver=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){worldObserver.disconnect();loadChessWorld();}},{rootMargin:'500px 0px'});worldObserver.observe(worldHost);observers.push(worldObserver);}else loadChessWorld();
     const revealTargets=document.querySelectorAll('.intro-section,.personal-story,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.archive-section,.certificate-section,.disciplines-section,.identity-section,.closing-section');
     revealTargets.forEach(target=>target.classList.add('scroll-reveal'));
     if('IntersectionObserver'in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');revealObserver.unobserve(entry.target);}}),{threshold:.08});observers.push(revealObserver);revealTargets.forEach(target=>revealObserver.observe(target));
       if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const ratingObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const node=entry.target;ratingObserver.unobserve(node);const target=Number(node.dataset.ratingCount);const start=performance.now();node.textContent='0';const count=time=>{const progress=Math.min(1,(time-start)/1050);const eased=1-Math.pow(1-progress,3);node.textContent=String(Math.round(target*eased));if(progress<1)requestAnimationFrame(count);};requestAnimationFrame(count);}),{threshold:.65});observers.push(ratingObserver);document.querySelectorAll('[data-rating-count]').forEach(node=>ratingObserver.observe(node));}
     }else revealTargets.forEach(target=>target.classList.add('in-view'));
-    return()=>{worldCancelled=true;clearTimeout(loaderTimeout);clearTimeout(fallbackTimer);worldCleanup();observers.forEach(observer=>observer.disconnect());};
+    return()=>{clearTimeout(loaderTimeout);clearTimeout(fallbackTimer);observers.forEach(observer=>observer.disconnect());};
   },[]);
   return <><div className="cinematic-atmosphere" aria-hidden="true"/>{loading&&<div className={`opening-loader${loaderExit?' is-exiting':''}`} aria-hidden="true"><span>VIVEK SHARMA</span><b>♛</b><small>FIDE 45046328 · INDIA</small><i/><p>PREPARING THE BOARD</p></div>}{parse(markup,{replace:node=>{
     if(node.type!=='tag')return;
@@ -159,7 +155,6 @@ function HomeApp() {
     if(node.attribs?.id==='certificate-showcase-app')return <NationalCertificateShowcase/>;
     if(node.attribs?.id==='certificate-app')return <CertificateGallery/>;
     if(node.attribs?.id==='games-app')return <GameArchive/>;
-    if(node.attribs?.id==='chess-world-root')return <div id="chess-world-root" className="chess-world-host" aria-hidden="true"/>;
   }})}<PortfolioAssistant/></>;
 }
 const root=createRoot(document.getElementById('root'));
