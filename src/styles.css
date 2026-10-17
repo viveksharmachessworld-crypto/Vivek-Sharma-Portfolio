@@ -72,7 +72,7 @@
 .hero-copy{position:relative;z-index:var(--z-content);min-width:0}.hero-copy h1{max-width:7ch}.hero-sub span{display:inline-block;margin-top:7px;color:#c5a66c;font:8px var(--mono);letter-spacing:.17em}.hero-art{z-index:1;min-height:440px;margin:0;align-self:stretch;overflow:visible}.hero-photo-wrap{right:6%;top:3%;width:31%;height:42%;z-index:3;opacity:1;filter:saturate(.72) contrast(1.04);mask-image:linear-gradient(180deg,#000 66%,transparent 100%);border:1px solid #c1a36b78;box-shadow:0 18px 55px #0007}.hero-photo-wrap img{object-position:center 26%}.chess-world-host{position:absolute;z-index:1;inset:14% 0 0;pointer-events:none}.chess-world-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;animation:world-fade-in 1.4s .45s ease forwards}.hero-art.has-webgl .chess-world-canvas{opacity:1}.hero-art.has-webgl .board-scene{opacity:0;visibility:hidden;animation:none}.hero-art.has-webgl .hero-photo-wrap{opacity:1}.board-scene{z-index:1}.art-index,.art-caption{z-index:4}.scroll-cue{z-index:var(--z-content)}
 @keyframes world-fade-in{to{opacity:1}}
 .intro-section,.feature-section,.games-section,.career-results,.ratings-section,.press-section,.certificate-section,.archive-section,.disciplines-section,.identity-section,.closing-section{position:relative;isolation:isolate}.section-kicker{position:relative;z-index:1}.career-results,.games-section,.press-section,.disciplines-section,.closing-section{background-color:#151411}
-.intro-section{background:linear-gradient(115deg,#e9e4d8f8,#dcd5c5f8)}
+.intro-section{padding-top:78px;padding-bottom:88px;background:linear-gradient(115deg,#e9e4d8f8,#dcd5c5f8)}
 .archive-section{padding-top:68px;padding-bottom:78px}.archive-head .section-kicker{margin-bottom:34px}.archive-head>p{max-width:340px}.archive-filters{margin-top:26px;gap:25px}.archive-grid{margin-top:16px;gap:11px}.archive-card{aspect-ratio:1.18}.archive-card[data-kind="personal"] img,.archive-card[data-kind="group"] img{object-fit:cover}
 .feature-section{overflow:clip}.feature-image{z-index:2}.feature-copy{position:relative;z-index:2;min-width:0}.feature-name,.feature-note{overflow-wrap:anywhere}.feature-watermark{right:2%;bottom:-110px;font-size:clamp(130px,25vw,360px);line-height:1;z-index:0}
 .ratings-section{background:linear-gradient(135deg,#e4dccb,#d5cbb7)}.ratings-heading{gap:clamp(28px,8vw,120px)}.ratings-heading>p{max-width:370px}.rating-line{grid-template-columns:repeat(3,minmax(0,1fr))}.rating-item{min-width:0}.rating-item strong{font-variant-numeric:lining-nums tabular-nums}.rating-bottom{gap:14px;flex-wrap:wrap}.rating-bottom>span,.rating-bottom>a{white-space:nowrap}
@@ -193,18 +193,19 @@ body:has(.full-story[open]) .assistant-launch:not(.is-open){width:48px;min-width
 body:has(.full-story[open]) .assistant-launch:not(.is-open):hover,body:has(.full-story[open]) .assistant-launch:not(.is-open):focus-visible{opacity:1}
 body:has(.full-story[open]) .assistant-launch:not(.is-open)>span:last-child{display:none}
 
-/* Give the journey a calm editorial rhythm and keep chapter titles in their lane. */
-.intro-grid{margin:58px 0 62px;align-items:center}
-.chess-lessons{display:grid;grid-template-columns:minmax(140px,.36fr) minmax(0,1.64fr);gap:clamp(24px,6vw,88px);margin:0 0 46px;padding:28px clamp(20px,4vw,46px);border-block:1px solid #c2b8a6;background:linear-gradient(110deg,#eee9dfb8,#d8d0c080);animation:lessons-arrive .8s .12s cubic-bezier(.2,.75,.2,1) both}
+/* Give the combined journey introduction a calm editorial rhythm. */
+.intro-section>.section-kicker{margin-bottom:30px}
+.chess-lessons{display:grid;grid-template-columns:minmax(140px,.36fr) minmax(0,1.64fr);gap:clamp(24px,6vw,88px);margin:0 0 38px;padding:28px clamp(20px,4vw,46px);border-block:1px solid #c2b8a6;background:linear-gradient(110deg,#eee9dfb8,#d8d0c080);animation:lessons-arrive .8s .12s cubic-bezier(.2,.75,.2,1) both}
 .chess-lessons-label{display:flex;flex-direction:column;justify-content:space-between;gap:20px;color:#82755f;font:8px var(--mono);letter-spacing:.11em}
 .chess-lessons-label .eyebrow{margin:0;color:#9b7941;font-size:8px}
 .chess-lessons-copy{display:grid;grid-template-columns:minmax(180px,.72fr) minmax(0,1.28fr);gap:clamp(20px,4vw,54px);align-items:center}
-.chess-lessons-copy h3{margin:0;color:#25221d;font:400 clamp(36px,4vw,55px)/.98 var(--serif);letter-spacing:-.045em}
-.chess-lessons-copy h3 em{color:#947346;font-weight:400}
+.chess-lessons-copy h2{margin:0;color:#25221d;font:400 clamp(36px,4vw,55px)/.98 var(--serif);letter-spacing:-.045em}
+.chess-lessons-copy h2 em{color:#947346;font-weight:400}
 .chess-lessons-copy>div{max-width:680px}
 .chess-lessons-copy p{margin:0 0 11px;color:#48443d;font:13px/1.75 var(--sans)}
 .chess-lessons-copy p:last-of-type{margin-bottom:0}
 .chess-lessons-copy a{display:inline-block;margin-top:13px;color:#72572e;font:8px var(--mono);letter-spacing:.04em;text-decoration:underline;text-underline-offset:4px}
+.journey-feature-photo{margin-bottom:46px}
 .journey-board-path{margin-top:0}
 .journey-square{min-height:160px}
 .story-grid article{min-width:0}
@@ -217,7 +218,7 @@ body:has(.full-story[open]) .assistant-launch:not(.is-open)>span:last-child{disp
 .square:nth-child(8n+1)::after{color:#9ba596}
 .queen-piece{color:#f0ede4;text-shadow:2px 4px 1px #7f827a,7px 12px 12px #000b;filter:drop-shadow(0 0 25px #e1d2a433)}
 @media(max-width:900px) and (min-width:701px){.full-story-chapter{grid-template-columns:minmax(190px,220px) minmax(0,1fr);column-gap:24px}.story-chapter-head h3{font-size:clamp(19px,2.3vw,25px)}}
-@media(max-width:700px){.intro-grid{align-items:initial;margin:46px 0 38px}.chess-lessons{grid-template-columns:1fr;gap:18px;margin-bottom:30px;padding:22px 18px}.chess-lessons-label{flex-direction:row;align-items:center}.chess-lessons-copy{grid-template-columns:1fr;gap:14px}.chess-lessons-copy h3{font-size:clamp(38px,10vw,48px)}.chess-lessons-copy p{font-size:12px}.journey-board-path{margin-top:0}.journey-square{min-height:145px}.full-story-chapter{grid-template-columns:minmax(0,1fr);row-gap:12px}.story-chapter-head h3{font-size:clamp(22px,6.5vw,28px);overflow-wrap:anywhere;word-break:normal}}
+@media(max-width:700px){.intro-section{padding-top:58px;padding-bottom:68px}.intro-section>.section-kicker{margin-bottom:22px}.chess-lessons{grid-template-columns:1fr;gap:18px;margin-bottom:28px;padding:22px 18px}.chess-lessons-label{flex-direction:row;align-items:center}.chess-lessons-copy{grid-template-columns:1fr;gap:14px}.chess-lessons-copy h2{font-size:clamp(38px,10vw,48px)}.chess-lessons-copy p{font-size:12px}.journey-feature-photo{margin-bottom:32px}.journey-board-path{margin-top:0}.journey-square{min-height:145px}.full-story-chapter{grid-template-columns:minmax(0,1fr);row-gap:12px}.story-chapter-head h3{font-size:clamp(22px,6.5vw,28px);overflow-wrap:anywhere;word-break:normal}}
 @media(prefers-reduced-motion:reduce){.chess-lessons{animation:none}}
 
 /* Tournament archive board: contemporary competition squares, graphite frame, no timber. */
