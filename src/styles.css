@@ -195,10 +195,10 @@ body:has(.full-story[open]) .assistant-launch:not(.is-open)>span:last-child{disp
 
 /* Give the combined journey introduction a calm editorial rhythm. */
 .intro-section>.section-kicker{margin-bottom:30px}
-.chess-lessons{display:grid;grid-template-columns:minmax(140px,.36fr) minmax(0,1.64fr);gap:clamp(24px,6vw,88px);margin:0 0 38px;padding:28px clamp(20px,4vw,46px);border-block:1px solid #c2b8a6;background:linear-gradient(110deg,#eee9dfb8,#d8d0c080);animation:lessons-arrive .8s .12s cubic-bezier(.2,.75,.2,1) both}
-.chess-lessons-label{display:flex;flex-direction:column;justify-content:space-between;gap:20px;color:#82755f;font:8px var(--mono);letter-spacing:.11em}
+.chess-lessons{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:0 0 38px;padding:28px clamp(20px,4vw,46px);border-block:1px solid #c2b8a6;background:linear-gradient(110deg,#eee9dfb8,#d8d0c080);animation:lessons-arrive .8s .12s cubic-bezier(.2,.75,.2,1) both}
+.chess-lessons-label{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;color:#82755f;font:8px var(--mono);letter-spacing:.11em}
 .chess-lessons-label .eyebrow{margin:0;color:#9b7941;font-size:8px}
-.chess-lessons-copy{display:grid;grid-template-columns:minmax(180px,.72fr) minmax(0,1.28fr);gap:clamp(20px,4vw,54px);align-items:center}
+.chess-lessons-copy{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.18fr);gap:clamp(20px,4vw,54px);align-items:center}
 .chess-lessons-copy h2{margin:0;color:#25221d;font:400 clamp(36px,4vw,55px)/.98 var(--serif);letter-spacing:-.045em}
 .chess-lessons-copy h2 em{color:#947346;font-weight:400}
 .chess-lessons-copy>div{max-width:680px}
