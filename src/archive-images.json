@@ -4,7 +4,8 @@
     "kind": "photograph",
     "caption": "Award ceremony",
     "detail": "Owner-provided photograph",
-    "evidenceType": "Photograph"
+    "evidenceType": "Photograph",
+    "journeyCategory": "group"
   },
   {
     "file": "bihar-chess-newspaper-coverage.webp",
@@ -173,7 +174,8 @@
     "kind": "photograph",
     "caption": "Playing at the board",
     "detail": "Owner-provided tournament photograph",
-    "evidenceType": "Photograph"
+    "evidenceType": "Photograph",
+    "journeyCategory": "personal"
   },
   {
     "file": "bihar-state-chess-certificate-02.webp",
@@ -277,7 +279,8 @@
     "height": 1846,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-tournament-prize-presentation.webp",
@@ -288,7 +291,8 @@
     "height": 1366,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "diksha-championship-results-record.webp",
@@ -338,7 +342,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-tournament-trophies.webp",
@@ -360,7 +365,8 @@
     "height": 658,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-award-presentation-group.webp",
@@ -371,7 +377,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "vivek-sharma-playing-chess-blue-shirt.webp",
@@ -382,7 +389,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "personal"
   },
   {
     "file": "vivek-sharma-at-chessboard-tournament.webp",
@@ -393,7 +401,8 @@
     "height": 608,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "personal"
   },
   {
     "file": "chess-tournament-hall-award-event.webp",
@@ -404,7 +413,8 @@
     "height": 608,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-trophy-detail.webp",
@@ -426,7 +436,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-tournament-award-group.webp",
@@ -437,7 +448,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-certificate-award-presentation.webp",
@@ -448,7 +460,8 @@
     "height": 1080,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-tournament-group-01.webp",
@@ -459,7 +472,8 @@
     "height": 1413,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "vivek-sharma-with-chess-trophy.webp",
@@ -470,7 +484,8 @@
     "height": 1442,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "personal"
   },
   {
     "file": "chess-tournament-award-ceremony-03.webp",
@@ -481,7 +496,8 @@
     "height": 1440,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-championship-prize-ceremony.webp",
@@ -492,7 +508,8 @@
     "height": 1280,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "junior-chess-tournament-playing-room.webp",
@@ -528,7 +545,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-certificate-archive-photo.webp",
@@ -552,7 +570,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "bihar-chess-championship-award.webp",
@@ -563,7 +582,8 @@
     "height": 540,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "bihar-chess-newspaper-profile-01.webp",
@@ -596,7 +616,8 @@
     "height": 540,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-newspaper-profile-archive.webp",
@@ -620,7 +641,8 @@
     "height": 810,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "group"
   },
   {
     "file": "chess-newspaper-clipping-archive.webp",
@@ -642,7 +664,8 @@
     "height": 720,
     "evidenceType": "Photograph",
     "sourceLabel": "Owner-provided tournament archive",
-    "sourceUrl": ""
+    "sourceUrl": "",
+    "journeyCategory": "personal"
   },
   {
     "file": "junior-chess-tournament-board.webp",

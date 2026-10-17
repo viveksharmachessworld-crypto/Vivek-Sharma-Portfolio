@@ -2,7 +2,9 @@ import assets from './src/archive-images.json';
 const imageUrl = file => `/images/${encodeURIComponent(file)}`;
 const grid = document.querySelector('#archive-grid');
 const dialog = document.querySelector('#lightbox');
+const journeyPhotos = assets.filter(asset => asset.journeyCategory);
 let activeIndex = 0;
+let lightboxAssets = assets;
 
 const heroBoard = document.querySelector('#hero-board');
 if (heroBoard) {
@@ -16,28 +18,28 @@ if (heroBoard) {
 
 function renderArchive() {
   grid.replaceChildren();
-  assets.forEach((asset, index) => {
+  journeyPhotos.forEach((asset, index) => {
     const button = document.createElement('button');
-    button.type = 'button'; button.className = 'archive-card'; button.dataset.kind = asset.kind;
+    button.type = 'button'; button.className = 'archive-card'; button.dataset.kind = asset.journeyCategory;
     button.setAttribute('aria-label', `${asset.caption}. Open image.`);
     const image = document.createElement('img');
     image.src = imageUrl(asset.file); image.alt = asset.caption; image.loading = 'lazy';
     image.addEventListener('error', () => button.classList.add('image-unavailable'), {once:true});
     const caption = document.createElement('span'); caption.className = 'archive-caption';
-    const type = document.createElement('b'); type.textContent = asset.kind.toUpperCase();
+    const type = document.createElement('b'); type.textContent = asset.journeyCategory === 'personal' ? 'VIVEK SHARMA' : 'GROUP PHOTOGRAPH';
     const title = document.createElement('small'); title.textContent = asset.caption;
     caption.append(type, title); button.append(image, caption);
-    button.addEventListener('click', () => openLightbox(index)); grid.append(button);
+    button.addEventListener('click', () => openLightbox(index, journeyPhotos)); grid.append(button);
   });
 }
-function openLightbox(index) { activeIndex = index; updateLightbox(); dialog.showModal(); }
+function openLightbox(index, source = assets) { lightboxAssets = source; activeIndex = index; updateLightbox(); dialog.showModal(); }
 function updateLightbox() {
-  const asset = assets[activeIndex], image = dialog.querySelector('figure img');
+  const asset = lightboxAssets[activeIndex], image = dialog.querySelector('figure img');
   image.src = imageUrl(asset.file); image.alt = asset.caption;
   dialog.querySelector('figcaption').textContent = `${asset.caption} · ${asset.detail}`;
-  dialog.querySelector('.lightbox-counter').textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${assets.length}`;
+  dialog.querySelector('.lightbox-counter').textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${lightboxAssets.length}`;
 }
-function stepLightbox(direction) { activeIndex = (activeIndex + direction + assets.length) % assets.length; updateLightbox(); }
+function stepLightbox(direction) { activeIndex = (activeIndex + direction + lightboxAssets.length) % lightboxAssets.length; updateLightbox(); }
 
 document.querySelectorAll('.filter-button').forEach(button => button.addEventListener('click', () => {
   document.querySelector('.filter-button.active')?.classList.remove('active'); button.classList.add('active');
@@ -68,7 +70,7 @@ document.addEventListener('keydown', event => {
   }
 });
 document.querySelectorAll('.image-open').forEach(button => button.addEventListener('click', () => {
-  const index = assets.findIndex(asset => asset.file === button.dataset.image); if (index >= 0) openLightbox(index);
+  const index = assets.findIndex(asset => asset.file === button.dataset.image); if (index >= 0) openLightbox(index, assets);
 }));
 document.querySelectorAll('a[href^="#story-chapter-"]').forEach(link => link.addEventListener('click', () => {
   const chapter = document.querySelector(link.getAttribute('href'));
