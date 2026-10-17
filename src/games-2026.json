@@ -1,12 +1,22 @@
 [
   {
+    "round": 2,
+    "white": "Vivek Sharma",
+    "black": "Shashank Seshan",
+    "result": "1–0",
+    "scoreForVivek": "Win",
+    "source": "https://chessarchive.net/es/game/KQReVPM35Z/sharma-vivek-vs-shashank-seshan-2026-06-01-4th-gujarat-international-open-grandmasters-chess-tournament-2026-c",
+    "sourceLabel": "ChessArchive game and PGN",
+    "note": null
+  },
+  {
     "round": 4,
     "white": "Vivek Sharma",
     "black": "Saumil Nair",
     "result": "½–½",
     "scoreForVivek": "½–½ draw",
-    "source": "https://chessarchive.net/en/player/MLDMBaPEgk/sharma-vivek",
-    "sourceLabel": "ChessArchive game list",
+    "source": "https://chessarchive.net/en/game/XQ6RpGbMQv/sharma-vivek-vs-saumil-nair-2026-06-02-4th-gujarat-international-open-grandmasters-chess-tournament-2026-categ",
+    "sourceLabel": "ChessArchive game and PGN",
     "note": null
   },
   {

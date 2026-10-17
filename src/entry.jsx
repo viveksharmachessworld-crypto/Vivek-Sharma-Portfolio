@@ -5,6 +5,7 @@ import parse from 'html-react-parser';
 import markup from '../public/site.html?raw';
 import certificatesSeed from './certificates.json';
 import gameRecords from './games.json';
+import gujaratGameRecords from './games-2026.json';
 import SeoPage from './seo-pages.jsx';
 import PortfolioAssistant from './portfolio-assistant.jsx';
 import './styles.css';
@@ -166,7 +167,20 @@ function GameArchive() {
         </>}
       </div>
     </div>
-    <p className="game-source-note">Game details and event ratings follow the supplied archive; linked databases provide the source records. The Diptayan Ghosh game links directly to its complete ChessBox score.</p>
+    <div className="recent-games-archive">
+      <div className="recent-games-heading"><div><p className="eyebrow gold-text">2026 · RECENT TOURNAMENT GAMES</p><h3>Round by round,<br/><em>move by move.</em></h3></div><p>Open the source score for each available game. These records preserve the tournament result and the players’ recorded colours.</p></div>
+      <div className="recent-games-layout">
+        <figure className="recent-games-photo"><img src="/images/vivek-sharma-at-chessboard-tournament.webp" alt="Vivek Sharma playing a tournament game against Grandmaster Michal Krasenkow" loading="lazy"/><figcaption>Vivek Sharma at the board · tournament photograph</figcaption></figure>
+        <div className="recent-games-list">
+          <h4>4th Gujarat International Open · 2026</h4>
+          {gujaratGameRecords.filter(game=>[2,4,7,8,10].includes(game.round)).sort((a,b)=>a.round-b.round).map(game=><article className="recent-game-row" key={`gujarat-${game.round}`}><span>ROUND {String(game.round).padStart(2,'0')}</span><b>{game.white} <i>vs</i> {game.black}</b><strong>{game.result}</strong><a href={game.source} target="_blank" rel="noreferrer">VIEW GAME ↗</a></article>)}
+          <h4 className="bihar-game-heading">Bihar Open FIDE Rating Chess Tournament · 2026</h4>
+          <article className="recent-game-row bihar-game-row"><span>ROUND 05 · 27 MAR</span><b>Mishra Ayush <i>vs</i> Vivek Sharma</b><strong>½–½</strong><a href="https://chessarchive.net/en/game/p5lPAGYP5b/mishra-ayush-vs-sharma-vivek-2026-03-27-bihar-open-fide-rating-chess-tournament-2026-round-5-mishra-ayush-shar" target="_blank" rel="noreferrer">VIEW GAME ↗</a></article>
+        </div>
+      </div>
+      <div className="game-database-links"><span>MORE GAME DATABASES</span><a href="https://chessarchive.net/en/player/MLDMBaPEgk/sharma-vivek" target="_blank" rel="noreferrer">ChessArchive · 12 listed games ↗</a><a href="https://www.yottachess.com/player/45046328" target="_blank" rel="noreferrer">YottaBase · 49 listed games ↗</a><a href="https://www.snoopchess.com/snoop/otb/45046328" target="_blank" rel="noreferrer">SnoopChess · historical records ↗</a><a href="https://chessprime.com/players/player/814778/" target="_blank" rel="noreferrer">ChessPrime · player profile ↗</a><a href="https://chessprime.com/database/primebase/637208/mov/73/" target="_blank" rel="noreferrer">ChessPrime · PrimeBase game ↗</a></div>
+    </div>
+    <p className="game-source-note">Game details and event ratings follow linked tournament and player records. The Diptayan Ghosh game links directly to its complete ChessBox score; the six 2026 entries above link to their available game records.</p>
   </section>;
 }
 function HomeApp() {
