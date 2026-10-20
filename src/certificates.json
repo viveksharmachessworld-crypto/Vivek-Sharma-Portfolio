@@ -54,14 +54,19 @@
     "year": 2018
   },
   {
-    "file": "diksha-international-chess-event-certificate.webp",
+    "file": "diksha-rapid-blitz-merit-certificate.webp",
     "kind": "certificate",
-    "caption": "Diksha International Bihar State Rapid & Blitz · first in both",
-    "detail": "Vivek Sharma won first place in both tournament sections; see the separate Blitz certificate for its 8/8 score.",
-    "width": 1521,
-    "height": 1155,
+    "caption": "Diksha Rapid · first place",
+    "detail": "The certificate records first place and 8.5/9 in Rapid; Snoop Chess lists Vivek first among 136 players over 9 rounds.",
+    "width": 1468,
+    "height": 1080,
     "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
-    "year": 2023
+    "year": 2023,
+    "position": "1st place · Rapid",
+    "score": "8.5/9",
+    "location": "Diksha International School, Sabour, Bhagalpur",
+    "showcaseLevel": "State · Rapid",
+    "showcaseWin": true
   },
   {
     "file": "bihar-state-junior-chess-certificate.webp",
@@ -87,22 +92,32 @@
   {
     "file": "bihar-state-chess-certificate-02.webp",
     "kind": "certificate",
-    "caption": "Bihar State event",
-    "detail": "Certificate records 7.5/8 and first place · Kishanganj",
+    "caption": "Bihar State U-15 · champion",
+    "detail": "Bihar State age-group title · certificate records 7.5/8 and first place in the merit list · Kishanganj",
     "width": 2271,
     "height": 1667,
     "event": "Bihar State U-15 Boys & Girls Chess Championship",
-    "year": 2016
+    "year": 2016,
+    "position": "1st place",
+    "score": "7.5/8",
+    "location": "Kishanganj, Bihar",
+    "showcaseLevel": "State · U-15",
+    "showcaseWin": true
   },
   {
     "file": "bihar-state-chess-certificate-03.webp",
     "kind": "certificate",
-    "caption": "Bihar State event",
-    "detail": "Certificate records 7/7 and winner · Khagaria",
+    "caption": "Bihar State U-17 · section winner",
+    "detail": "Bihar State age-group section win · certificate records 7/7 and winner · Khagaria",
     "width": 2108,
     "height": 1610,
     "event": "Bihar State U-11 & U-17 Boys & Girls Chess Championship",
-    "year": 2016
+    "year": 2016,
+    "position": "Winner · U-17 section",
+    "score": "7/7",
+    "location": "Khagaria, Bihar",
+    "showcaseLevel": "State · U-17",
+    "showcaseWin": true
   },
   {
     "file": "bihar-state-rapid-chess-certificate.webp",
@@ -117,13 +132,16 @@
   {
     "file": "east-central-railway-chess-certificate.webp",
     "kind": "certificate",
-    "caption": "East Central Railway sports record",
-    "detail": "Certificate dated 8–9 September 2018 · records first place",
+    "caption": "ECR Open Rapid · first place",
+    "detail": "East Central Railway Sports Association certificate records first place; Snoop Chess lists 116 participants.",
     "width": 2282,
     "height": 1635,
     "event": "ECR Open Rapid Chess Challenge",
     "year": 2018,
-    "showcaseLevel": "Open Rapid"
+    "position": "1st place",
+    "players": 116,
+    "showcaseLevel": "Open Rapid",
+    "showcaseWin": true
   },
   {
     "file": "bihar-state-chess-certificate-04.webp",
@@ -148,34 +166,20 @@
   {
     "file": "diksha-international-chess-certificate.webp",
     "kind": "certificate",
-    "caption": "Diksha Rapid & Blitz champion · Blitz certificate",
-    "detail": "Vivek finished first in both sections; this certificate records first place and 8/8 in Blitz.",
+    "caption": "Diksha Blitz · first place",
+    "detail": "The certificate records first place and a perfect 8/8 in Blitz. Vivek also finished first in Rapid.",
     "width": 1468,
     "height": 1080,
     "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
     "year": 2023,
-    "position": "1st place · certificate",
+    "position": "1st place · Blitz",
     "location": "Diksha International School, Bhagalpur",
     "source": "https://www.snoopchess.com/snoop/otb/45046328",
     "sourceLabel": "Snoop Chess + owner-provided certificate",
     "evidenceType": "Certificate",
-    "score": "8/8 on certificate"
-  },
-  {
-    "file": "diksha-rapid-blitz-merit-certificate.webp",
-    "kind": "certificate",
-    "caption": "Diksha Rapid & Blitz · first place in both sections",
-    "detail": "Merit certificate records 8/8 and first place. Vivek won first place in both Rapid and Blitz.",
-    "width": 1468,
-    "height": 1080,
-    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
-    "year": 2023,
-    "position": "1st place in both Rapid and Blitz",
-    "location": "Diksha International School, Sabour, Bhagalpur",
-    "source": "https://www.snoopchess.com/snoop/otb/45046328",
-    "sourceLabel": "Owner-provided merit certificate + Snoop Chess",
-    "evidenceType": "Certificate",
-    "score": "8/8 on certificate"
+    "score": "8/8",
+    "showcaseLevel": "State · Blitz",
+    "showcaseWin": true
   },
   {
     "file": "bihar-rapid-blitz-championship-certificate.webp",
@@ -227,8 +231,8 @@
   {
     "file": "chess-certificate-archive-photo.webp",
     "kind": "certificate",
-    "caption": "Barauni Open Chess Championship · first place",
-    "detail": "Certificate dated 22–25 December 2018 · records 7/8, Buchholz 34.5 and first place",
+    "caption": "Barauni State-Level Open · first place",
+    "detail": "Certificate of Merit dated 22–25 December 2018 · records 7/8, Buchholz 34.5 and first place",
     "width": 1080,
     "height": 1440,
     "event": "Barauni Open Chess Championship · State Level",
@@ -236,7 +240,9 @@
     "position": "1st place",
     "score": "7/8 · Buchholz 34.5",
     "location": "Barauni, Begusarai",
-    "evidenceType": "Certificate"
+    "evidenceType": "Certificate",
+    "showcaseLevel": "State · Open",
+    "showcaseWin": true
   },
   {
     "file": "dd-dbca-open-fide-2022-fifth-place.jpeg",

@@ -28,27 +28,27 @@ function SoundControl() {
 }
 function imageUrl(file) { return `/images/${encodeURIComponent(file||'')}`; }
 const archiveCertificates = certificatesSeed.filter(cert => cert.showcase !== false);
-const featuredCertificates = certificatesSeed.filter(cert => cert.showcaseLevel && cert.showcase !== false).sort((a,b) => (a.year||0)-(b.year||0));
+const featuredCertificates = certificatesSeed.filter(cert => cert.showcaseWin && cert.showcase !== false).sort((a,b) => (a.year||0)-(b.year||0));
 function NationalCertificateShowcase() {
   const [active,setActive]=useState(0), touch=useRef(null);
   const certificates=featuredCertificates;
   const cert=certificates[active];
   if(!cert)return null;
   const move=amount=>setActive(i=>(i+amount+certificates.length)%certificates.length);
-  const outcome=cert.detail.match(/\d+(?:st|nd|rd|th) place/i)?.[0]||cert.detail.match(/\d+(?:½|\.\d+)?\s*\/\s*\d+/i)?.[0]||'Participation';
-  return <section className="feature-section national-certificate-feature" aria-label="National and open tournament certificate records">
+  const outcome=cert.position||cert.detail.match(/\d+(?:st|nd|rd|th) place/i)?.[0]||cert.detail.match(/\d+(?:½|\.\d+)?\s*\/\s*\d+/i)?.[0]||'First place';
+  return <section className="feature-section national-certificate-feature" aria-label="Verified first-place chess results">
     <div className="feature-image national-certificate-image" onTouchStart={e=>{touch.current=e.touches[0].clientX;}} onTouchEnd={e=>{if(touch.current!==null&&Math.abs(e.changedTouches[0].clientX-touch.current)>45)move(e.changedTouches[0].clientX<touch.current?1:-1);touch.current=null;}}>
       <img className="certificate-slide-image" key={cert.file} src={imageUrl(cert.file)} alt={`${cert.year} ${cert.event} certificate`} width={cert.width} height={cert.height} loading="eager"/>
       <span className="image-tag">{cert.showcaseLevel.toUpperCase()} · {cert.year}</span>
     </div>
     <div className="feature-copy">
-      <p className="eyebrow gold-text" aria-live="polite">{cert.showcaseLevel.toUpperCase()} CERTIFICATE · {String(active+1).padStart(2,'0')} / {String(certificates.length).padStart(2,'0')}</p>
-      <h2 key={cert.file} className="certificate-slide-title">{outcome!=='Participation'?<>{outcome}.<br/><em>{cert.year}.</em></>:<>National stage.<br/><em>{cert.year}.</em></>}</h2>
-      <p className="feature-name">{cert.event}<br/><span className="feature-format">{cert.showcaseLevel.toUpperCase()} · OWNER-PROVIDED CERTIFICATE</span></p>
-      <div className="feature-stats"><div><strong>{cert.year}</strong><small>EVENT YEAR</small></div><div><strong>{cert.showcaseLevel}</strong><small>COMPETITION LEVEL</small></div><div><strong>{outcome}</strong><small>ON THE CERTIFICATE</small></div></div>
-      <p className="feature-note">{cert.detail}. Each certificate in this collection is shown individually; use the controls to move through the archive.</p>
+      <p className="eyebrow gold-text" aria-live="polite">FIRST-PLACE RESULT · {String(active+1).padStart(2,'0')} / {String(certificates.length).padStart(2,'0')}</p>
+      <h2 key={cert.file} className="certificate-slide-title">{outcome}.<br/><em>{cert.year}.</em></h2>
+      <p className="feature-name">{cert.event}<br/><span className="feature-format">{cert.showcaseLevel.toUpperCase()} · CERTIFICATE RECORD</span></p>
+      <div className="feature-stats"><div><strong>{cert.year}</strong><small>EVENT YEAR</small></div><div><strong>{cert.showcaseLevel}</strong><small>COMPETITION LEVEL</small></div><div><strong>{cert.score||outcome}</strong><small>SCORE / RESULT</small></div></div>
+      <p className="feature-note">{cert.detail} The supplied archive documents six first-place results at state level or in open rapid events; it currently contains no verified national, international or district-category first-place result.</p>
       <a className="text-link gold-link" href={imageUrl(cert.file)} target="_blank" rel="noreferrer">View full certificate <span>↗</span></a>
-      <div className="national-certificate-controls" aria-label="Certificate navigation"><button className="certificate-step" type="button" onClick={()=>move(-1)} aria-label="Previous national certificate">←</button><span>{String(active+1).padStart(2,'0')} — {String(certificates.length).padStart(2,'0')}</span><button className="certificate-step" type="button" onClick={()=>move(1)} aria-label="Next national certificate">→</button><small>SWIPE OR USE ARROWS</small></div>
+      <div className="national-certificate-controls" aria-label="Certificate navigation"><button className="certificate-step" type="button" onClick={()=>move(-1)} aria-label="Previous first-place result">←</button><span>{String(active+1).padStart(2,'0')} — {String(certificates.length).padStart(2,'0')}</span><button className="certificate-step" type="button" onClick={()=>move(1)} aria-label="Next first-place result">→</button><small>SWIPE OR USE ARROWS</small></div>
     </div>
   </section>;
 }
