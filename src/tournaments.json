@@ -287,7 +287,7 @@
     "date": "16–17 September 2023",
     "category": "Bihar State Rapid",
     "prize": null,
-    "award": "Certificate records first place",
+    "award": "1st place in Rapid and Blitz",
     "eventCode": "",
     "source": "https://www.snoopchess.com/snoop/otb/45046328",
     "sourceLabel": "Snoop Chess + owner certificate",
@@ -296,13 +296,13 @@
     "fideRated": true,
     "certificate": "Verified",
     "game": null,
-    "note": "Snoop Chess lists Vivek 1st among 136 after 9 rounds. The uploaded 8/8 certificate is for the separate Blitz section, not this Rapid event."
+    "note": "Vivek finished 1st in the Rapid section, listed among 136 players over 9 rounds, and 1st in the separate Blitz section. The uploaded certificate records 8/8 for Blitz."
   },
   {
     "id": "bihar-state-blitz-2023",
     "year": 2023,
     "name": "Diksha International Bihar State Blitz Chess Championship 2023–24",
-    "position": "1st place · certificate + database",
+    "position": "1st place in Blitz and Rapid · certificate + database",
     "score": "8/8 on certificate",
     "players": 100,
     "rounds": 8,
@@ -319,7 +319,7 @@
     "fideRated": true,
     "certificate": "Verified",
     "game": null,
-    "note": "The certificate records 8 points from 8 rounds and first place in the Rapid/Blitz section; Snoop Chess separately lists the Blitz event as 1st of 100."
+    "note": "Vivek finished 1st in both sections at the Diksha International Bihar State Rapid & Blitz Championship. The certificate records 8/8 and 1st place in Blitz; Snoop Chess lists the Blitz event as 1st among 100 players."
   },
   {
     "id": "bihar-state-senior-2023",
@@ -485,8 +485,8 @@
   {
     "id": "bihar-rapid-blitz-2023",
     "year": 2023,
-    "name": "Bihar State Rapid & Blitz Chess Championship · owner archive",
-    "position": null,
+    "name": "Diksha International Bihar State Rapid & Blitz Chess Championship · First in both",
+    "position": "1st place in both Rapid and Blitz",
     "score": null,
     "players": null,
     "rounds": null,
@@ -494,7 +494,7 @@
     "date": "16–17 September 2023",
     "category": "State rapid + blitz",
     "prize": null,
-    "award": null,
+    "award": "Rapid and Blitz champion",
     "eventCode": "",
     "source": "https://biharchess.org/",
     "sourceLabel": "All Bihar Chess Association",
@@ -503,7 +503,7 @@
     "fideRated": true,
     "certificate": "Record available",
     "game": null,
-    "note": null
+    "note": "Vivek Sharma finished first in both sections. The Rapid record lists 1st among 136 players over 9 rounds; the Blitz certificate records 8/8 and Snoop Chess lists 1st among 100 players over 8 rounds."
   },
   {
     "id": "khagaria-rapid-2023",

@@ -10,11 +10,11 @@
   {
     "file": "bihar-chess-newspaper-coverage.webp",
     "kind": "press",
-    "caption": "Bihar chess coverage",
-    "detail": "Newspaper / association archive coverage · event dated September 2023",
+    "caption": "Diksha Rapid & Blitz championship · first place in both",
+    "detail": "Press coverage of Vivek Sharma’s first-place finishes in both sections · September 2023",
     "evidenceType": "Press",
     "year": 2023,
-    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship"
+    "event": "Diksha International Bihar State Rapid & Blitz Championship · Vivek Sharma 1st in both sections"
   },
   {
     "file": "local-chess-press-coverage.webp",
@@ -33,11 +33,11 @@
   {
     "file": "chess-event-press-archive.webp",
     "kind": "press",
-    "caption": "Chess event coverage",
-    "detail": "Newspaper / association archive coverage · event dated September 2023",
+    "caption": "Diksha Rapid & Blitz championship · first place in both",
+    "detail": "Press coverage of Vivek Sharma’s first-place finishes in both sections · September 2023",
     "evidenceType": "Press",
     "year": 2023,
-    "event": "Diksha International Bihar State Rapid & Blitz Chess Championship"
+    "event": "Diksha International Bihar State Rapid & Blitz Championship · Vivek Sharma 1st in both sections"
   },
   {
     "file": "chess-participation-certificate.webp",
@@ -145,8 +145,8 @@
   {
     "file": "diksha-international-chess-event-certificate.webp",
     "kind": "certificate",
-    "caption": "Diksha International event",
-    "detail": "Owner-provided certificate scan",
+    "caption": "Diksha International Bihar State Rapid & Blitz · first in both",
+    "detail": "Vivek Sharma won first place in both tournament sections; see the separate Blitz certificate for its 8/8 score.",
     "evidenceType": "Certificate",
     "event": "Diksha International Bihar State Rapid & Blitz Chess Championship",
     "year": 2023
@@ -297,8 +297,8 @@
   {
     "file": "diksha-championship-results-record.webp",
     "kind": "result",
-    "caption": "Diksha International championship results",
-    "detail": "Owner-provided tournament results screenshot",
+    "caption": "Diksha Rapid & Blitz · first place in both sections",
+    "detail": "Results archive for Vivek Sharma’s first-place finishes in both sections",
     "width": 1080,
     "height": 1452,
     "evidenceType": "Results screenshot",
@@ -309,8 +309,8 @@
   {
     "file": "diksha-championship-standings-record.webp",
     "kind": "result",
-    "caption": "Diksha International final standings",
-    "detail": "Owner-provided tournament standings screenshot",
+    "caption": "Diksha Rapid & Blitz · first place in both sections",
+    "detail": "Final standings archive for Vivek Sharma’s first-place finishes in both sections",
     "width": 1080,
     "height": 1481,
     "evidenceType": "Results screenshot",
@@ -321,8 +321,8 @@
   {
     "file": "diksha-international-chess-certificate.webp",
     "kind": "certificate",
-    "caption": "Diksha International Blitz · first place",
-    "detail": "Certificate records first place and 8/8 in the Blitz section",
+    "caption": "Diksha Rapid & Blitz champion · Blitz certificate",
+    "detail": "Vivek finished first in both sections; this certificate records first place and 8/8 in Blitz.",
     "width": 1468,
     "height": 1080,
     "evidenceType": "Certificate",
@@ -359,8 +359,8 @@
   {
     "file": "diksha-chess-event-stage.webp",
     "kind": "photograph",
-    "caption": "Diksha International chess event stage",
-    "detail": "Owner-provided tournament photograph",
+    "caption": "Diksha Rapid & Blitz championship award stage",
+    "detail": "Vivek Sharma won first place in both the Rapid and Blitz sections",
     "width": 1080,
     "height": 658,
     "evidenceType": "Photograph",
